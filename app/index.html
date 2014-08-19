@@ -30,6 +30,7 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/underscore/underscore.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -49,7 +50,12 @@
 
         <script type="text/javascript">
         $(function() {
-            $("header").load("header.html");
+            $.get("header.html",function(data) {
+                
+                var real = _.template(data,{"title":"开心农民", "hidden":"", "url":"http://www.hujiang.com"});
+                $("header").html(real);
+                //real.appendTo($("header"));
+            });
         });
         </script>
 </body>
