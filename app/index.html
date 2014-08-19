@@ -12,7 +12,9 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/reset.css">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="import" href="header.html">
         <!-- endbuild -->
     </head>
     <body>
@@ -21,15 +23,8 @@
         <![endif]-->
 
 
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
+        <header></header>
 
-
-          </ul>
-        </div>
 
 
         <!-- build:js scripts/vendor.js -->
@@ -51,5 +46,11 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+
+        <script type="text/javascript">
+        $(function() {
+            $("header").load("header.html");
+        });
+        </script>
 </body>
 </html>
