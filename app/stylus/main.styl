@@ -1,0 +1,114 @@
+body
+    background #fafafa
+    font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+    color #333
+
+
+.hero-unit
+    margin 50px auto 0 auto
+    width 300px
+    font-size 18px
+    font-weight 200
+    line-height 30px
+    background-color #eee
+    border-radius 6px
+    padding 60px
+
+
+.hero-unit h1
+    font-size 60px
+    line-height 1
+    letter-spacing -1px
+
+
+.browsehappy
+    margin 0.2em 0
+    background #ccc
+    color #000
+    padding 0.2em 0
+
+.hidden
+    position absolute
+    clip rect(1px, 1px, 1px, 1px)
+    clip rect(1px 1px 1px 1px)
+
+
+/* header begin for header.html*/
+header
+    position absolute
+    top 0px
+    width 100%
+    overflow hidden
+    height 45px
+    line-height 45px
+    background-color #29B6F6
+    font-size 1rem
+    font-family Helvetica, "Microsoft YaHei", "SimSun"
+
+    a
+        text-decoration none
+        color white
+
+    .page_name
+        padding-left 8px
+
+        span
+            padding-left 8px
+
+    .download
+        position absolute
+        right 45px
+        width 45px
+        height 45px
+        span
+            width 14px 
+            height 17px 
+            display inline-block
+            margin 14px 15.5px
+            background url(../images/download.png) center center no-repeat
+            background-size cover
+            
+
+    .menu
+        position absolute
+        right 0
+        width 45px
+        height 45px
+        -webkit-animation menu_off 0.8s ease forwards
+        span
+            width 4px 
+            height 16px 
+            display inline-block
+            margin 14px 20.5px
+            background url(../images/menu.png) center center no-repeat
+            background-size cover
+        &:hover
+            -webkit-animation menu_on 0.8s ease forwards
+        
+@-webkit-keyframes menu_on
+    0%
+        transform rotate(0deg)
+    100%
+        transform rotate(90deg)
+@-webkit-keyframes menu_off
+    0%
+        transform rotate(90deg)
+    100%
+        transform rotate(0deg)
+/* header end*/
+
+
+/*Content begin*/
+.content
+    width 100%
+    position absolute
+    top 45px
+    background-color silver
+
+
+
+/*Content end*/
+
+/*hjm_share begin*/
+
+/*hjm-share end*/

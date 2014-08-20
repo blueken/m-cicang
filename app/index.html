@@ -2,7 +2,7 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>m cichang</title>
+        <title>开心词场</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
@@ -51,10 +51,8 @@
         <script type="text/javascript">
         $(function() {
             $.get("header.html",function(data) {
-                
-                var real = _.template(data,{"title":"开心农民", "hidden":"", "url":"http://www.hujiang.com"});
+                var real = _.template(data,{"title":"开心农民", "arrow":"hidden", "back_url":"http://www.hujiang.com", "down_url":"http://www.yahoo.com"});
                 $("header").html(real);
-                //real.appendTo($("header"));
             });
         });
         </script>

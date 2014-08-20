@@ -1,86 +1,112 @@
 body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
 }
-
 .hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
+  margin: 50px auto 0 auto;
+  width: 300px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 60px;
 }
-
 .hero-unit h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
 }
-
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 .hidden {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    clip: rect(1px 1px 1px 1px);
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip: rect(1px 1px 1px 1px);
 }
-
 /* header begin for header.html*/
 header {
-    position: absolute;
-    top: 0px;
-
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    background-color: #29B6F6;
-
-    font-size: 1rem;
-    font-family: Helvetica, "Microsoft YaHei", "SimSun";
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  overflow: hidden;
+  height: 45px;
+  line-height: 45px;
+  background-color: #29b6f6;
+  font-size: 1rem;
+  font-family: Helvetica, "Microsoft YaHei", "SimSun";
 }
-
 header a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: #fff;
 }
 header .page_name {
-    padding-left: 15px;
+  padding-left: 8px;
 }
-header .page_name span{
-    padding-left: 15px;
+header .page_name span {
+  padding-left: 8px;
 }
 header .download {
-    position: absolute;
-    right: 60px;
+  position: absolute;
+  right: 45px;
+  width: 45px;
+  height: 45px;
+}
+header .download span {
+  width: 14px;
+  height: 17px;
+  display: inline-block;
+  margin: 14px 15.5px;
+  background: url("../images/download.png") center center no-repeat;
+  background-size: cover;
 }
 header .menu {
-    position: absolute;
-    right: 15px;
+  position: absolute;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  -webkit-animation: menu_off 0.8s ease forwards;
 }
-
+header .menu span {
+  width: 4px;
+  height: 16px;
+  display: inline-block;
+  margin: 14px 20.5px;
+  background: url("../images/menu.png") center center no-repeat;
+  background-size: cover;
+}
+header .menu:hover {
+  -webkit-animation: menu_on 0.8s ease forwards;
+}
+@-webkit-keyframes menu_on {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@-webkit-keyframes menu_off {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 /* header end*/
-
-
 /*Content begin*/
 .content {
-    width: 100%;
-    
-    position: absolute;
-    top: 45px;
-    background-color: silver;
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  background-color: #c0c0c0;
 }
-
-
 /*Content end*/
-
 /*hjm_share begin*/
-
 /*hjm-share end*/
