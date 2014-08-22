@@ -32,6 +32,16 @@ body
     clip rect(1px, 1px, 1px, 1px)
     clip rect(1px 1px 1px 1px)
 
+/*muti-browser capability*/
+animation()
+    -webkit-animation arguments
+    -moz-animation arguments
+    -o-animation arguments
+    -ms-animation arguments
+    animation arguments
+/*muti-browser capability end*/
+
+
 
 /* header begin for header.html*/
 header
@@ -52,7 +62,7 @@ header
     .page_name
         padding-left 8px
 
-        span
+        span.name_txt
             padding-left 8px
 
     .download
@@ -60,7 +70,7 @@ header
         right 45px
         width 45px
         height 45px
-        span
+        span.download_icon
             width 14px 
             height 17px 
             display inline-block
@@ -74,8 +84,8 @@ header
         right 0
         width 45px
         height 45px
-        -webkit-animation menu_off 0.8s ease forwards
-        span
+        animation menu_off 0.8s ease forwards
+        span.menu_icon
             width 4px 
             height 16px 
             display inline-block
@@ -83,14 +93,14 @@ header
             background url(../images/menu.png) center center no-repeat
             background-size cover
         &:hover
-            -webkit-animation menu_on 0.8s ease forwards
-        
-@-webkit-keyframes menu_on
+            animation menu_on 0.8s ease forwards
+
+@keyframes menu_on
     0%
         transform rotate(0deg)
     100%
         transform rotate(90deg)
-@-webkit-keyframes menu_off
+@keyframes menu_off
     0%
         transform rotate(90deg)
     100%

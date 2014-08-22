@@ -1,4 +1,8 @@
-<a href="<%=back_url%>" class="page_name"><b class="<%= arrow %>">&lt;</b><span><%= title %></span></a>
-<a href="<%=down_url%>" class="download"><span></span></a>
-<a href="javascript:void(0)" class="menu"><span></span></a>
 
+<% if ($.trim(back_url) == "") { %>
+	<a class="page_name"><span class="name_txt"><%= title %></span></a>
+<% } else { %>
+	<a href="<%=back_url%>" class="page_name"><b>&lt;</b><span class="name_txt"><%= title %></span></a>
+<% } %>
+<a href="<%=down_url%>" class="download"><span class="download_icon"></span></a>
+<a href="javascript:void(0)" class="menu"><span class="menu_icon"></span></a>

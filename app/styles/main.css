@@ -29,6 +29,8 @@ body {
   clip: rect(1px, 1px, 1px, 1px);
   clip: rect(1px 1px 1px 1px);
 }
+/*muti-browser capability*/
+/*muti-browser capability end*/
 /* header begin for header.html*/
 header {
   position: absolute;
@@ -71,6 +73,10 @@ header .menu {
   width: 45px;
   height: 45px;
   -webkit-animation: menu_off 0.8s ease forwards;
+  -moz-animation: menu_off 0.8s ease forwards;
+  -o-animation: menu_off 0.8s ease forwards;
+  -ms-animation: menu_off 0.8s ease forwards;
+  animation: menu_off 0.8s ease forwards;
 }
 header .menu span {
   width: 4px;
@@ -82,22 +88,10 @@ header .menu span {
 }
 header .menu:hover {
   -webkit-animation: menu_on 0.8s ease forwards;
-}
-@-webkit-keyframes menu_on {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(90deg);
-  }
-}
-@-webkit-keyframes menu_off {
-  0% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  -moz-animation: menu_on 0.8s ease forwards;
+  -o-animation: menu_on 0.8s ease forwards;
+  -ms-animation: menu_on 0.8s ease forwards;
+  animation: menu_on 0.8s ease forwards;
 }
 /* header end*/
 /*Content begin*/
@@ -110,3 +104,67 @@ header .menu:hover {
 /*Content end*/
 /*hjm_share begin*/
 /*hjm-share end*/
+@-moz-keyframes menu_on {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@-webkit-keyframes menu_on {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@-o-keyframes menu_on {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes menu_on {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@-moz-keyframes menu_off {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes menu_off {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@-o-keyframes menu_off {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes menu_off {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
