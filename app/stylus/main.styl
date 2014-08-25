@@ -152,10 +152,14 @@ header
             animation cloud_move 100s linear infinite
             // -webkit-transform scaleY(0.5);
 
-
+    .movedown
+        animation cloud_down 0.2s ease forwards
 @keyframes cloud_move
     100%
         transform translateX(-50%)
+@keyframes cloud_down
+    100%
+        transform translateY(200px);
 /* CSS for cloud.html END*/
 
 

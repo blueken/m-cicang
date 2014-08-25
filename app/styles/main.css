@@ -145,6 +145,13 @@ header .menu:hover {
   -ms-animation: cloud_move 100s linear infinite;
   animation: cloud_move 100s linear infinite;
 }
+.movedown {
+  -webkit-animation: cloud_down 0.2s ease forwards;
+  -moz-animation: cloud_down 0.2s ease forwards;
+  -o-animation: cloud_down 0.2s ease forwards;
+  -ms-animation: cloud_down 0.2s ease forwards;
+  animation: cloud_down 0.2s ease forwards;
+}
 /* CSS for cloud.html END*/
 /*Content begin*/
 .content {
@@ -239,5 +246,25 @@ header .menu:hover {
 @keyframes cloud_move {
   100% {
     transform: translateX(-50%);
+  }
+}
+@-moz-keyframes cloud_down {
+  100% {
+    transform: translateY(200px);
+  }
+}
+@-webkit-keyframes cloud_down {
+  100% {
+    transform: translateY(200px);
+  }
+}
+@-o-keyframes cloud_down {
+  100% {
+    transform: translateY(200px);
+  }
+}
+@keyframes cloud_down {
+  100% {
+    transform: translateY(200px);
   }
 }
