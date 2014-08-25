@@ -59,19 +59,11 @@
 
     <script type="text/javascript">
     $(function() {
-        $.get("header.html",function(tmpl) {
-            var pageData = {"title":"开心词场", "back_url":"", "down_url":"http://www.yahoo.com"};
-            _.defaults(pageData, {"title":"开心词场", "back_url":"", "down_url":"http://www.yahoo.com"});
-            var header_html = _.template(tmpl,pageData);
-            $("header").html(header_html);
-        });
+        
 
-        // $.get("clouds.html", function(tmpl) {
-            
-        //     $("body").append(tmpl);
-        // });
+        init_header();
+        //init_cloud();
 
-        init_cloud();
     });
     </script>
 </html>

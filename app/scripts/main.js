@@ -1,3 +1,20 @@
+function init_header() {
+	var stand_height = 416 * 0.5;
+	var stand_width = 640 * 0.5;
+
+	var ratio = $(window).width() / stand_width;
+
+	$.get("header.html",function(tmpl) {
+        var pageData = {"title":"开心词场", "back_url":"", "down_url":"http://www.yahoo.com"};
+        _.defaults(pageData, {"title":"开心词场", "back_url":"", "down_url":"http://www.yahoo.com"});
+        var header_html = _.template(tmpl,pageData);
+        $("header").html(header_html);
+    });
+
+
+    // $("header").css("height", 45*ratio);
+    // $("header").css("line-height", 45*ratio+"px");
+}
 function init_cloud() {
 	var stand_height = 416 * 0.5;
 	var stand_width = 640 * 0.5;
