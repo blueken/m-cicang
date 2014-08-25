@@ -1,5 +1,5 @@
 body {
-  background: #fafafa;
+  background: #000;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
@@ -31,7 +31,12 @@ body {
 }
 /*muti-browser capability*/
 /*muti-browser capability end*/
-/* header begin for header.html*/
+.wrapper {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+/* CSS for header.html BEGIN*/
 header {
   position: absolute;
   top: 0px;
@@ -42,6 +47,7 @@ header {
   background-color: #29b6f6;
   font-size: 1rem;
   font-family: Helvetica, "Microsoft YaHei", "SimSun";
+  z-index: 2;
 }
 header a {
   text-decoration: none;
@@ -50,7 +56,7 @@ header a {
 header .page_name {
   padding-left: 8px;
 }
-header .page_name span {
+header .page_name span.name_txt {
   padding-left: 8px;
 }
 header .download {
@@ -59,7 +65,7 @@ header .download {
   width: 45px;
   height: 45px;
 }
-header .download span {
+header .download span.download_icon {
   width: 14px;
   height: 17px;
   display: inline-block;
@@ -78,7 +84,7 @@ header .menu {
   -ms-animation: menu_off 0.8s ease forwards;
   animation: menu_off 0.8s ease forwards;
 }
-header .menu span {
+header .menu span.menu_icon {
   width: 4px;
   height: 16px;
   display: inline-block;
@@ -93,13 +99,60 @@ header .menu:hover {
   -ms-animation: menu_on 0.8s ease forwards;
   animation: menu_on 0.8s ease forwards;
 }
-/* header end*/
+/* CSS for header.html END*/
+/* CSS for cloud.html BEGIN*/
+.clouds {
+  width: 100%;
+  height: 58.89%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0px;
+}
+.clouds .cloud_bg {
+  display: inline-block;
+  width: 100%;
+  height: 75.5%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+}
+.clouds .cloud_b {
+  display: inline-block;
+  width: 4000px;
+  height: 67px;
+  background: url("../images/cloud_b.png");
+  background-size: contain;
+  opacity: 0.75;
+  position: absolute;
+  top: 0;
+  -webkit-animation: cloud_move 200s linear infinite;
+  -moz-animation: cloud_move 200s linear infinite;
+  -o-animation: cloud_move 200s linear infinite;
+  -ms-animation: cloud_move 200s linear infinite;
+  animation: cloud_move 200s linear infinite;
+}
+.clouds .cloud_f {
+  display: inline-block;
+  width: 4000px;
+  height: 67px;
+  background: url("../images/cloud_f.png");
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  -webkit-animation: cloud_move 100s linear infinite;
+  -moz-animation: cloud_move 100s linear infinite;
+  -o-animation: cloud_move 100s linear infinite;
+  -ms-animation: cloud_move 100s linear infinite;
+  animation: cloud_move 100s linear infinite;
+}
+/* CSS for cloud.html END*/
 /*Content begin*/
 .content {
   width: 100%;
   position: absolute;
-  top: 45px;
-  background-color: #c0c0c0;
+  padding-bottom: 143.75%;
+  background: #c0c0c0 url("../images/bg.jpg") center center no-repeat;
+  background-size: cover;
 }
 /*Content end*/
 /*hjm_share begin*/
@@ -166,5 +219,25 @@ header .menu:hover {
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+@-moz-keyframes cloud_move {
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@-webkit-keyframes cloud_move {
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@-o-keyframes cloud_move {
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes cloud_move {
+  100% {
+    transform: translateX(-50%);
   }
 }

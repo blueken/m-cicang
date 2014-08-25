@@ -1,5 +1,5 @@
 body
-    background #fafafa
+    background #000
     font-family "Helvetica Neue", Helvetica, Arial, sans-serif
     color #333
 
@@ -42,8 +42,13 @@ animation()
 /*muti-browser capability end*/
 
 
+.wrapper {
+    width 100%
+    position relative
+    margin 0 auto
+}
 
-/* header begin for header.html*/
+/* CSS for header.html BEGIN*/
 header
     position absolute
     top 0px
@@ -54,6 +59,7 @@ header
     background-color #29B6F6
     font-size 1rem
     font-family Helvetica, "Microsoft YaHei", "SimSun"
+    z-index 2
 
     a
         text-decoration none
@@ -105,16 +111,62 @@ header
         transform rotate(90deg)
     100%
         transform rotate(0deg)
-/* header end*/
+/* CSS for header.html END*/
+
+/* CSS for cloud.html BEGIN*/
+    .clouds
+        width 100%
+        // padding-bottom 21.1% /*135 / 640*/
+        height 58.89% //(416+135)/920
+        overflow hidden
+        position absolute
+        bottom 0px
+        // background-color gold
+        .cloud_bg 
+            display inline-block
+            width 100%
+            height 75.5% //416/(416+135)
+            background-color white
+            position absolute
+            bottom 0
+        .cloud_b
+            display inline-block
+            width 4000px
+            height 67px
+            background url("../images/cloud_b.png")
+            background-size contain
+            opacity 0.75
+            position absolute
+            top 0
+            animation cloud_move 200s linear infinite
+
+           
+        .cloud_f
+            display inline-block
+            width 4000px
+            height 67px
+            background url("../images/cloud_f.png")
+            background-size contain
+            position absolute
+            top 0
+            animation cloud_move 100s linear infinite
+            // -webkit-transform scaleY(0.5);
+
+
+@keyframes cloud_move
+    100%
+        transform translateX(-50%)
+/* CSS for cloud.html END*/
 
 
 /*Content begin*/
 .content
     width 100%
+    // min-height 480px
     position absolute
-    top 45px
-    background-color silver
-
+    padding-bottom 143.75% //920/640
+    background silver url("../images/bg.jpg") center center no-repeat
+    background-size cover
 
 
 /*Content end*/
