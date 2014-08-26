@@ -1,6 +1,6 @@
 body {
   background: #000;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun";
   color: #333;
 }
 .hero-unit {
@@ -29,6 +29,14 @@ body {
   clip: rect(1px, 1px, 1px, 1px);
   clip: rect(1px 1px 1px 1px);
 }
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+  color: #666;
+}
 /*muti-browser capability*/
 /*muti-browser capability end*/
 .wrapper {
@@ -46,11 +54,9 @@ header {
   line-height: 45px;
   background-color: #29b6f6;
   font-size: 1rem;
-  font-family: Helvetica, "Microsoft YaHei", "SimSun";
-  z-index: 2;
+  z-index: 99;
 }
 header a {
-  text-decoration: none;
   color: #fff;
 }
 header .page_name {
@@ -100,6 +106,157 @@ header .menu:hover {
   animation: menu_on 0.8s ease forwards;
 }
 /* CSS for header.html END*/
+/* CSS for .menu_content BEGIN*/
+.menu_content {
+  width: 100%;
+  height: 50%;
+  min-height: 245px;
+  background-color: #fff;
+  position: absolute;
+  top: 45px;
+  z-index: 2;
+}
+.menu_content .login {
+  width: 100%;
+  height: 105px;
+  border-bottom: #f7f7f7 2px solid;
+}
+.menu_content .login .container {
+  max-width: 640px;
+  background-color: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+  color: #d2d2d2;
+  position: relative;
+}
+.menu_content .login .container .portrait {
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  float: left;
+  margin: 16px;
+}
+.menu_content .login .container img {
+  clip-path: circle(50%, 50%, 50%);
+  -webkit-clip-path: circle(50%, 50%, 50%);
+  -moz-clip-path: circle(50%, 50%, 50%);
+  -o-clip-path: circle(50%, 50%, 50%);
+  -ms-clip-path: circle(50%, 50%, 50%);
+}
+.menu_content .login .container h3 {
+  margin-left: 105px;
+  margin-top: 40px;
+  font-size: 1.4rem;
+  color: #7f7f7f;
+}
+.menu_content .login .container p {
+  margin-left: 105px;
+  color: #29b6f6;
+  font-size: 10px;
+  margin-top: 9px;
+}
+.menu_content .login .container a {
+  width: 72px;
+  height: 30px;
+  border: #d2d2d2 1px solid;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  left: 233px;
+  top: 38px;
+  color: #d2d2d2;
+}
+.menu_content .off a.regist {
+  width: 77px;
+  height: 30px;
+  display: inline-block;
+  border: #d2d2d2 1px solid;
+  border-radius: 5px;
+  position: absolute;
+  left: 130px;
+}
+.menu_content .off a.logon {
+  width: 77px;
+  height: 30px;
+  display: inline-block;
+  background-color: #29b6f6;
+  color: #fff;
+  border-radius: 5px;
+  border: #29b6f6 1px solid;
+}
+.menu_content .icon_links {
+  width: 100%;
+  height: 97px;
+  background-color: #fff;
+}
+.menu_content .icon_links ul {
+  width: 96.25%;
+  max-width: 616px;
+  margin: 0 auto;
+}
+.menu_content .icon_links ul li {
+  width: 18.67%;
+  height: 97px;
+  float: left;
+  margin: 0 3.13%;
+}
+.menu_content .icon_links ul li a {
+  width: 100%;
+  height: 57px;
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  text-align: center;
+}
+.menu_content .icon_links ul li span {
+  width: 100%;
+  height: 25px;
+  display: inline-block;
+  line-height: 25px;
+}
+.menu_content .txt_links {
+  width: 100%;
+  height: 90px;
+  background-color: #fff;
+  border-top: #f7f7f7 2px solid;
+  zoom: 0.5;
+}
+.menu_content .txt_links ul {
+  width: 100%;
+}
+.menu_content .txt_links ul li {
+  width: 33%;
+  height: 88px;
+  line-height: 88px;
+  text-align: center;
+  float: left;
+}
+.menu_content .txt_links ul li:first-child {
+  border-right: #f7f7f7 1px solid;
+}
+.menu_content .txt_links ul li:last-child {
+  border-left: #f7f7f7 1px solid;
+}
+.menu_content .txt_links ul li a {
+  display: inline-block;
+  width: 100%;
+}
+.ani_menu_up {
+  -webkit-animation: menu_up 0.8s ease forwards;
+  -moz-animation: menu_up 0.8s ease forwards;
+  -o-animation: menu_up 0.8s ease forwards;
+  -ms-animation: menu_up 0.8s ease forwards;
+  animation: menu_up 0.8s ease forwards;
+}
+.ani_menu_down {
+  -webkit-animation: menu_down 0.8s ease forwards;
+  -moz-animation: menu_down 0.8s ease forwards;
+  -o-animation: menu_down 0.8s ease forwards;
+  -ms-animation: menu_down 0.8s ease forwards;
+  animation: menu_down 0.8s ease forwards;
+}
+/* CSS for .menu_content END*/
 /* CSS for cloud.html BEGIN*/
 .clouds {
   width: 100%;
@@ -111,7 +268,7 @@ header .menu:hover {
 .clouds .cloud_bg {
   display: inline-block;
   width: 100%;
-  height: 75.5%;
+  height: 75.6%;
   background-color: #fff;
   position: absolute;
   bottom: 0;
@@ -145,7 +302,7 @@ header .menu:hover {
   -ms-animation: cloud_move 100s linear infinite;
   animation: cloud_move 100s linear infinite;
 }
-.movedown {
+.ani_cloud_down {
   -webkit-animation: cloud_down 0.2s ease forwards;
   -moz-animation: cloud_down 0.2s ease forwards;
   -o-animation: cloud_down 0.2s ease forwards;
@@ -226,6 +383,46 @@ header .menu:hover {
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+@-moz-keyframes menu_up {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@-webkit-keyframes menu_up {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@-o-keyframes menu_up {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes menu_up {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@-moz-keyframes menu_down {
+  100% {
+    transform: translateY(100%);
+  }
+}
+@-webkit-keyframes menu_down {
+  100% {
+    transform: translateY(100%);
+  }
+}
+@-o-keyframes menu_down {
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes menu_down {
+  100% {
+    transform: translateY(100%);
   }
 }
 @-moz-keyframes cloud_move {

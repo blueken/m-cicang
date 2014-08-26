@@ -27,8 +27,8 @@ function init_cloud() {
 	var cloud_b_actua_h = cloud_b_stand_h * ratio;
 	var cloud_f_actua_h = cloud_f_stand_h * ratio;
 
-	$(".cloud_b").css("height", cloud_b_actua_h);
-	$(".cloud_f").css("height", cloud_f_actua_h);
+	$(".cloud_b").css("height", 1.1*cloud_b_actua_h);
+	$(".cloud_f").css("height", 1.1*cloud_f_actua_h);
 
 	//var cloud_y = $(window).width() * (920 / 640) * (504/920);
 	// $(".cloud_b").css("bottom", cloud_y-1*cloud_b_actua_h);

@@ -1,6 +1,6 @@
 body
     background #000
-    font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun"
     color #333
 
 
@@ -32,6 +32,10 @@ body
     clip rect(1px, 1px, 1px, 1px)
     clip rect(1px 1px 1px 1px)
 
+a, a:link, a:visited, a:active, a:hover {
+    text-decoration none
+    color #666;
+}
 /*muti-browser capability*/
 animation()
     -webkit-animation arguments
@@ -39,6 +43,13 @@ animation()
     -o-animation arguments
     -ms-animation arguments
     animation arguments
+
+clip-path()
+    clip-path arguments    
+    -webkit-clip-path arguments
+    -moz-clip-path arguments
+    -o-clip-path arguments
+    -ms-clip-path arguments
 /*muti-browser capability end*/
 
 
@@ -58,11 +69,10 @@ header
     line-height 45px
     background-color #29B6F6
     font-size 1rem
-    font-family Helvetica, "Microsoft YaHei", "SimSun"
-    z-index 2
+    
+    z-index 99
 
     a
-        text-decoration none
         color white
 
     .page_name
@@ -113,6 +123,143 @@ header
         transform rotate(0deg)
 /* CSS for header.html END*/
 
+/* CSS for .menu_content BEGIN*/
+
+.menu_content
+    width 100%
+    height 50%
+    min-height 245px
+    background-color white
+    position absolute
+    top 45px
+    z-index 2
+    .login
+        width 100%
+        height 105px
+        border-bottom #f7f7f7 2px solid
+        .container
+            max-width 640px
+            background-color white
+            margin 0 auto
+            overflow hidden
+            color #d2d2d2
+            position relative
+            .portrait
+                width 72px
+                height 72px
+                overflow hidden
+                float left
+                margin  16px
+            img 
+                clip-path circle(50%, 50%, 50%)
+                
+            h3 
+                margin-left 105px 
+                margin-top 40px
+                font-size 1.4rem
+                color #7f7f7f
+            p 
+                margin-left 105px 
+                color #29b6f6
+                font-size 10px
+                margin-top 9px
+            a
+                width 72px
+                height 30px
+                border #d2d2d2 1px solid
+                display inline-block
+                text-align center
+                line-height 30px
+                position absolute
+                left 233px
+                top 38px
+                color #d2d2d2;
+    .off
+        a.regist
+            width 77px
+            height 30px
+            display inline-block
+            border #d2d2d2 1px solid
+            border-radius 5px
+            position absolute
+            left 130px
+        a.logon
+            width 77px
+            height 30px
+            display inline-block
+            background-color #29b6f6
+            color white
+            border-radius 5px
+            border #29b6f6 1px solid
+            
+        
+    .icon_links 
+        width 100% //640-12-12/640
+        height 97px
+        background-color white
+        ul 
+            width 96.25%
+            max-width 616px
+            margin 0 auto
+            li 
+                width 18.67% //115/616
+                height 97px
+                // background-color gold
+                float left
+                margin 0 3.13%
+                a 
+                    width 100%
+                    height 57px
+                    display inline-block
+                    margin-top 12px      
+                    font-size 12px
+                    text-align center
+                span 
+                    width 100%
+                    height 25px
+                    display inline-block
+                    line-height 25px
+    .txt_links
+        width 100%
+        height 90px
+        background-color white
+        border-top #f7f7f7 2px solid
+        zoom 0.5
+
+        ul 
+            width 100%
+            // max-width 640px
+            li
+                width 33%
+                height 88px
+                line-height 88px
+                text-align center
+                // background-color gold
+                float left
+                &:first-child
+                    border-right #f7f7f7 1px solid
+                &:last-child
+                    border-left #f7f7f7 1px solid
+                a
+                    display inline-block
+                    width 100%
+
+
+.ani_menu_up
+    animation menu_up 0.8s ease forwards           
+.ani_menu_down
+    animation menu_down 0.8s ease forwards 
+
+@keyframes menu_up
+    100%
+        transform translateY(-100%);
+@keyframes menu_down
+    100%
+        transform translateY(100%);
+    
+
+/* CSS for .menu_content END*/
+
 /* CSS for cloud.html BEGIN*/
     .clouds
         width 100%
@@ -125,7 +272,7 @@ header
         .cloud_bg 
             display inline-block
             width 100%
-            height 75.5% //416/(416+135)
+            height 75.6% //416/(416+135)
             background-color white
             position absolute
             bottom 0
@@ -152,7 +299,7 @@ header
             animation cloud_move 100s linear infinite
             // -webkit-transform scaleY(0.5);
 
-    .movedown
+    .ani_cloud_down
         animation cloud_down 0.2s ease forwards
 @keyframes cloud_move
     100%
