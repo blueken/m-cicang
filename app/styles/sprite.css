@@ -12,7 +12,7 @@
 
 .sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sprite.png);zoom:0.5;}
 
-.download {width:28px; height:34px; background-position: -466px -2px}
+.download {width:28px; height:22px; background-position: -466px -2px}
 .icon_cctalk {width:114px; height:114px; background-position: -2px -2px}
 .icon_hjtk {width:114px; height:114px; background-position: -118px -2px}
 .icon_hjxd {width:114px; height:114px; background-position: -234px -2px}

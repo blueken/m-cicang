@@ -25,7 +25,14 @@
         <div class="hcontrol">
             <div class="ratioparent">
                 <div class="ratio">
-                    <header></header>
+                    <header>
+                        <a class="page_name"><span class="name_txt"><%= title %></span></a>
+                        <!-- <a href="<%=down_url%>" class="xxxxxxdownload"><span class="sprite download"></span></a>
+<a href="javascript:void(0)" class="xxxxxxmenu"><span class="sprite menu"></span></a> -->   
+                        
+                        <span class="sprite download"></span>
+
+                    </header>
                     <div class="menu_content">
                         <!-- <div class="login off">
                             <div class="container">
@@ -49,9 +56,24 @@
                                     <span class="sprite icon_cctalk"></span>
                                     <span class="pname">CCTalk</span>
                                 </a></li>
-                                <li><a href="#"><img width="57" height="57" src="images/icon_hjtk.png" alt=""/><span>虎将题库</span></a></li>
-                                <li><a href="#"><img width="57" height="57" src="images/icon_hjxd.png" alt=""/><span>沪江小D</span></a></li>
-                                <li><a href="#"><img width="57" height="57" src="images/icon_tlk.png" alt=""/><span>听力酷</span></a></li>
+
+                                <li><a href="#">
+                                    <span class="sprite icon_hjtk"></span>
+                                    <span class="pname">虎将题库</span>
+                                </a></li>
+
+                                <li><a href="#">
+                                    <span class="sprite icon_hjxd"></span>
+                                    <span class="pname">沪江小D</span>
+                                </a></li>
+
+                                <li><a href="#">
+                                    <span class="sprite icon_tlk"></span>
+                                    <span class="pname">听力酷</span>
+                                </a></li>
+
+
+                               
                             </ul>
                         </div>
                         <div class="txt_links">
@@ -63,11 +85,12 @@
                         </div>
                     </div>
                     <article class="content">
-                        <div class="clouds">
+                        <!-- <div class="clouds">
                             <span class="cloud_bg"></span>
                             <span class="cloud_f"></span>
                             <span class="cloud_b"></span>
-                        </div>
+                        </div> -->
+                        <span class="sprite download"></span>
                     </article>
 
                 </div>
@@ -146,7 +169,7 @@
     $(function() {
         
 
-        init_header();
+        // init_header();
         init_cloud();
 
     });
