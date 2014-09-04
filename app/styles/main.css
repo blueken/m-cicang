@@ -1,5 +1,5 @@
 body {
-  background: #000;
+  background: #eef3fa;
   font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun";
   color: #333;
 }
@@ -39,10 +39,25 @@ a:hover {
 }
 /*muti-browser capability*/
 /*muti-browser capability end*/
-.wrapper {
+.hcontrol {
   width: 100%;
-  position: relative;
+  max-width: 800px;
+  background-color: #ffd700;
   margin: 0 auto;
+}
+.hcontrol .ratioparent {
+  position: relative;
+  width: 100%;
+  padding-bottom: 143.75%;
+  background-color: #f00;
+}
+.hcontrol .ratioparent .ratio {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffd700;
 }
 /* CSS for header.html BEGIN*/
 header {
@@ -209,7 +224,7 @@ header .menu:hover {
   font-size: 12px;
   text-align: center;
 }
-.menu_content .icon_links ul li span {
+.menu_content .icon_links ul li a .pname {
   width: 100%;
   height: 25px;
   display: inline-block;

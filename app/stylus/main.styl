@@ -1,5 +1,5 @@
 body
-    background #000
+    background #EEF3FA
     font-family "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun"
     color #333
 
@@ -53,11 +53,24 @@ clip-path()
 /*muti-browser capability end*/
 
 
-.wrapper {
+
+.hcontrol 
     width 100%
-    position relative
+    max-width 800px
+    background-color gold
     margin 0 auto
-}
+    .ratioparent
+        position relative
+        width 100%
+        padding-bottom 143.75% //920/640
+        background-color red
+        .ratio
+            position absolute
+            top 0
+            bottom 0
+            left 0
+            right 0
+            background-color gold
 
 /* CSS for header.html BEGIN*/
 header
@@ -65,7 +78,7 @@ header
     top 0px
     width 100%
     overflow hidden
-    height 45px
+    height 45px // 45/920
     line-height 45px
     background-color #29B6F6
     font-size 1rem
@@ -214,11 +227,11 @@ header
                     margin-top 12px      
                     font-size 12px
                     text-align center
-                span 
-                    width 100%
-                    height 25px
-                    display inline-block
-                    line-height 25px
+                    .pname 
+                        width 100%
+                        height 25px
+                        display inline-block
+                        line-height 25px
     .txt_links
         width 100%
         height 90px
