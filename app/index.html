@@ -13,8 +13,8 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/reset.css">
-        <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/sprite.css">
+        <link rel="stylesheet" href="styles/main.css">
         <link rel="import" href="header.html">
         <!-- endbuild -->
     </head>
@@ -26,11 +26,6 @@
             <div class="ratioparent">
                 <div class="ratio">
                     <header>
-                        <a class="page_name"><span class="name_txt"><%= title %></span></a>
-                        <!-- <a href="<%=down_url%>" class="xxxxxxdownload"><span class="sprite download"></span></a>
-<a href="javascript:void(0)" class="xxxxxxmenu"><span class="sprite menu"></span></a> -->   
-                        
-                        <span class="sprite download"></span>
 
                     </header>
                     <div class="menu_content">
@@ -44,10 +39,10 @@
                         </div>-->
                         <div class="login">
                             <div class="container">
-                            <span class="portrait"><img width="72" height="72" src="images/bg.jpg" alt=""/></span>
+                            <span class="portrait"><img src="images/photo.png" alt=""/></span>
                             <h3>小杨同学</h3>
                             <p>已登录</p>
-                            <a href="#">注销</a>
+                            <a href="#"><span class="hvmiddle">注销</span></a>
                             </div>
                         </div> 
                         <div class="icon_links">
@@ -78,19 +73,18 @@
                         </div>
                         <div class="txt_links">
                             <ul>
-                                <li><a href="#">沪江网校</a></li>
-                                <li><a href="#">沪江网</a></li>
-                                <li><a href="#">沪江团购</a></li>
+                                <li><a href="#"><span class="hvmiddle">沪江网校</span></a></li>
+                                <li><a href="#"><span class="hvmiddle">沪江网</span></a></li>
+                                <li><a href="#"><span class="hvmiddle">沪江团购</span></a></li>
                             </ul>
                         </div>
                     </div>
                     <article class="content">
-                        <!-- <div class="clouds">
+                        <div class="clouds">
                             <span class="cloud_bg"></span>
                             <span class="cloud_f"></span>
                             <span class="cloud_b"></span>
-                        </div> -->
-                        <span class="sprite download"></span>
+                        </div>
                     </article>
 
                 </div>
@@ -169,8 +163,8 @@
     $(function() {
         
 
-        // init_header();
-        init_cloud();
+        initHeader();
+        initCloud();
 
     });
     </script>

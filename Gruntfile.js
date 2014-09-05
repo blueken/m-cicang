@@ -310,6 +310,16 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+
+        //bob test shell
+        shell: {
+            options: {
+                stderr: false
+            },
+            target: {
+                command: './xxx.sh'
+            }
         }
     });
 
@@ -367,4 +377,12 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+
+    grunt.loadNpmTasks('grunt-contrib-stylus');
+
+    grunt.registerTask('bob', function(s) {
+        grunt.log.warn('bob alan green');
+    });
+
+    grunt.registerTask('bobshell', ['shell']);
 };

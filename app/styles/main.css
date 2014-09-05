@@ -1,3 +1,6 @@
+html {
+  font-size: 62.5%;
+}
 body {
   background: #eef3fa;
   font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun";
@@ -41,7 +44,8 @@ a:hover {
 /*muti-browser capability end*/
 .hcontrol {
   width: 100%;
-  max-width: 800px;
+  max-width: 640px;
+  min-width: 400px;
   background-color: #ffd700;
   margin: 0 auto;
 }
@@ -65,62 +69,50 @@ header {
   top: 0px;
   width: 100%;
   overflow: hidden;
-  height: 45px;
-  line-height: 45px;
+  height: 9.56%;
+  max-height: 88px;
   background-color: #29b6f6;
-  font-size: 1rem;
+  font-size: 3.2rem;
   z-index: 99;
 }
 header a {
   color: #fff;
 }
 header .page_name {
-  padding-left: 8px;
+  width: 50%;
+  display: inline-block;
+  margin-left: 5%;
+  margin-top: 4.37%;
 }
 header .page_name span.name_txt {
-  padding-left: 8px;
+  margin-left: 5%;
 }
-header .download {
+header .btn_download {
   position: absolute;
-  right: 45px;
-  width: 45px;
-  height: 45px;
+  right: 13.75%;
+  width: 13.75%;
+  height: 100%;
+  text-align: center;
 }
-header .download span.download_icon {
-  width: 14px;
-  height: 17px;
-  display: inline-block;
-  margin: 14px 15.5px;
-  background: url("../images/download.png") center center no-repeat;
-  background-size: cover;
-}
-header .menu {
+header .btn_menu {
   position: absolute;
   right: 0;
-  width: 45px;
-  height: 45px;
-  -webkit-animation: menu_off 0.8s ease forwards;
-  -moz-animation: menu_off 0.8s ease forwards;
-  -o-animation: menu_off 0.8s ease forwards;
-  -ms-animation: menu_off 0.8s ease forwards;
-  animation: menu_off 0.8s ease forwards;
+  width: 13.75%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(0deg);
+  transition: transform 0.5s;
 }
-header .menu span.menu_icon {
-  width: 4px;
-  height: 16px;
-  display: inline-block;
-  margin: 14px 20.5px;
-  background: url("../images/menu.png") center center no-repeat;
-  background-size: cover;
-}
-header .menu:hover {
-  -webkit-animation: menu_on 0.8s ease forwards;
-  -moz-animation: menu_on 0.8s ease forwards;
-  -o-animation: menu_on 0.8s ease forwards;
-  -ms-animation: menu_on 0.8s ease forwards;
-  animation: menu_on 0.8s ease forwards;
+header .btn_menu:hover {
+  transform: rotate(90deg);
 }
 /* CSS for header.html END*/
+.hvmiddle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
 /* CSS for .menu_content BEGIN*/
 .menu_content {
   width: 100%;
@@ -128,16 +120,19 @@ header .menu:hover {
   min-height: 245px;
   background-color: #fff;
   position: absolute;
-  top: 45px;
+  top: 9.56%;
   z-index: 2;
 }
 .menu_content .login {
   width: 100%;
-  height: 105px;
+  height: 44.56%;
+  max-height: 205px;
+  margin: 0 auto;
   border-bottom: #f7f7f7 2px solid;
 }
 .menu_content .login .container {
-  max-width: 640px;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   margin: 0 auto;
   overflow: hidden;
@@ -145,41 +140,38 @@ header .menu:hover {
   position: relative;
 }
 .menu_content .login .container .portrait {
-  width: 72px;
-  height: 72px;
+  width: 32%;
+  height: 100%;
   overflow: hidden;
   float: left;
-  margin: 16px;
 }
-.menu_content .login .container img {
-  clip-path: circle(50%, 50%, 50%);
-  -webkit-clip-path: circle(50%, 50%, 50%);
-  -moz-clip-path: circle(50%, 50%, 50%);
-  -o-clip-path: circle(50%, 50%, 50%);
-  -ms-clip-path: circle(50%, 50%, 50%);
+.menu_content .login .container .portrait img {
+  width: 70.73%;
+  margin: 15.6%;
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
 }
 .menu_content .login .container h3 {
-  margin-left: 105px;
-  margin-top: 40px;
-  font-size: 1.4rem;
+  margin-top: 12.5%;
+  font-size: 3.8rem;
   color: #7f7f7f;
 }
 .menu_content .login .container p {
-  margin-left: 105px;
   color: #29b6f6;
-  font-size: 10px;
-  margin-top: 9px;
+  font-size: 2rem;
+  margin-top: 2.44%;
 }
 .menu_content .login .container a {
-  width: 72px;
-  height: 30px;
+  width: 24.22%;
+  height: 30.24%;
   border: #d2d2d2 1px solid;
+  border-radius: 10px;
   display: inline-block;
-  text-align: center;
-  line-height: 30px;
+  font-size: 2.4rem;
   position: absolute;
-  left: 233px;
-  top: 38px;
+  left: 70.62%;
+  top: 34.15%;
   color: #d2d2d2;
 }
 .menu_content .off a.regist {
@@ -202,48 +194,50 @@ header .menu:hover {
 }
 .menu_content .icon_links {
   width: 100%;
-  height: 97px;
+  height: 42.39%;
+  max-height: 195px;
   background-color: #fff;
 }
 .menu_content .icon_links ul {
   width: 96.25%;
+  height: 100%;
   max-width: 616px;
   margin: 0 auto;
 }
 .menu_content .icon_links ul li {
   width: 18.67%;
-  height: 97px;
+  height: 76.93%;
   float: left;
-  margin: 0 3.13%;
+  margin: 4.22% 3.13%;
 }
 .menu_content .icon_links ul li a {
   width: 100%;
-  height: 57px;
+  height: 100%;
   display: inline-block;
-  margin-top: 12px;
-  font-size: 12px;
+  font-size: 2.4rem;
   text-align: center;
 }
 .menu_content .icon_links ul li a .pname {
   width: 100%;
-  height: 25px;
+  height: 12.82%;
   display: inline-block;
-  line-height: 25px;
+  margin-top: 13.04%;
 }
 .menu_content .txt_links {
   width: 100%;
-  height: 90px;
+  height: 19.56%;
+  max-height: 88px;
+  margin: 0 auto;
   background-color: #fff;
   border-top: #f7f7f7 2px solid;
-  zoom: 0.5;
 }
 .menu_content .txt_links ul {
   width: 100%;
+  height: 100%;
 }
 .menu_content .txt_links ul li {
   width: 33%;
-  height: 88px;
-  line-height: 88px;
+  height: 100%;
   text-align: center;
   float: left;
 }
@@ -256,6 +250,9 @@ header .menu:hover {
 .menu_content .txt_links ul li a {
   display: inline-block;
   width: 100%;
+  height: 100%;
+  position: relative;
+  font-size: 2.5rem;
 }
 .ani_menu_up {
   -webkit-animation: menu_up 0.8s ease forwards;
@@ -336,6 +333,24 @@ header .menu:hover {
 /*Content end*/
 /*hjm_share begin*/
 /*hjm-share end*/
+/* MEDIA QUERY BEGIN */
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 50%;
+  }
+  .sprite {
+    zoom: 0.7;
+  }
+}
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 40%;
+  }
+  .sprite {
+    zoom: 0.6;
+  }
+}
+/* MEDIA QUERY END */
 @-moz-keyframes menu_on {
   0% {
     transform: rotate(0deg);

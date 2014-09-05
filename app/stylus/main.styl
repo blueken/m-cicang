@@ -1,7 +1,10 @@
+html 
+    font-size 62.5%
 body
     background #EEF3FA
     font-family "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun"
     color #333
+
 
 
 .hero-unit
@@ -56,7 +59,8 @@ clip-path()
 
 .hcontrol 
     width 100%
-    max-width 800px
+    max-width 640px
+    min-width 400px
     background-color gold
     margin 0 auto
     .ratioparent
@@ -78,39 +82,46 @@ header
     top 0px
     width 100%
     overflow hidden
-    height 45px // 45/920
-    line-height 45px
+    height 9.56% // 88/920
+    max-height 88px
     background-color #29B6F6
-    font-size 1rem
-    
+    font-size 3.2rem
     z-index 99
 
     a
         color white
 
     .page_name
-        padding-left 8px
+        width 50%
+        display inline-block
+        margin-left 5% //32px/640
+        margin-top 4.37% //28px/640
 
         span.name_txt
-            padding-left 8px
+            margin-left 5% //32px/640
 
-    .xxxdownload
+    .btn_download
         position absolute
-        right 45px
-        width 45px
-        height 45px
-        
-            
+        right 13.75%  //88/640
+        width 13.75% //88/640
+        height 100%
+        text-align center
 
-    .xxxmenu
+    .btn_menu
         position absolute
         right 0
-        width 45px
-        height 45px
-        animation menu_off 0.8s ease forwards
+        width 13.75% //88/640
+        height 100%
+        
+        text-align center
+        //animation menu_off 0.8s ease forwards
+        transform rotate(0deg)
+        transition transform 0.5s
+
         
         &:hover
-            animation menu_on 0.8s ease forwards
+            //animation menu_on 0.8s ease forwards
+                transform rotate(90deg)
 
 @keyframes menu_on
     0%
@@ -124,57 +135,76 @@ header
         transform rotate(0deg)
 /* CSS for header.html END*/
 
+
+
+.hvmiddle
+    position absolute
+    left 50%
+    top 50%
+    transform translateY(-50%) translateX(-50%)
+
+
+
 /* CSS for .menu_content BEGIN*/
 
 .menu_content
     width 100%
-    height 50%
+    height 50% //460
     min-height 245px
     background-color white
     position absolute
-    top 45px
+    top 9.56% // 88/920
     z-index 2
     .login
         width 100%
-        height 105px
+        height  44.56%//205px/460px
+        max-height 205px
+        margin 0 auto
         border-bottom #f7f7f7 2px solid
         .container
-            max-width 640px
+            width 100%
+
+            height 100%
             background-color white
             margin 0 auto
             overflow hidden
             color #d2d2d2
             position relative
             .portrait
-                width 72px
-                height 72px
+                width 32%   //205/640
+                height 100% //205/205
                 overflow hidden
                 float left
-                margin  16px
-            img 
-                clip-path circle(50%, 50%, 50%)
+                
+                img 
+                    
+                    width 70.73% //145px/205
+                    margin 15.6% // 32px/205
+                    border-radius 50%
+                    max-width 100%
+                    max-height 100%
                 
             h3 
-                margin-left 105px 
-                margin-top 40px
-                font-size 1.4rem
+                margin-top 12.5% //80/640
+                font-size 3.8rem
                 color #7f7f7f
             p 
-                margin-left 105px 
                 color #29b6f6
-                font-size 10px
-                margin-top 9px
+                font-size 2rem
+                margin-top 2.44% //15px/640
             a
-                width 72px
-                height 30px
+                width 24.22% //155px/640 
+                height 30.24% //62px/205
                 border #d2d2d2 1px solid
+                border-radius 10px
                 display inline-block
-                text-align center
-                line-height 30px
+                font-size 2.4rem
+                
                 position absolute
-                left 233px
-                top 38px
-                color #d2d2d2;
+                left 70.62% //452px/640
+                top 34.15% //70/205
+                color #d2d2d2
+                
     .off
         a.regist
             width 77px
@@ -196,44 +226,48 @@ header
         
     .icon_links 
         width 100% //640-12-12/640
-        height 97px
+        height 42.39% //195px/460
+        max-height 195px
         background-color white
         ul 
             width 96.25%
+            height 100%
             max-width 616px
+
             margin 0 auto
             li 
                 width 18.67% //115/616
-                height 97px
+                height 76.93%  //150/195
                 // background-color gold
                 float left
-                margin 0 3.13%
+                margin 4.22% 3.13% // 26/616 
                 a 
                     width 100%
-                    height 57px
+                    height 100%
                     display inline-block
-                    margin-top 12px      
-                    font-size 12px
+                    font-size 2.4rem
                     text-align center
                     .pname 
                         width 100%
-                        height 25px
+                        height 12.82% //25px/195px 
                         display inline-block
-                        line-height 25px
+                        margin-top 13.04% //15px/115
     .txt_links
         width 100%
-        height 90px
+        height 19.56% //90px/460
+        max-height 88px
+        margin 0 auto
         background-color white
         border-top #f7f7f7 2px solid
-        zoom 0.5
 
         ul 
             width 100%
             // max-width 640px
+            height 100%
             li
                 width 33%
-                height 88px
-                line-height 88px
+                height 100%
+                
                 text-align center
                 // background-color gold
                 float left
@@ -244,6 +278,9 @@ header
                 a
                     display inline-block
                     width 100%
+                    height 100%
+                    position relative
+                    font-size 2.5rem
 
 
 .ani_menu_up
@@ -326,3 +363,23 @@ header
 /*hjm_share begin*/
 
 /*hjm-share end*/
+
+
+/* MEDIA QUERY BEGIN */
+@media screen and (max-width: 640px) {
+    html {
+        font-size: 50%;
+    }
+    .sprite {
+        zoom: 0.7;
+    }
+}
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 40%;
+    }
+    .sprite {
+        zoom: 0.6;
+    }
+}
+/* MEDIA QUERY END */
