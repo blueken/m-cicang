@@ -155,6 +155,7 @@ header
     position absolute
     top 9.56% // 88/920
     z-index 2
+    display none
     .login
         width 100%
         height  44.56%//205px/460px
@@ -302,7 +303,7 @@ header
     .clouds
         width 100%
         // padding-bottom 21.1% /*135 / 640*/
-        height 58.89% //(416+135)/920
+        height 59.89% //(416+135)/920
         overflow hidden
         position absolute
         bottom 0px
@@ -314,28 +315,33 @@ header
             background-color white
             position absolute
             bottom 0
-        .cloud_b
-            display inline-block
-            width 4000px
-            height 67px
-            background url("../images/cloud_b.png")
-            background-size contain
-            opacity 0.75
-            position absolute
-            top 0
-            animation cloud_move 200s linear infinite
+        .cloud_parallax
+            width 100%
+            height 24.4% //135/(416+135)
+            position relative
 
-           
-        .cloud_f
-            display inline-block
-            width 4000px
-            height 67px
-            background url("../images/cloud_f.png")
-            background-size contain
-            position absolute
-            top 0
-            animation cloud_move 100s linear infinite
-            // -webkit-transform scaleY(0.5);
+            .cloud_b
+                display inline-block
+                width 4000px
+                height 67px
+                background url("../images/cloud_b.png")
+                background-size contain
+                opacity 0.75
+                position absolute
+                bottom 0
+                animation cloud_move 200s linear infinite
+
+               
+            .cloud_f
+                display inline-block
+                width 4000px
+                height 67px
+                background url("../images/cloud_f.png")
+                background-size contain
+                position absolute
+                bottom 0
+                animation cloud_move 100s linear infinite
+                // -webkit-transform scaleY(0.5);
 
     .ani_cloud_down
         animation cloud_down 0.2s ease forwards

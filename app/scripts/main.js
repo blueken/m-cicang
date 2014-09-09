@@ -25,24 +25,21 @@ function initHeader() {
 }
 
 function initCloud() {
-	var stand_height = 416 * 0.5;
-	var stand_width = 640 * 0.5;
 
-	var ratio = $(window).width() / stand_width;
-	var cloud_height = ratio * stand_height;
+	var cloud_b_stand_h = 135 * 1;
+	var cloud_f_stand_h = 135 * 1;
 
-	var cloud_b_stand_h = 135 * 0.5;
-	var cloud_f_stand_h = 135 * 0.5;
+
+	var clouds_bg_h_by_width = $(".ratio").width() * (920 / 640) * ((416 + 135) / 920);
+	var clouds_bg_h_by_height = $(".ratio").height() * ((416+135) / 920);
+	var clouds_bg_actua_h = Math.min(clouds_bg_h_by_width, clouds_bg_h_by_height);
+	$('.clouds').css('height', clouds_bg_actua_h);
+
+
+	var ratio = clouds_bg_actua_h / (551);
 	var cloud_b_actua_h = cloud_b_stand_h * ratio;
 	var cloud_f_actua_h = cloud_f_stand_h * ratio;
 
-	$('.cloud_b').css('height', 1.1 * cloud_b_actua_h);
-	$('.cloud_f').css('height', 1.1 * cloud_f_actua_h);
-
-	//var cloud_y = $(window).width() * (920 / 640) * (504/920);
-	// $('.cloud_b').css('bottom', cloud_y-1*cloud_b_actua_h);
-	// $('.cloud_f').css('bottom', cloud_y-1*cloud_f_actua_h);
-
-	var clouds_bg_actua_h = $(window).width() * (920 / 640) * ((416 + 135) / 920);
-	$('.clouds').css('height', clouds_bg_actua_h);
+	$('.cloud_b').css('height', cloud_b_actua_h);
+	$('.cloud_f').css('height', cloud_f_actua_h);
 }
