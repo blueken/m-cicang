@@ -59,8 +59,8 @@ clip-path()
 
 .hcontrol 
     width 100%
-    max-width 640px
-    min-width 400px
+    max-width 768px
+    min-width 320px
     background-color gold
     margin 0 auto
     .ratioparent
@@ -311,7 +311,7 @@ header
         .cloud_bg 
             display inline-block
             width 100%
-            height 75.6% //416/(416+135)
+            height 76% //416/(416+135)
             background-color white
             position absolute
             bottom 0
@@ -357,12 +357,64 @@ header
 /*Content begin*/
 .content
     width 100%
+    height 100% //920px
     // min-height 480px
     position absolute
-    padding-bottom 143.75% //920/640
     background silver url("../images/bg.jpg") center center no-repeat
     background-size cover
-
+    .kinds
+        position relative
+        top 25% //230px/920px
+        text-align center
+        .icon_left
+            float left
+            margin-right 2%
+        .icon_right
+            float right
+            position: absolute;
+            top: 50%;
+            right: 15%;
+            transform: translateY(-50%);
+        .kqbc
+            display inline-block
+            padding 0 1.56% //10/640
+            width 69.37% //464-10-10/640
+            text-align left
+            color white
+            position relative
+            .kind_title 
+                width 54.5% //240/444
+                display block
+                margin 0 auto
+                font-size 5.6rem
+            .kind_desc
+                width 54.5% //240/444
+                display block
+                margin 0 auto
+                font-size 2.4rem
+                margin-top 3% //15/100
+        .xmyy
+            display inline-block
+            position relative
+            padding 0 1.56% //10/640
+            margin-top 44.53% //285/640
+            width 69.37% //464-10-10/640
+            text-align left
+            .kind_title 
+                width 54.5% //240/444
+                display block
+                margin 0 auto
+                font-size 5.6rem
+            .kind_desc
+                width 54.5% //240/444
+                display block
+                margin 0 auto
+                font-size 2.4rem
+                margin-top 3% //15/100
+        .copyright
+            font-size 2.2rem
+            margin-top 24.9% //120px/482px
+            
 
 /*Content end*/
 
@@ -377,7 +429,7 @@ header
         font-size: 50%;
     }
     .sprite {
-        zoom: 0.7;
+        zoom: 0.7;  
     }
 }
 @media screen and (max-width: 480px) {
@@ -386,6 +438,14 @@ header
     }
     .sprite {
         zoom: 0.6;
+    }
+}
+@media screen and (max-width: 321px) {
+    html {
+        font-size: 30%;
+    }
+    .sprite {
+        zoom: 0.58;
     }
 }
 /* MEDIA QUERY END */

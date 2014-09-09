@@ -1,7 +1,7 @@
 /* ----------------------------------------------------
    created with http://www.codeandweb.com/texturepacker 
    ----------------------------------------------------
-   $TexturePacker:SmartUpdate:35cac14e267bc797c42e4b6118325d66:0293bcb1a519d5bc4e1e8cf2b0dcf6c7:1e9ea531edb030fd06c741d8d5dec72b$
+   $TexturePacker:SmartUpdate:b85bc5dde7d0feb599624cb7210e11cf:661e7935164a8a27fed0b5d97bb58d9e:1e9ea531edb030fd06c741d8d5dec72b$
    ----------------------------------------------------
 
    usage: <span class="{-spritename-} sprite"></span>
@@ -10,13 +10,15 @@
 
 */
 
-.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sprite.png); zoom:1;}
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sprite.png);}
 
-.download {width:28px; height:34px; background-position: -466px -2px}
+.doctor_hat {width:85px; height:85px; background-position: -466px -2px}
+.download {width:28px; height:34px; background-position: -640px -2px}
 .icon_cctalk {width:114px; height:114px; background-position: -2px -2px}
 .icon_hjtk {width:114px; height:114px; background-position: -118px -2px}
 .icon_hjxd {width:114px; height:114px; background-position: -234px -2px}
 .icon_tlk {width:114px; height:114px; background-position: -350px -2px}
-.menu {width:8px; height:32px; background-position: -466px -38px}
-
-
+.menu {width:8px; height:32px; background-position: -670px -2px}
+.paper_flight {width:85px; height:85px; background-position: -553px -2px}
+.rarrow_gray {width:19px; height:60px; background-position: -640px -38px}
+.rarrow_white {width:19px; height:60px; background-position: -661px -38px}

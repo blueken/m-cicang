@@ -44,8 +44,8 @@ a:hover {
 /*muti-browser capability end*/
 .hcontrol {
   width: 100%;
-  max-width: 640px;
-  min-width: 400px;
+  max-width: 768px;
+  min-width: 320px;
   background-color: #ffd700;
   margin: 0 auto;
 }
@@ -281,7 +281,7 @@ header .btn_menu:hover {
 .clouds .cloud_bg {
   display: inline-block;
   width: 100%;
-  height: 75.6%;
+  height: 76%;
   background-color: #fff;
   position: absolute;
   bottom: 0;
@@ -331,10 +331,72 @@ header .btn_menu:hover {
 /*Content begin*/
 .content {
   width: 100%;
+  height: 100%;
   position: absolute;
-  padding-bottom: 143.75%;
   background: #c0c0c0 url("../images/bg.jpg") center center no-repeat;
   background-size: cover;
+}
+.content .kinds {
+  position: relative;
+  top: 25%;
+  text-align: center;
+}
+.content .kinds .icon_left {
+  float: left;
+  margin-right: 2%;
+}
+.content .kinds .icon_right {
+  float: right;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  transform: translateY(-50%);
+}
+.content .kinds .kqbc {
+  display: inline-block;
+  padding: 0 1.56%;
+  width: 69.37%;
+  text-align: left;
+  color: #fff;
+  position: relative;
+}
+.content .kinds .kqbc .kind_title {
+  width: 54.5%;
+  display: block;
+  margin: 0 auto;
+  font-size: 5.6rem;
+}
+.content .kinds .kqbc .kind_desc {
+  width: 54.5%;
+  display: block;
+  margin: 0 auto;
+  font-size: 2.4rem;
+  margin-top: 3%;
+}
+.content .kinds .xmyy {
+  display: inline-block;
+  position: relative;
+  padding: 0 1.56%;
+  margin-top: 44.53%;
+  width: 69.37%;
+  text-align: left;
+}
+.content .kinds .xmyy .kind_title {
+  width: 54.5%;
+  display: block;
+  margin: 0 auto;
+  font-size: 5.6rem;
+}
+.content .kinds .xmyy .kind_desc {
+  width: 54.5%;
+  display: block;
+  margin: 0 auto;
+  font-size: 2.4rem;
+  margin-top: 3%;
+}
+.content .kinds .copyright {
+  font-size: 2.2rem;
+  margin-top: 24.9%;
 }
 /*Content end*/
 /*hjm_share begin*/
@@ -354,6 +416,14 @@ header .btn_menu:hover {
   }
   .sprite {
     zoom: 0.6;
+  }
+}
+@media screen and (max-width: 321px) {
+  html {
+    font-size: 30%;
+  }
+  .sprite {
+    zoom: 0.58;
   }
 }
 /* MEDIA QUERY END */

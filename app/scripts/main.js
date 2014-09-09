@@ -25,7 +25,7 @@ function initHeader() {
 }
 
 function initCloud() {
-
+	document.title = Math.random();
 	var cloud_b_stand_h = 135 * 1;
 	var cloud_f_stand_h = 135 * 1;
 
@@ -42,4 +42,10 @@ function initCloud() {
 
 	$('.cloud_b').css('height', cloud_b_actua_h);
 	$('.cloud_f').css('height', cloud_f_actua_h);
+}
+
+function bindEvents() {
+	$(window).on('resize', function() {
+		initCloud();
+	});
 }
