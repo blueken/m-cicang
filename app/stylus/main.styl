@@ -114,14 +114,9 @@ header
         height 100%
         
         text-align center
-        //animation menu_off 0.8s ease forwards
-        transform rotate(0deg)
-        transition transform 0.5s
-
-        
-        &:hover
-            //animation menu_on 0.8s ease forwards
-                transform rotate(90deg)
+        transition all 0.5s
+    .btn_menu_on
+        transform rotate(90deg)
 
 @keyframes menu_on
     0%
@@ -146,16 +141,16 @@ header
 
 
 /* CSS for .menu_content BEGIN*/
-
 .menu_content
     width 100%
     height 50% //460
     min-height 245px
     background-color white
     position absolute
-    top 9.56% // 88/920
+    // top 9.56% // 88/920
+    top -45%
     z-index 2
-    display none
+    display block
     .login
         width 100%
         height  44.56%//205px/460px
@@ -283,6 +278,12 @@ header
                     position relative
                     font-size 2.5rem
 
+.menu_content_on
+    transition all 0.5s 
+    top 9.56% // 88/920
+.menu_content_off
+    transition all 0.5s
+    top -45%
 
 .ani_menu_up
     animation menu_up 0.8s ease forwards           
@@ -311,7 +312,7 @@ header
         .cloud_bg 
             display inline-block
             width 100%
-            height 76% //416/(416+135)
+            height 78% //416/(416+135)
             background-color white
             position absolute
             bottom 0
@@ -378,7 +379,7 @@ header
         .kqbc
             display inline-block
             padding 0 1.56% //10/640
-            width 69.37% //464-10-10/640
+            width 75% //464-10-10/640
             text-align left
             color white
             position relative
@@ -398,7 +399,7 @@ header
             position relative
             padding 0 1.56% //10/640
             margin-top 44.53% //285/640
-            width 69.37% //464-10-10/640
+            width 75% //464-10-10/640
             text-align left
             .kind_title 
                 width 54.5% //240/444
@@ -417,6 +418,29 @@ header
             
 
 /*Content end*/
+
+/*DOwntips begin*/
+@keyframes fadeOut
+    100%
+        opacity 0
+        visibility hidden
+
+.downtips
+    position absolute
+    z-index 100
+    width 100%
+    height 100%
+    background rgba(0,0,0,0.9)
+    animation fadeOut 1s 3s linear forwards
+    // display none
+    img 
+        position absolute
+        top 11px
+        max-width 100%
+
+
+
+/*DOwntips begin*/
 
 /*hjm_share begin*/
 

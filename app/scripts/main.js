@@ -1,8 +1,7 @@
 function initHeader() {
+	'use strict';
 	var stand_height = 416 * 0.5;
 	var stand_width = 640 * 0.5;
-
-	var ratio = $(window).width() / stand_width;
 
 	$.get('header.html', function(tmpl) {
 		var pageData = {
@@ -17,6 +16,26 @@ function initHeader() {
 		});
 		var header_html = _.template(tmpl, pageData);
 		$('header').html(header_html);
+
+		$('.btn_menu').click(function(){
+			var menu = $('.btn_menu');
+			var menuContent = $('.menu_content');
+			// var bOn = menuContent.hasClass('menu_content_on');
+			 var bOn = parseInt($(".menu_content").css("top")) > 0;
+			if (bOn) {
+				// menuContent.removeClass('menu_content_on').addClass('menu_content_off');
+				menu.removeClass('btn_menu_on');
+				menuContent.animate({
+					top: '-45%'
+				});
+			} else {
+				// menuContent.removeClass('menu_content_off').addClass('menu_content_on');
+				menu.addClass('btn_menu_on');
+				menuContent.animate({
+					top: '9.56%'
+				});
+			}
+		});
 	});
 
 
@@ -25,13 +44,13 @@ function initHeader() {
 }
 
 function initCloud() {
-	document.title = Math.random();
+	'use strict';
 	var cloud_b_stand_h = 135 * 1;
 	var cloud_f_stand_h = 135 * 1;
 
 
-	var clouds_bg_h_by_width = $(".ratio").width() * (920 / 640) * ((416 + 135) / 920);
-	var clouds_bg_h_by_height = $(".ratio").height() * ((416+135) / 920);
+	var clouds_bg_h_by_width = $('.ratio').width() * (920 / 640) * ((416 + 135) / 920);
+	var clouds_bg_h_by_height = $('.ratio').height() * ((416+135) / 920);
 	var clouds_bg_actua_h = Math.min(clouds_bg_h_by_width, clouds_bg_h_by_height);
 	$('.clouds').css('height', clouds_bg_actua_h);
 
@@ -45,7 +64,9 @@ function initCloud() {
 }
 
 function bindEvents() {
+	'use strict';
 	$(window).on('resize', function() {
 		initCloud();
 	});
+
 }

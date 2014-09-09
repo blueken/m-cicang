@@ -100,10 +100,9 @@ header .btn_menu {
   width: 13.75%;
   height: 100%;
   text-align: center;
-  transform: rotate(0deg);
-  transition: transform 0.5s;
+  transition: all 0.5s;
 }
-header .btn_menu:hover {
+header .btn_menu_on {
   transform: rotate(90deg);
 }
 /* CSS for header.html END*/
@@ -120,9 +119,9 @@ header .btn_menu:hover {
   min-height: 245px;
   background-color: #fff;
   position: absolute;
-  top: 9.56%;
+  top: -45%;
   z-index: 2;
-  display: none;
+  display: block;
 }
 .menu_content .login {
   width: 100%;
@@ -255,6 +254,14 @@ header .btn_menu:hover {
   position: relative;
   font-size: 2.5rem;
 }
+.menu_content_on {
+  transition: all 0.5s;
+  top: 9.56%;
+}
+.menu_content_off {
+  transition: all 0.5s;
+  top: -45%;
+}
 .ani_menu_up {
   -webkit-animation: menu_up 0.8s ease forwards;
   -moz-animation: menu_up 0.8s ease forwards;
@@ -281,7 +288,7 @@ header .btn_menu:hover {
 .clouds .cloud_bg {
   display: inline-block;
   width: 100%;
-  height: 76%;
+  height: 78%;
   background-color: #fff;
   position: absolute;
   bottom: 0;
@@ -355,7 +362,7 @@ header .btn_menu:hover {
 .content .kinds .kqbc {
   display: inline-block;
   padding: 0 1.56%;
-  width: 69.37%;
+  width: 75%;
   text-align: left;
   color: #fff;
   position: relative;
@@ -378,7 +385,7 @@ header .btn_menu:hover {
   position: relative;
   padding: 0 1.56%;
   margin-top: 44.53%;
-  width: 69.37%;
+  width: 75%;
   text-align: left;
 }
 .content .kinds .xmyy .kind_title {
@@ -399,6 +406,25 @@ header .btn_menu:hover {
   margin-top: 24.9%;
 }
 /*Content end*/
+/*DOwntips begin*/
+.downtips {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  -webkit-animation: fadeOut 1s 3s linear forwards;
+  -moz-animation: fadeOut 1s 3s linear forwards;
+  -o-animation: fadeOut 1s 3s linear forwards;
+  -ms-animation: fadeOut 1s 3s linear forwards;
+  animation: fadeOut 1s 3s linear forwards;
+}
+.downtips img {
+  position: absolute;
+  top: 11px;
+  max-width: 100%;
+}
+/*DOwntips begin*/
 /*hjm_share begin*/
 /*hjm-share end*/
 /* MEDIA QUERY BEGIN */
@@ -569,5 +595,29 @@ header .btn_menu:hover {
 @keyframes cloud_down {
   100% {
     transform: translateY(200px);
+  }
+}
+@-moz-keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@-o-keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
