@@ -134,7 +134,7 @@ header
 
 .hvmiddle
     position absolute
-    left 50%
+    left 49%
     top 50%
     transform translateY(-50%) translateX(-50%)
 
@@ -148,13 +148,12 @@ header
     background-color white
     position absolute
     // top 9.56% // 88/920
-    top -45%
+    top -50%
     z-index 2
     display block
     .login
         width 100%
         height  44.56%//205px/460px
-        max-height 205px
         margin 0 auto
         border-bottom #f7f7f7 2px solid
         .container
@@ -223,7 +222,6 @@ header
     .icon_links 
         width 100% //640-12-12/640
         height 42.39% //195px/460
-        max-height 195px
         background-color white
         ul 
             width 96.25%
@@ -251,7 +249,6 @@ header
     .txt_links
         width 100%
         height 19.56% //90px/460
-        max-height 88px
         margin 0 auto
         background-color white
         border-top #f7f7f7 2px solid
@@ -276,14 +273,14 @@ header
                     width 100%
                     height 100%
                     position relative
-                    font-size 2.5rem
+                    font-size 2.3rem
 
 .menu_content_on
     transition all 0.5s 
     top 9.56% // 88/920
 .menu_content_off
     transition all 0.5s
-    top -45%
+    top -50%
 
 .ani_menu_up
     animation menu_up 0.8s ease forwards           
@@ -369,12 +366,12 @@ header
         text-align center
         .icon_left
             float left
-            margin-right 2%
+            margin-right 8%
         .icon_right
             float right
             position: absolute;
             top: 50%;
-            right: 15%;
+            right: 12%;
             transform: translateY(-50%);
         .kqbc
             display inline-block
@@ -384,12 +381,12 @@ header
             color white
             position relative
             .kind_title 
-                width 54.5% //240/444
+                width 60% //240/444
                 display block
                 margin 0 auto
                 font-size 5.6rem
             .kind_desc
-                width 54.5% //240/444
+                width 60% //240/444
                 display block
                 margin 0 auto
                 font-size 2.4rem
@@ -402,19 +399,19 @@ header
             width 75% //464-10-10/640
             text-align left
             .kind_title 
-                width 54.5% //240/444
+                width 60% //240/444
                 display block
                 margin 0 auto
                 font-size 5.6rem
             .kind_desc
-                width 54.5% //240/444
+                width 60% //240/444
                 display block
                 margin 0 auto
                 font-size 2.4rem
                 margin-top 3% //15/100
         .copyright
             font-size 2.2rem
-            margin-top 24.9% //120px/482px
+            margin-top 23% //120px/482px
             
 
 /*Content end*/
@@ -448,7 +445,15 @@ header
 
 
 /* MEDIA QUERY BEGIN */
-@media screen and (max-width: 640px) {
+@media screen and (min-width: 642px) {
+    html {
+        font-size: 70%;
+    }
+    .sprite {
+        zoom: 1.0;  
+    }
+}
+@media screen and (max-width: 641px) {
     html {
         font-size: 50%;
     }
@@ -456,20 +461,41 @@ header
         zoom: 0.7;  
     }
 }
-@media screen and (max-width: 480px) {
+// @media screen and (max-width: 481px) {
+//     html {
+//         font-size: 38%;
+//     }
+//     .sprite {
+//         zoom: 0.69;
+//     }
+// }
+@media screen and (max-width: 391px) {
+    // nexus 4 = 384
     html {
         font-size: 40%;
     }
     .sprite {
-        zoom: 0.6;
+        zoom: 0.55;
     }
 }
 @media screen and (max-width: 321px) {
+    //iphone 3g 4 5 = 320
     html {
-        font-size: 30%;
+        font-size: 35%;
     }
     .sprite {
-        zoom: 0.58;
+        zoom: 0.5;
     }
 }
 /* MEDIA QUERY END */
+
+/* LANDSCAPE BEGIN */
+@media screen and (orientation: landscape)
+    .content
+        .kinds
+            .kqbc, .xmyy
+                text-align center
+
+
+
+/* LANDSCAPE BEGIN */

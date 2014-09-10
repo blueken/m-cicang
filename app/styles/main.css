@@ -108,7 +108,7 @@ header .btn_menu_on {
 /* CSS for header.html END*/
 .hvmiddle {
   position: absolute;
-  left: 50%;
+  left: 49%;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
 }
@@ -119,14 +119,13 @@ header .btn_menu_on {
   min-height: 245px;
   background-color: #fff;
   position: absolute;
-  top: -45%;
+  top: -50%;
   z-index: 2;
   display: block;
 }
 .menu_content .login {
   width: 100%;
   height: 44.56%;
-  max-height: 205px;
   margin: 0 auto;
   border-bottom: #f7f7f7 2px solid;
 }
@@ -195,7 +194,6 @@ header .btn_menu_on {
 .menu_content .icon_links {
   width: 100%;
   height: 42.39%;
-  max-height: 195px;
   background-color: #fff;
 }
 .menu_content .icon_links ul {
@@ -226,7 +224,6 @@ header .btn_menu_on {
 .menu_content .txt_links {
   width: 100%;
   height: 19.56%;
-  max-height: 88px;
   margin: 0 auto;
   background-color: #fff;
   border-top: #f7f7f7 2px solid;
@@ -252,7 +249,7 @@ header .btn_menu_on {
   width: 100%;
   height: 100%;
   position: relative;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 .menu_content_on {
   transition: all 0.5s;
@@ -260,7 +257,7 @@ header .btn_menu_on {
 }
 .menu_content_off {
   transition: all 0.5s;
-  top: -45%;
+  top: -50%;
 }
 .ani_menu_up {
   -webkit-animation: menu_up 0.8s ease forwards;
@@ -350,13 +347,13 @@ header .btn_menu_on {
 }
 .content .kinds .icon_left {
   float: left;
-  margin-right: 2%;
+  margin-right: 8%;
 }
 .content .kinds .icon_right {
   float: right;
   position: absolute;
   top: 50%;
-  right: 15%;
+  right: 12%;
   transform: translateY(-50%);
 }
 .content .kinds .kqbc {
@@ -368,13 +365,13 @@ header .btn_menu_on {
   position: relative;
 }
 .content .kinds .kqbc .kind_title {
-  width: 54.5%;
+  width: 60%;
   display: block;
   margin: 0 auto;
   font-size: 5.6rem;
 }
 .content .kinds .kqbc .kind_desc {
-  width: 54.5%;
+  width: 60%;
   display: block;
   margin: 0 auto;
   font-size: 2.4rem;
@@ -389,13 +386,13 @@ header .btn_menu_on {
   text-align: left;
 }
 .content .kinds .xmyy .kind_title {
-  width: 54.5%;
+  width: 60%;
   display: block;
   margin: 0 auto;
   font-size: 5.6rem;
 }
 .content .kinds .xmyy .kind_desc {
-  width: 54.5%;
+  width: 60%;
   display: block;
   margin: 0 auto;
   font-size: 2.4rem;
@@ -403,7 +400,7 @@ header .btn_menu_on {
 }
 .content .kinds .copyright {
   font-size: 2.2rem;
-  margin-top: 24.9%;
+  margin-top: 23%;
 }
 /*Content end*/
 /*DOwntips begin*/
@@ -428,7 +425,15 @@ header .btn_menu_on {
 /*hjm_share begin*/
 /*hjm-share end*/
 /* MEDIA QUERY BEGIN */
-@media screen and (max-width: 640px) {
+@media screen and (min-width: 642px) {
+  html {
+    font-size: 70%;
+  }
+  .sprite {
+    zoom: 1;
+  }
+}
+@media screen and (max-width: 641px) {
   html {
     font-size: 50%;
   }
@@ -436,23 +441,31 @@ header .btn_menu_on {
     zoom: 0.7;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 391px) {
   html {
     font-size: 40%;
   }
   .sprite {
-    zoom: 0.6;
+    zoom: 0.55;
   }
 }
 @media screen and (max-width: 321px) {
   html {
-    font-size: 30%;
+    font-size: 35%;
   }
   .sprite {
-    zoom: 0.58;
+    zoom: 0.5;
   }
 }
 /* MEDIA QUERY END */
+/* LANDSCAPE BEGIN */
+@media screen and (orientation: landscape) {
+  .content .kinds .kqbc,
+  .content .kinds .xmyy {
+    text-align: center;
+  }
+}
+/* LANDSCAPE BEGIN */
 @-moz-keyframes menu_on {
   0% {
     transform: rotate(0deg);

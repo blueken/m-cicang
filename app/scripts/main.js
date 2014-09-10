@@ -26,7 +26,7 @@ function initHeader() {
 				// menuContent.removeClass('menu_content_on').addClass('menu_content_off');
 				menu.removeClass('btn_menu_on');
 				menuContent.animate({
-					top: '-45%'
+					top: '-50%'
 				});
 			} else {
 				// menuContent.removeClass('menu_content_off').addClass('menu_content_on');
