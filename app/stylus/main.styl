@@ -37,7 +37,7 @@ body
 
 a, a:link, a:visited, a:active, a:hover {
     text-decoration none
-    color #666;
+    color #FFF;
 }
 /*muti-browser capability*/
 animation()
@@ -137,7 +137,10 @@ header
     left 49%
     top 50%
     transform translateY(-50%) translateX(-50%)
-
+.vmiddle
+    position absolute
+    top 50%
+    transform translateY(-50%)
 
 
 /* CSS for .menu_content BEGIN*/
@@ -241,18 +244,19 @@ header
                     display inline-block
                     font-size 2.4rem
                     text-align center
+                    color #666
                     .pname 
                         width 100%
                         height 12.82% //25px/195px 
                         display inline-block
                         margin-top 13.04% //15px/115
+
     .txt_links
         width 100%
         height 19.56% //90px/460
         margin 0 auto
         background-color white
         border-top #f7f7f7 2px solid
-
         ul 
             width 100%
             // max-width 640px
@@ -274,6 +278,7 @@ header
                     height 100%
                     position relative
                     font-size 2.3rem
+                    color #666
 
 .menu_content_on
     transition all 0.5s 
@@ -398,6 +403,7 @@ header
             margin-top 44.53% //285/640
             width 75% //464-10-10/640
             text-align left
+            color #666666
             .kind_title 
                 width 60% //240/444
                 display block
@@ -441,52 +447,48 @@ header
 
 /*hjm_share begin*/
 
-/*hjm-share end*/
+/*hm-share end*/
 
 
 /* MEDIA QUERY BEGIN */
-@media screen and (min-width: 642px) {
-    html {
-        font-size: 70%;
-    }
-    .sprite {
-        zoom: 1.0;  
-    }
-}
-@media screen and (max-width: 641px) {
-    html {
-        font-size: 50%;
-    }
-    .sprite {
-        zoom: 0.7;  
-    }
-}
+@media screen and (min-width: 642px)
+    html
+        font-size: 70%
+
+    .sprite 
+        transform scale(1.0)
+    .sprite_hvmiddle
+        transform scale(1.0) translateX(-50%) translateY(-50%)
+
+@media screen and (max-width: 641px)
+    html
+        font-size 50%
+    .sprite
+        transform scale(0.7)
+    .sprite_hvmiddle
+        transform scale(0.7) translateX(-71.43%) translateY(-71.43%)
+
 // @media screen and (max-width: 481px) {
 //     html {
 //         font-size: 38%;
 //     }
 //     .sprite {
 //         zoom: 0.69;
+//         transform scale(0.69)
 //     }
 // }
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 391px) 
     // nexus 4 = 384
-    html {
-        font-size: 40%;
-    }
-    .sprite {
-        zoom: 0.55;
-    }
-}
-@media screen and (max-width: 321px) {
+    html 
+        font-size 40%
+    .sprite 
+        transform scale(0.55)
+    .sprite_hvmiddle
+        transform scale(0.55) translateX(-90.91%) translateY(-90.91%)
+
+@media screen and (max-width: 321px) 
     //iphone 3g 4 5 = 320
-    html {
-        font-size: 35%;
-    }
-    .sprite {
-        zoom: 0.5;
-    }
-}
+
 /* MEDIA QUERY END */
 
 /* LANDSCAPE BEGIN */

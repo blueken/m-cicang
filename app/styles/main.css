@@ -38,7 +38,7 @@ a:visited,
 a:active,
 a:hover {
   text-decoration: none;
-  color: #666;
+  color: #fff;
 }
 /*muti-browser capability*/
 /*muti-browser capability end*/
@@ -111,6 +111,11 @@ header .btn_menu_on {
   left: 49%;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
+}
+.vmiddle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 /* CSS for .menu_content BEGIN*/
 .menu_content {
@@ -214,6 +219,7 @@ header .btn_menu_on {
   display: inline-block;
   font-size: 2.4rem;
   text-align: center;
+  color: #666;
 }
 .menu_content .icon_links ul li a .pname {
   width: 100%;
@@ -250,6 +256,7 @@ header .btn_menu_on {
   height: 100%;
   position: relative;
   font-size: 2.3rem;
+  color: #666;
 }
 .menu_content_on {
   transition: all 0.5s;
@@ -384,6 +391,7 @@ header .btn_menu_on {
   margin-top: 44.53%;
   width: 75%;
   text-align: left;
+  color: #666;
 }
 .content .kinds .xmyy .kind_title {
   width: 60%;
@@ -423,14 +431,17 @@ header .btn_menu_on {
 }
 /*DOwntips begin*/
 /*hjm_share begin*/
-/*hjm-share end*/
+/*hm-share end*/
 /* MEDIA QUERY BEGIN */
 @media screen and (min-width: 642px) {
   html {
     font-size: 70%;
   }
   .sprite {
-    zoom: 1;
+    transform: scale(1);
+  }
+  .sprite_hvmiddle {
+    transform: scale(1) translateX(-50%) translateY(-50%);
   }
 }
 @media screen and (max-width: 641px) {
@@ -438,7 +449,10 @@ header .btn_menu_on {
     font-size: 50%;
   }
   .sprite {
-    zoom: 0.7;
+    transform: scale(0.7);
+  }
+  .sprite_hvmiddle {
+    transform: scale(0.7) translateX(-71.43%) translateY(-71.43%);
   }
 }
 @media screen and (max-width: 391px) {
@@ -446,15 +460,10 @@ header .btn_menu_on {
     font-size: 40%;
   }
   .sprite {
-    zoom: 0.55;
+    transform: scale(0.55);
   }
-}
-@media screen and (max-width: 321px) {
-  html {
-    font-size: 35%;
-  }
-  .sprite {
-    zoom: 0.5;
+  .sprite_hvmiddle {
+    transform: scale(0.55) translateX(-90.91%) translateY(-90.91%);
   }
 }
 /* MEDIA QUERY END */

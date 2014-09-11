@@ -1,18 +1,16 @@
-function initHeader() {
+function initHeader(pageData) {
 	'use strict';
 	var stand_height = 416 * 0.5;
 	var stand_width = 640 * 0.5;
 
+	pageData = pageData ? pageData : {};
+
 	$.get('header.html', function(tmpl) {
-		var pageData = {
-			'title': '开心词场',
-			'back_url': '',
-			'down_url': 'http://www.yahoo.com'
-		};
+		
 		_.defaults(pageData, {
-			'title': '开心词场',
+			'title': 'Default title',
 			'back_url': '',
-			'down_url': 'http://www.yahoo.com'
+			'down_url': 'http://www.default.com'
 		});
 		var header_html = _.template(tmpl, pageData);
 		$('header').html(header_html);

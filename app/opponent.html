@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>选择对手</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/sprite.css">
+        <link rel="stylesheet" href="styles/sprite_opponent.css">
+        <link rel="stylesheet" href="styles/opponent.css">
+        <link rel="import" href="header.html">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="hcontrol">
+            <div class="ratioparent">
+                <div class="ratio">
+                    <header>
+
+                    </header>
+                    
+                    <article class="content">
+                        <div class="clouds">
+                            <span class="cloud_bg"></span>
+                            <div class="cloud_parallax">
+
+                                <span class="cloud_f"></span>
+                                <span class="cloud_b"></span>
+                            </div>
+                        </div>
+
+                        <div class="user_info">
+                            <div class="pic">
+                                <div class="wave_containter">
+                                    <div class="wave sprite"></div>
+                                </div>
+                                <img class="photo" src="images/photo.png" alt="用户头像" />
+                            </div>
+                            <p class="user_txt user_name">小杨同学</p>
+                            <p class="user_txt user_status">准备就绪</p>
+                        </div>
+                        <div class="opp_info">
+                            <ul>
+                                <li><span class="sprite anonymous"></span></li>
+                                <li><span class="sprite anonymous"></span></li>
+                                <li><span class="sprite anonymous"></span></li>
+                                <li><span class="sprite anonymous"></span></li>
+                                <li><span class="sprite anonymous"></span></li>
+                            </ul>
+
+                        </div>
+                        
+                    </article>
+
+
+                    <div class="no_opponent">
+                        <img  src="images/xxx.png" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+       
+
+
+
+    </body>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <script type="text/javascript">
+    $(function() {
+        var pageData = {
+            'title': 'PK',
+            'back_url': 'http://www.baidu.com',
+        };
+
+
+        initHeader(pageData);
+        initCloud();
+        bindEvents();
+    });
+    </script>
+</html>
