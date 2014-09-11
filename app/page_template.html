@@ -17,9 +17,7 @@
         <link rel="stylesheet" href="styles/reset.css">
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/sprite.css">
-        <link rel="stylesheet" href="styles/sprite_opponent.css">
         <link rel="stylesheet" href="styles/opponent.css">
-        <link rel="import" href="header.html">
         <!-- endbuild -->
     </head>
     <body>
@@ -32,7 +30,9 @@
                     <header>
 
                     </header>
-                    
+                    <div class="menu_content">
+                        
+                    </div>
                     <article class="content">
                         <div class="clouds">
                             <span class="cloud_bg"></span>
@@ -84,6 +84,7 @@
 
 
         initHeader(pageData);
+        initMenu();
         initCloud();
         bindEvents();
     });

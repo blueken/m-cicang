@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/sprite.css">
         <link rel="stylesheet" href="styles/opponent.css">
-
         <!-- endbuild -->
     </head>
     <body>
@@ -36,41 +35,33 @@
                     </div>
                     <article class="content">
                         <div class="clouds">
+
                             <span class="cloud_bg"></span>
                             <div class="cloud_parallax">
 
                                 <span class="cloud_f"></span>
+
                                 <span class="cloud_b"></span>
                             </div>
-                        </div>
-
-                        <div class="user_info">
-                            <div class="pic">
-                                <div class="wave_containter">
-                                    <div class="wave sprite"></div>
-                                </div>
-                                <img class="photo" src="images/photo.png" alt="用户头像" />
-                            </div>
-                            <p class="user_txt user_name">小杨同学</p>
-                            <p class="user_txt user_status">准备就绪</p>
-                        </div>
-                        <div class="opp_info">
-                            <ul>
-                                <li><span class="sprite anonymous"></span></li>
-                                <li><span class="sprite anonymous"></span></li>
-                                <li><span class="sprite anonymous"></span></li>
-                                <li><span class="sprite anonymous"></span></li>
-                                <li><span class="sprite anonymous"></span></li>
-                            </ul>
 
                         </div>
+
+                        <span class="sprite boy in_cloud"></span>
                         
                     </article>
 
 
-                    <div class="no_opponent">
-                        <img  src="images/xxx.png" />
+                    <div class="waiting">
+                        <div class="wave"></div>
+                        <div class="opp_photo"><img src="images/photo.png" alt="对手头像"/></div>
+                        <p>等待对手答完...</p>
                     </div>
+                    
+
+                    <!-- <div class="me_done">
+                        <span class="sprite right_tick hmiddle"></span>
+                        <p>所有题目已完成！</p>
+                    </div> -->
 
                 </div>
             </div>
@@ -96,7 +87,7 @@
     <script type="text/javascript">
     $(function() {
         var pageData = {
-            'title': 'PK',
+            'title': '完成中',
             'back_url': 'http://www.baidu.com',
         };
 
@@ -105,6 +96,8 @@
         initMenu();
         initCloud();
         bindEvents();
+
+        $(".clouds").css("bottom", "-33%");
     });
     </script>
 </html>

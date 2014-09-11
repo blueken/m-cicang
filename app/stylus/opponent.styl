@@ -1,3 +1,4 @@
+
 .hmiddle
 	position: absolute;
 	left: 50%;
@@ -52,13 +53,56 @@
 				position relative
 				top 50%
 				transform translateY(-50%)
-				.anonymous.active
-					background-size 1120px 482px
-					background-position: -198px -308px
-					width:164px; 
-					height:164px; 
+	.clouds
+		z-index 1
+	.in_cloud
+		position absolute
+		top 62%
+		left 5%
+		z-index 0
+.waiting, .me_done
+	position absolute
+	top 28.8% //265px/920
+	width 100%
+	height 28.8% //265px/920 
+	.wave
+		position absolute
+		left 50%
+		transform translateX(-50%)
+		width 50.45% //325px/640
+		height 54.72% //145/265
+		background url("../images/wave.png") center center no-repeat
+		background-size contain
 
+		margin-top 3.91% //25/640
+		// animation wave_broadcast 2s infinite
+	.opp_photo
+		width 30%//192/640
+		height 72.45% // 192/265
+		position absolute
+		left 50%
+		transform translateX(-50%)
+		text-align center
+		img 
+			max-height 100%
+			max-width 100%
+			border-radius 50%
+	p
+		width 100%
+		position absolute
+		top 86.79% //230px/265
+		text-align center
+		font-size 3.2rem
+		color white
 
+// waves animation			
+@keyframes wave_broadcast
+	0%
+		// width 30.2%
+		width 30.2%
+	100%
+		// width 50.45% //325px/640
+		width 50.45% //325px/640
 				
 
 				

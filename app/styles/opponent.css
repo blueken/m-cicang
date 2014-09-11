@@ -59,9 +59,86 @@
   top: 50%;
   transform: translateY(-50%);
 }
-.content .opp_info ul li .anonymous.active {
-  background-size: 1120px 482px;
-  background-position: -198px -308px;
-  width: 164px;
-  height: 164px;
+.content .clouds {
+  z-index: 1;
+}
+.content .in_cloud {
+  position: absolute;
+  top: 62%;
+  left: 5%;
+  z-index: 0;
+}
+.waiting,
+.me_done {
+  position: absolute;
+  top: 28.8%;
+  width: 100%;
+  height: 28.8%;
+}
+.waiting .wave,
+.me_done .wave {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50.45%;
+  height: 54.72%;
+  background: url("../images/wave.png") center center no-repeat;
+  background-size: contain;
+  margin-top: 3.91%;
+}
+.waiting .opp_photo,
+.me_done .opp_photo {
+  width: 30%;
+  height: 72.45%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.waiting .opp_photo img,
+.me_done .opp_photo img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 50%;
+}
+.waiting p,
+.me_done p {
+  width: 100%;
+  position: absolute;
+  top: 86.79%;
+  text-align: center;
+  font-size: 3.2rem;
+  color: #fff;
+}
+@-moz-keyframes wave_broadcast {
+  0% {
+    width: 30.2%;
+  }
+  100% {
+    width: 50.45%;
+  }
+}
+@-webkit-keyframes wave_broadcast {
+  0% {
+    width: 30.2%;
+  }
+  100% {
+    width: 50.45%;
+  }
+}
+@-o-keyframes wave_broadcast {
+  0% {
+    width: 30.2%;
+  }
+  100% {
+    width: 50.45%;
+  }
+}
+@keyframes wave_broadcast {
+  0% {
+    width: 30.2%;
+  }
+  100% {
+    width: 50.45%;
+  }
 }

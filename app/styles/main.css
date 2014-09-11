@@ -433,39 +433,6 @@ header .btn_menu_on {
 /*hjm_share begin*/
 /*hm-share end*/
 /* MEDIA QUERY BEGIN */
-@media screen and (min-width: 642px) {
-  html {
-    font-size: 70%;
-  }
-  .sprite {
-    transform: scale(1);
-  }
-  .sprite_hvmiddle {
-    transform: scale(1) translateX(-50%) translateY(-50%);
-  }
-}
-@media screen and (max-width: 641px) {
-  html {
-    font-size: 50%;
-  }
-  .sprite {
-    transform: scale(0.7);
-  }
-  .sprite_hvmiddle {
-    transform: scale(0.7) translateX(-71.43%) translateY(-71.43%);
-  }
-}
-@media screen and (max-width: 391px) {
-  html {
-    font-size: 40%;
-  }
-  .sprite {
-    transform: scale(0.55);
-  }
-  .sprite_hvmiddle {
-    transform: scale(0.55) translateX(-90.91%) translateY(-90.91%);
-  }
-}
 /* MEDIA QUERY END */
 /* LANDSCAPE BEGIN */
 @media screen and (orientation: landscape) {

@@ -5,7 +5,7 @@ function initHeader(pageData) {
 
 	pageData = pageData ? pageData : {};
 
-	$.get('header.html', function(tmpl) {
+	$.get('inc_header.html', function(tmpl) {
 		
 		_.defaults(pageData, {
 			'title': 'Default title',
@@ -35,11 +35,8 @@ function initHeader(pageData) {
 			}
 		});
 	});
-
-
-	// $('header').css('height', 45*ratio);
-	// $('header').css('line-height', 45*ratio+'px');
 }
+
 
 function initCloud() {
 	'use strict';
@@ -59,6 +56,26 @@ function initCloud() {
 
 	$('.cloud_b').css('height', cloud_b_actua_h);
 	$('.cloud_f').css('height', cloud_f_actua_h);
+}
+
+function initMenu(menuData) {
+	'use strict';
+	var stand_height = 416 * 0.5;
+	var stand_width = 640 * 0.5;
+
+	menuData = menuData ? menuData : {};
+
+	$.get('inc_menu.html', function(tmpl) {
+		
+		_.defaults(menuData, {
+			'title': 'Default title',
+			'back_url': '',
+			'down_url': 'http://www.default.com'
+		});
+		var header_html = _.template(tmpl, menuData);
+		$('.menu_content').html(header_html);
+
+	});
 }
 
 function bindEvents() {
