@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>选择对手</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/sprite.css">
+        <link rel="stylesheet" href="styles/competition.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="hcontrol">
+            <div class="ratioparent">
+                <div class="ratio">
+                    <header>
+
+                    </header>
+                    <div class="menu_content">
+                        
+                    </div>
+                    <article class="content">
+                        <div class="clouds">
+                            <span class="cloud_bg"></span>
+                            <div class="cloud_parallax">
+
+                                <span class="cloud_f"></span>
+                                <span class="cloud_b"></span>
+                            </div>
+                        </div>
+
+                        <div class="questions">
+                            <section class="question">
+                                <h2>Contratulations</h2>
+                                <ul>
+                                    <li><a href="javascript:void(0)" class="right"><span class="circle"><b>A</b></span><span class="answer vmiddle">谈话；会谈；社交的；</span></a></li>
+                                    <li><a href="javascript:void(0)" class="selected"><span class="circle"><b>B</b></span><span class="answer vmiddle">目标</span></a></li>
+                                    <li><a href="javascript:void(0)" class="wrong"><span class="circle"><b>C</b></span><span class="answer vmiddle">军队</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>D</b></span><span class="answer vmiddle">与。。。相同</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>
+                                </ul>
+                            </section>
+
+                            <section class="question">
+                                <h2>Contratulations</h2>
+                                <ul>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>A</b></span><span class="answer vmiddle">谈话；会谈；社交的；</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>B</b></span><span class="answer vmiddle">目标</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>C</b></span><span class="answer vmiddle">军队</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>D</b></span><span class="answer vmiddle">与。。。相同</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>
+                                </ul>
+                            </section>
+
+                            <section class="question">
+                                <h2>Contratulations</h2>
+                                <ul>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>A</b></span><span class="answer vmiddle">谈话；会谈；社交的；</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>B</b></span><span class="answer vmiddle">目标</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>C</b></span><span class="answer vmiddle">军队</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>D</b></span><span class="answer vmiddle">与。。。相同</span></a></li>
+                                    <li><a href="javascript:void(0)"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>
+                                </ul>
+                            </section>
+                        </div>
+
+
+                        <div class="vs">
+                            <img class="me" src="" alt="我的头像"/>
+                            <div class="info">
+                                <b class="my_name">小杨同学</b>
+                                <b class="his_name">路人词霸甲</b>
+                                <span class="progress">
+                                    <span class="my_progress"></span>
+                                    <span class="his_progress"></span>
+                                </span>
+                            </div>
+                            <img class="him" src="" alt="对手头像"/>
+                        </div>
+                        
+                    </article>
+
+
+                    
+
+                </div>
+            </div>
+        </div>
+
+       
+
+
+
+    </body>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <script type="text/javascript">
+    $(function() {
+        var pageData = {
+            'title': '第 1/40 题',
+            'back_url': 'http://www.baidu.com',
+        };
+
+
+        initHeader(pageData);
+        initMenu();
+        initCloud();
+        bindEvents();
+
+        cloudDown();
+    });
+
+
+    //$(".questions").animate({left:"-=100%"},{duration:'250'});
+    </script>
+</html>

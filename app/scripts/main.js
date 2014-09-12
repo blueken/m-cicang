@@ -77,7 +77,10 @@ function initMenu(menuData) {
 
 	});
 }
-
+function cloudDown(percent) {
+	var p = percent ? percent : '-33%';
+	$(".clouds").css("bottom", p);
+}
 function bindEvents() {
 	'use strict';
 	$(window).on('resize', function() {

@@ -1,0 +1,88 @@
+.content
+	$content_w = 640
+	$content_h = 920
+	.questions
+		$questions_w = 640
+		$questions_h = 572
+		$questions_num = 10
+		position absolute
+		top 14.35% // 88+44 / 920
+
+		width ($questions_num * 100)%
+		//height 62.18% //572/920
+		height ($questions_h * 100 / $content_h)%
+
+		// background-color silver
+		.question
+			width (100/$questions_num)% // 1/ 1000
+			height 100%
+			float left
+			h2
+				width 100%
+				height  (50*100 / $questions_h)%
+				font-size 5rem
+				padding 3.12% 0//20/640
+				text-align	center
+				color white
+				border-bottom white 2px dashed
+			ul
+				$ul_w = 492 + 12 + 12 //516
+				$ul_h = 440
+				width ($ul_w*100/$content_w)%
+				height  ($ul_h*100 / $questions_h) %
+				bob2 $ul_h
+				// background-color gold
+				margin 3.75% auto 0 auto //left: 24/640
+
+				li 
+					width 100%
+					height  20%//88/440
+					// background-color green
+					a 
+						$a_h = 72
+						position relative
+						top 50%
+						transform translateY(-50%)
+						display block;
+						width 100%
+						height ($a_h * 100 / 88)% //72/88
+						border-radius 2.5rem
+
+						.circle
+							display inline-block
+							width (50 * 100 / $ul_w)% //50/516
+							height  (50 * 100 / $a_h)% //50/72
+							border white 2px solid
+							border-radius 50%
+							text-align center
+							margin-right (32 * 100 / $ul_w)% //32/516
+							margin-top  (11 * 100 / $ul_w)%//11/516
+							margin-left (12 * 100 / $ul_w)% //12/516
+							float left
+							b 
+								display inline-block
+								position relative
+								top 50%
+								transform translateY(-50%)
+								font-size 2.4rem
+						.answer
+							display inline-block
+							font-size 3.0rem
+					a.selected
+						background-color #ffffff
+						color #666666
+						// .circle
+						// 	border-color #666666
+					a.wrong
+						background-color #ed5d62
+					a.right 
+						background-color #08c863
+	.vs
+		$vs_w = 576
+		$vs_h = 82
+		position absolute
+		width ($vs_w * 100 / $content_w)%
+		height ($vs_h * 100 / $content_h)%
+		background-color gold
+		bottom (32 * 100 / $content_h)%
+		left (32 * 100 / $content_w)%

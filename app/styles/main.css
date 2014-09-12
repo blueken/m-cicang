@@ -346,6 +346,7 @@ header .btn_menu_on {
   position: absolute;
   background: #c0c0c0 url("../images/bg.jpg") center center no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 .content .kinds {
   position: relative;

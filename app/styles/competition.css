@@ -1,0 +1,80 @@
+.content .questions {
+  position: absolute;
+  top: 14.35%;
+  width: 1000%;
+  height: 62.17391304347826%;
+}
+.content .questions .question {
+  width: 10%;
+  height: 100%;
+  float: left;
+}
+.content .questions .question h2 {
+  width: 100%;
+  height: 8.741258741258742%;
+  font-size: 5rem;
+  padding: 3.12% 0;
+  text-align: center;
+  color: #fff;
+  border-bottom: #fff 2px dashed;
+}
+.content .questions .question ul {
+  width: 80.625%;
+  height: 76.92307692307692%;
+  bob2: 440;
+  margin: 3.75% auto 0 auto;
+}
+.content .questions .question ul li {
+  width: 100%;
+  height: 20%;
+}
+.content .questions .question ul li a {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 100%;
+  height: 81.81818181818181%;
+  border-radius: 2.5rem;
+}
+.content .questions .question ul li a .circle {
+  display: inline-block;
+  width: 9.689922480620154%;
+  height: 69.44444444444444%;
+  border: #fff 2px solid;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 6.2015503875969%;
+  margin-top: 2.131782945736434%;
+  margin-left: 2.325581395348837%;
+  float: left;
+}
+.content .questions .question ul li a .circle b {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.4rem;
+}
+.content .questions .question ul li a .answer {
+  display: inline-block;
+  font-size: 3rem;
+}
+.content .questions .question ul li a.selected {
+  background-color: #fff;
+  color: #666;
+}
+.content .questions .question ul li a.wrong {
+  background-color: #ed5d62;
+}
+.content .questions .question ul li a.right {
+  background-color: #08c863;
+}
+.content .vs {
+  position: absolute;
+  width: 90%;
+  height: 8.91304347826087%;
+  background-color: #ffd700;
+  bottom: 3.478260869565217%;
+  left: 5%;
+}
