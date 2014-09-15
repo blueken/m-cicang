@@ -1,3 +1,4 @@
+
 .content
 	$content_w = 640
 	$content_h = 920
@@ -136,3 +137,43 @@
 					float right
 					border-top-right-radius 0.5rem
 					border-bottom-right-radius 0.5rem
+
+
+.overlay
+	.quit
+		$quit_w = 540
+		$quit_h = 307
+		width ($quit_w * 100 / 640)%
+		height ($quit_h * 100 / 920)%
+		position relative
+		background-color white
+		margin-top (308*100/640)%
+		margin-left auto
+		margin-right auto
+		border-radius 15px
+		overflow hidden
+		text-align center
+		h2
+			font-size 3.2rem
+			font-weight bold
+			margin-top 4.5rem
+			margin-bottom 2.5rem
+		p 
+			font-size 2.5rem
+			margin-bottom 1.6rem
+		.btn
+			position absolute
+			bottom 0
+			color #666
+			display inline-block;
+			width 50%
+			height (88*100 / $quit_h)%
+			// background-color gold
+			font-size 3.0rem
+			color #007aff
+			border-top #b2b2b2 1px solid
+		.confirm
+			left 0
+			border-right #b2b2b2 1px solid
+		.cancel
+			right 0

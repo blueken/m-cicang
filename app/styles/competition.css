@@ -123,3 +123,43 @@
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+.overlay .quit {
+  width: 84.375%;
+  height: 33.369565217391305%;
+  position: relative;
+  background-color: #fff;
+  margin-top: 48.125%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+.overlay .quit h2 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-top: 4.5rem;
+  margin-bottom: 2.5rem;
+}
+.overlay .quit p {
+  font-size: 2.5rem;
+  margin-bottom: 1.6rem;
+}
+.overlay .quit .btn {
+  position: absolute;
+  bottom: 0;
+  color: #666;
+  display: inline-block;
+  width: 50%;
+  height: 28.664495114006513%;
+  font-size: 3rem;
+  color: #007aff;
+  border-top: #b2b2b2 1px solid;
+}
+.overlay .quit .confirm {
+  left: 0;
+  border-right: #b2b2b2 1px solid;
+}
+.overlay .quit .cancel {
+  right: 0;
+}
