@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>选择对手</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/sprite.css">
+        <link rel="stylesheet" href="styles/result.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="hcontrol">
+            <div class="ratioparent">
+                <div class="ratio">
+                    <header>
+
+                    </header>
+                    <div class="menu_content">
+                        
+                    </div>
+                    <article class="content content_bg2">
+                       <!--  <div class="clouds">
+                            <span class="cloud_bg"></span>
+                            <div class="cloud_parallax">
+
+                                <span class="cloud_f"></span>
+                                <span class="cloud_b"></span>
+                            </div>
+                        </div> -->
+
+                        <div class="result">
+                            <img class="result_img" src="images/win2.png" alt="you win"/>
+                            <div class="winorlose">
+                                <p class="you2">YOU</p>
+                                <p class="result">WIN</p>
+                            </div>
+                            <div class="info">
+                                <img src="images/photo.png" />
+                                <span class="nick">小杨学学</span>
+                                <span class="total">3690</span>
+                                <span class="correct">21</span>
+                                <span class="time">300</span>
+                                <span class="combo">20</span>
+                            </div>
+
+                        </div>
+                        <div class="btns">
+                            <a class="btn down" href="#"><span class="rvmiddle">下载APP版<span></a>
+                            <a class="btn show2" href="#"><span class="rvmiddle">炫耀一下<span></a>
+                        </div>
+                    </article>
+
+
+                    <div class="no_opponent">
+                        <img  src="images/xxx.png" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+       
+
+
+
+    </body>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <script type="text/javascript">
+    $(function() {
+        var pageData = {
+            'title': 'PK胜利',
+            'back_url': 'http://www.baidu.com',
+        };
+
+
+        initHeader(pageData);
+        initMenu();
+        // initCloud();
+        bindEvents();
+
+        // cloudDown();
+    });
+    </script>
+</html>
