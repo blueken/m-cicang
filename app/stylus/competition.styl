@@ -83,6 +83,56 @@
 		position absolute
 		width ($vs_w * 100 / $content_w)%
 		height ($vs_h * 100 / $content_h)%
-		background-color gold
+		// background-color gold
 		bottom (32 * 100 / $content_h)%
 		left (32 * 100 / $content_w)%
+		.pho
+			width (82 * 100 / $vs_w)%
+			height 100%
+		.me 
+			float left
+		.him
+			float right
+		.info
+			$info_w = 380
+			$info_h = 82
+			width ($info_w * 100 / $vs_w)%
+			height ($info_h * 100 / $vs_h)%
+
+			position relative
+			
+			font-size 2.2rem
+			color #666
+			// background-color green
+			float left
+			margin-left (16*100 / $vs_w)%
+			.my_name
+				position absolute
+				bottom 50%
+			.his_name
+				position absolute
+				bottom 50%
+				right 0
+				// margin-right (16*100 / $vs_w)%
+		
+			.progress
+				$progress_w = 380
+				$progress_h = 16
+				width ($progress_w * 100 / $info_w)%
+				height ($progress_h * 100 / $info_h)%
+					
+				display block
+				background-color #29b6f6
+
+				position relative
+				top (50 + (16*100 / $info_h) )%
+
+				border-radius 0.5rem
+				.his_progress
+					width 20%
+					height 100%
+					display inline-block
+					background-color #fdcc41
+					float right
+					border-top-right-radius 0.5rem
+					border-bottom-right-radius 0.5rem

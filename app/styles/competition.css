@@ -74,7 +74,52 @@
   position: absolute;
   width: 90%;
   height: 8.91304347826087%;
-  background-color: #ffd700;
   bottom: 3.478260869565217%;
   left: 5%;
+}
+.content .vs .pho {
+  width: 14.23611111111111%;
+  height: 100%;
+}
+.content .vs .me {
+  float: left;
+}
+.content .vs .him {
+  float: right;
+}
+.content .vs .info {
+  width: 65.97222222222223%;
+  height: 100%;
+  position: relative;
+  font-size: 2.2rem;
+  color: #666;
+  float: left;
+  margin-left: 2.777777777777778%;
+}
+.content .vs .info .my_name {
+  position: absolute;
+  bottom: 50%;
+}
+.content .vs .info .his_name {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+}
+.content .vs .info .progress {
+  width: 100%;
+  height: 19.51219512195122%;
+  display: block;
+  background-color: #29b6f6;
+  position: relative;
+  top: 69.51219512195122%;
+  border-radius: 0.5rem;
+}
+.content .vs .info .progress .his_progress {
+  width: 20%;
+  height: 100%;
+  display: inline-block;
+  background-color: #fdcc41;
+  float: right;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
