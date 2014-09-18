@@ -1,0 +1,128 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>选择对手</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/sprite.css">
+        <link rel="stylesheet" href="styles/info_exam.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="hcontrol">
+            <div class="ratioparent">
+                <div class="ratio">
+                    <header>
+
+                    </header>
+                    <div class="menu_content">
+                        
+                    </div>
+                    <article class="content">
+                        <div class="clouds">
+                            <span class="cloud_bg"></span>
+                            <div class="cloud_parallax">
+
+                                <span class="cloud_f"></span>
+                                <span class="cloud_b"></span>
+                            </div>
+                        </div>
+
+                        <div class="carousel">
+                            <a href="#" class="btn prev"><span class="sprite rarrow_white rvmiddle"></span></a>
+                            <!-- <a href="#" class="btn next"><span class="rvmiddle">&gt;</span></a> -->
+                            <a href="#" class="btn next"><span class="sprite rarrow_white rvmiddle"></span></a>
+                            <div class="outer">
+                                <div class="swrapper">
+                                    <div class="scroller">
+                                        <div class="pic"><img src="images/book_cover1.jpg" alt="" /></div>
+                                        <div class="pic"><img src="images/book_cover1.jpg" alt="" /></div>
+                                        <div class="pic"><img src="images/book_cover1.jpg" alt="" /></div>
+                                        <div class="pic"><img src="images/book_cover1.jpg" alt="" /></div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info"> 
+                            <!-- <img src="" alt=""/> -->
+                            <span class="sprite boy adjust"></span>
+                            <p>通过本词书你找到了</p>
+                            <p><b class="num">192,098</b>个</p>
+                            <p>一起备考四级的小伙伴!</p>
+                            <p class="friends">快来和小伙伴们：</p>
+                            <a class="pk" href="#"><span class="rvmiddle">PK一下</span></a>
+                        </div>
+                        
+                    </article>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+       
+
+
+
+    </body>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/iscroll/build/iscroll.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <script type="text/javascript">
+    $(function() {
+        var pageData = {
+            'title': '英语四级词汇',
+            'back_url': 'http://www.baidu.com',
+        };
+
+
+        initHeader(pageData);
+        initMenu();
+        initCloud();
+        bindEvents();
+
+        initScroller();
+    });
+
+    function initScroller() {
+        var scroller = new IScroll('.swrapper', {
+            scrollX: true,
+            scrollY: false,
+            snap: true,
+            snapSpeed: 1000
+        });
+
+        $('.prev').on('click', function() { scroller.prev(); });
+        $('.next').on('click', function() { scroller.next(); });
+    }
+    </script>
+</html>
