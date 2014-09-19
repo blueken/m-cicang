@@ -89,6 +89,7 @@
   width: 100%;
   height: 7.826086956521739%;
   position: absolute;
+  z-index: 1;
   bottom: 3.478260869565217%;
 }
 .content .btns .btn {
@@ -120,4 +121,32 @@
 .content_bg3 {
   background: #c0c0c0 url("../images/bg3.jpg") center center no-repeat;
   background-size: cover;
+}
+.shares {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 46.9565217391304%;
+  background-color: #fff;
+}
+.shares .shares_wrapper {
+  width: 96.25%;
+  height: 100%;
+  margin-left: 1.875%;
+}
+.shares .shares_wrapper ul {
+  width: 100%;
+  height: 100%;
+}
+.shares .shares_wrapper ul li {
+  width: 18.181818181818198%;
+  height: 34.7222222222222%;
+  float: left;
+  margin: 7.305194805194801% 3.2467532467532% 0 3.2467532467532%;
+}
+.shares .shares_wrapper ul li p {
+  margin-top: 13.392857142857101%;
+  color: #666;
+  font-size: 2.2rem;
+  text-align: center;
 }

@@ -66,8 +66,20 @@
                     </article>
 
 
-                    <div class="no_opponent">
-                        <img  src="images/xxx.png" />
+                    <div class="overlay hidden">
+                        <div class="shares">
+                            <div class="shares_wrapper">
+                                <ul>
+                                    <li><a class="jiathis_button_weixin" href="#"><span class="sprite s_weixin"></span><p>微信</p></a></li>
+                                    <li><a class="jiathis_button_qzone" href="#"><span class="sprite s_qq"></span><p>QQ空间</p></a></li>
+                                    <li><a class="jiathis_button_tqq" href="#"><span class="sprite s_txwb"></span><p>腾讯微博</p></a></li>
+                                    <li><a class="jiathis_button_tsina" href="#"><span class="sprite s_xlwb"></span><p>新浪微博</p></a></li>
+                                    <li><a class="jiathis_button_renren" href="#"><span class="sprite s_renren"></span><p>人人网</p></a></li>
+                                    <li><a class="jiathis_button_tieba" href="#"><span class="sprite s_bdtb"></span><p>百度贴吧</p></a></li>
+                                    <li><a class="jiathis_button_douban"href="#"><span class="sprite s_db"></span><p>豆瓣</p></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -116,6 +128,25 @@
         bindEvents();
 
         // cloudDown();
+        initPage();
     });
+    function initPage() {
+        $('.btn.show3').on('click', function() {
+            $(".overlay").removeClass('hidden')
+            return false;
+        });
+        $('.overlay').on('click', function() {
+            $(".overlay").addClass('hidden')
+            return false;
+        });
+
+        $('.shares_wrapper').on('click', function(e) {
+            e.stopPropagation();
+        });
+
+        $.getScript('http://v3.jiathis.com/code/jia.js',function(){
+            
+        }) ;
+    }
     </script>
 </html>
