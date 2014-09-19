@@ -309,6 +309,7 @@ header .btn_menu_on {
   height: 60.64%;
   background-color: #fff;
   position: absolute;
+  z-index: 1;
   bottom: 0;
 }
 .clouds .cloud_parallax {

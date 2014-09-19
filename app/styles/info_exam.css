@@ -51,6 +51,7 @@
 }
 .content .info {
   position: absolute;
+  z-index: 2;
   bottom: 4.3478260869565%;
   width: 76.875%;
   height: 38.2608695652174%;
@@ -68,7 +69,7 @@
 }
 .content .info .friends {
   margin-left: 0;
-  margin-top: 6.5040650406504%;
+  margin-top: 9.7560975609756%;
   color: #b5b5b5;
   font-size: 2.4rem;
 }

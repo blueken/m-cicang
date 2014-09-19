@@ -51,6 +51,7 @@
 }
 .content .info {
   position: absolute;
+  z-index: 2;
   bottom: 4.3478260869565%;
   width: 76.875%;
   height: 33.478260869565204%;
