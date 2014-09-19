@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="styles/reset.css">
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/sprite.css">
-        <link rel="stylesheet" href="styles/opponent.css">
+        <link rel="stylesheet" href="styles/info_book.css">
         <!-- endbuild -->
     </head>
     <body>
@@ -35,7 +35,6 @@
                     </div>
                     <article class="content">
                         <div class="clouds">
-
                             <span class="cloud_bg"></span>
                             <div class="cloud_parallax">
 
@@ -43,25 +42,33 @@
                                 <span class="sprite boy boy_in_cloud"></span>
                                 <span class="cloud_f"></span>
                             </div>
-
                         </div>
 
-                        
+                        <div class="carousel">
+                            <!-- <a href="#" class="btn prev"><span class="sprite rarrow_white rvmiddle"></span></a>
+                            <a href="#" class="btn next"><span class="sprite rarrow_white rvmiddle"></span></a> -->
+                            <div class="outer">
+                                <div class="swrapper">
+                                    <div class="scroller">
+                                        <div class="pic"><img src="images/book_cover1.jpg" alt="" /></div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info"> 
+                            <!-- <img src="" alt=""/> -->
+                            <p class="friends">您选择的词书：</p>
+                            <p class="bookname">英语四级高频词汇</p>
+                            <p class="friends line2">和背本词书的小伙伴们：</p>
+                            <a class="pk" href="#"><span class="rvmiddle">PK一下</span></a>
+                        </div>
                         
                     </article>
 
 
-                    <div class="waiting">
-                        <div class="wave"></div>
-                        <div class="opp_photo"><img src="images/photo.png" alt="对手头像"/></div>
-                        <p>等待对手答完...</p>
-                    </div>
-                    
 
-                    <!-- <div class="me_done">
-                        <span class="sprite right_tick hmiddle"></span>
-                        <p>所有题目已完成！</p>
-                    </div> -->
 
                 </div>
             </div>
@@ -76,6 +83,7 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/iscroll/build/iscroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -87,7 +95,7 @@
     <script type="text/javascript">
     $(function() {
         var pageData = {
-            'title': '完成中',
+            'title': '英语四级词汇',
             'back_url': 'http://www.baidu.com',
         };
 
@@ -95,9 +103,22 @@
         initHeader(pageData);
         initMenu();
         initCloud();
+        cloudDown('-5%');
         bindEvents();
 
-        cloudDown();
+        // initScroller();
     });
+
+    function initScroller() {
+        var scroller = new IScroll('.swrapper', {
+            scrollX: true,
+            scrollY: false,
+            snap: true,
+            snapSpeed: 1000
+        });
+
+        $('.prev').on('click', function() { scroller.prev(); });
+        $('.next').on('click', function() { scroller.next(); });
+    }
     </script>
 </html>

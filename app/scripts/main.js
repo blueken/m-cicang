@@ -44,8 +44,8 @@ function initCloud() {
 	var cloud_f_stand_h = 135 * 1;
 
 
-	var clouds_bg_h_by_width = $('.ratio').width() * (920 / 640) * ((416 + 135) / 920);
-	var clouds_bg_h_by_height = $('.ratio').height() * ((416+135) / 920);
+	var clouds_bg_h_by_width = $('.ratio').width() * (920 / 640) * ((416 + 135 + 135) / 920);
+	var clouds_bg_h_by_height = $('.ratio').height() * ((416 + 135 + 135) / 920);
 	var clouds_bg_actua_h = Math.min(clouds_bg_h_by_width, clouds_bg_h_by_height);
 	$('.clouds').css('height', clouds_bg_actua_h);
 

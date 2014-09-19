@@ -52,10 +52,11 @@
 							left 50%
 							transform translateX(-50%)
 	.info
+		$info_h = 308
 		position absolute
 		bottom (40/920) * 100%
 		width (492 * 100 / 640)%
-		height (352/920) * 100%
+		height ($info_h/920) * 100%
 		margin-left (74/640) * 100%
 		// background-color gold
 		p 
@@ -76,14 +77,17 @@
 			&:before
 				content "Ο"
 				margin-right (10/492) * 100%
+		.line2
+			margin-top (50/492) * 100%
 		.bookname
 			margin-left 0
+			margin (28/492)*100% 0
 		.pk
 			position absolute
 			bottom 0
 			display inline-block
 			width 100%
-			height (88/352) * 100%
+			height (88/$info_h) * 100%
 			background-color #fdcc41
 
 			text-align center
