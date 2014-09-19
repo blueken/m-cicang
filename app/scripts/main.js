@@ -26,12 +26,17 @@ function initHeader(pageData) {
 				menuContent.animate({
 					top: '-50%'
 				});
+
+				// $('.ratio').remove('div[class=for_menu');
+				$('#for_menu').remove();
 			} else {
 				// menuContent.removeClass('menu_content_off').addClass('menu_content_on');
 				menu.addClass('btn_menu_on');
 				menuContent.animate({
 					top: '9.56%'
 				});
+
+				$('<div class="overlay" id="for_menu"></div>').appendTo($('.ratio'));
 			}
 		});
 	});

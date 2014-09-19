@@ -49,6 +49,9 @@ a:hover {
   left: 0;
   z-index: 101;
 }
+#for_menu {
+  z-index: 90;
+}
 /*muti-browser capability*/
 /*muti-browser capability end*/
 .hcontrol {
