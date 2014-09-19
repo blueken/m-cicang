@@ -139,7 +139,7 @@ header .btn_menu_on {
   background-color: #fff;
   position: absolute;
   top: -50%;
-  z-index: 2;
+  z-index: 98;
   display: block;
 }
 .menu_content .login {
@@ -371,6 +371,7 @@ header .btn_menu_on {
 }
 .content .kinds {
   position: relative;
+  z-index: 1;
   top: 25%;
   text-align: center;
 }
