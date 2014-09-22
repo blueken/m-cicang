@@ -380,7 +380,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-stylus');
 
-    grunt.registerTask('bob', function(s) {
+    grunt.registerTask('bob', function() {
         grunt.log.warn('bob alan green');
     });
 

@@ -91,9 +91,12 @@
 
     <script type="text/javascript">
     $(function() {
-        
+        var pageData = {
+            'title': '开心词场',
+            'back_url': '',
+        };
 
-        initHeader();
+        initHeader(pageData);
         initMenu();
         initCloud();
         bindEvents();

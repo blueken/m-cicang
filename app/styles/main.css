@@ -313,7 +313,7 @@ header .btn_menu_on {
   background-color: #fff;
   position: absolute;
   z-index: 1;
-  bottom: 0;
+  bottom: 3px;
 }
 .clouds .cloud_parallax {
   width: 100%;
@@ -393,6 +393,7 @@ header .btn_menu_on {
   display: inline-block;
   padding: 0 1.56%;
   width: 75%;
+  max-width: 450px;
   text-align: left;
   color: #fff;
   position: relative;
@@ -416,6 +417,7 @@ header .btn_menu_on {
   padding: 0 1.56%;
   margin-top: 44.53%;
   width: 75%;
+  max-width: 450px;
   text-align: left;
   color: #666;
 }
@@ -452,7 +454,8 @@ header .btn_menu_on {
 }
 .downtips img {
   position: absolute;
-  top: 11px;
+  right: 2.5%;
+  top: 1.8%;
   max-width: 100%;
 }
 /*DOwntips begin*/

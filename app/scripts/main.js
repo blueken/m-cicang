@@ -19,7 +19,7 @@ function initHeader(pageData) {
 			var menu = $('.btn_menu');
 			var menuContent = $('.menu_content');
 			// var bOn = menuContent.hasClass('menu_content_on');
-			 var bOn = parseInt($(".menu_content").css("top")) > 0;
+			 var bOn = parseInt($('.menu_content').css('top')) > 0;
 			if (bOn) {
 				// menuContent.removeClass('menu_content_on').addClass('menu_content_off');
 				menu.removeClass('btn_menu_on');
@@ -56,8 +56,10 @@ function initCloud() {
 
 
 	var ratio = clouds_bg_actua_h / (551);
+	ratio = 1;
 	var cloud_b_actua_h = cloud_b_stand_h * ratio;
 	var cloud_f_actua_h = cloud_f_stand_h * ratio;
+
 
 	$('.cloud_b').css('height', cloud_b_actua_h);
 	$('.cloud_f').css('height', cloud_f_actua_h);
@@ -83,8 +85,9 @@ function initMenu(menuData) {
 	});
 }
 function cloudDown(percent) {
+	'use strict';
 	var p = percent ? percent : '-33%';
-	$(".clouds").css("bottom", p);
+	$('.clouds').css('bottom', p);
 }
 function bindEvents() {
 	'use strict';
