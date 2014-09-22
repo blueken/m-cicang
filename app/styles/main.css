@@ -462,6 +462,46 @@ header .btn_menu_on {
 /*hjm_share begin*/
 /*hm-share end*/
 /* MEDIA QUERY BEGIN */
+@media screen and (max-width: 601px) {
+  html {
+    font-size: 53.13%;
+  }
+  .sprite {
+    zoom: 1;
+  }
+}
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 48%;
+  }
+  .sprite {
+    zoom: 0.9;
+  }
+}
+@media screen and (max-width: 470px) {
+  html {
+    font-size: 43%;
+  }
+  .sprite {
+    zoom: 0.8;
+  }
+}
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 37%;
+  }
+  .sprite {
+    zoom: 0.72;
+  }
+}
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 34%;
+  }
+  .sprite {
+    zoom: 0.52;
+  }
+}
 /* MEDIA QUERY END */
 /* LANDSCAPE BEGIN */
 @media screen and (orientation: landscape) {

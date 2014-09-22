@@ -56,7 +56,7 @@ function initCloud() {
 
 
 	var ratio = clouds_bg_actua_h / (551);
-	ratio = 1;
+	ratio =  (ratio > 1) ? 1 : ratio; // not larger than 1 ,or may see white edge
 	var cloud_b_actua_h = cloud_b_stand_h * ratio;
 	var cloud_f_actua_h = cloud_f_stand_h * ratio;
 
