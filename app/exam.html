@@ -8,18 +8,13 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
         <link rel="shortcut icon" href="/favicon.ico">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        
         <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/reset.css">
-        <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/sprite.css">
+        <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-
-
         <!-- build:css styles/exam.css -->
         <link rel="stylesheet" href="styles/exam.css">
         <!-- endbuild -->
@@ -56,15 +51,15 @@
                             <div class="booklist_scroller">
                                 <div class="books">
                                      <ul>
-                                        <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言6级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言8级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
                                         
                                     </ul>   
                                 </div>
@@ -128,13 +123,7 @@
 
 
     </body>
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/underscore/underscore.js"></script>
-    <script src="../bower_components/iscroll/build/iscroll.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -148,9 +137,15 @@
 
     </script>
     
-    <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    // <script src="../bower_components/iscroll/build/iscroll.js"></script>
+    <!-- endbower -->
     <!-- endbuild -->
+
+    <script src="scripts/main.js"></script>
 
     <script type="text/javascript">
     $(function() {
@@ -164,7 +159,6 @@
         initMenu();
         bindEvents();
 
-        alert('domloaded  iscroll    :'+IScroll);
         var scrollNav = new IScroll('.nav_mask', {
             scrollX: true
         });
@@ -176,16 +170,10 @@
             bounce: false,
             snap: true,
             snapSpeed: 600,
+            click: true,
         });
 
-        scrollList.on('beforeScrollStart', function() {
-            // console.log("beforeScrollStart!!!!");
-            // console.log(abc);
-            // abc.disable();
-        });
-        scrollList.on('scrollEnd', function() {
-            // abc.enable();
-        });
+
 
         $(".books").each(function(idx, val) {
             new IScroll(this);

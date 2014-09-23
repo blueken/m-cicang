@@ -8,16 +8,12 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
         <link rel="shortcut icon" href="/favicon.ico">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/reset.css">
-        <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/sprite.css">
+        <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+
         <!-- build:css styles/competition.css -->
         <link rel="stylesheet" href="styles/competition.css">
         <!-- endbuild -->
@@ -104,7 +100,7 @@
                             <h2>离开词场</h2>
                             <p>您正在与对手激烈PK,</p>
                             <p>是否要退出开心词场?</p>
-                            <a href="#" class="btn confirm"><span class="rvmiddle">确认退出</span></a>
+                            <a href="win1.html" class="btn confirm"><span class="rvmiddle">确认退出</span></a>
                             <a href="#" class="btn cancel"><span class="rvmiddle">继续PK</span></a>
                         </div>
                     </div>
@@ -118,12 +114,7 @@
         
 
     </body>
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/underscore/underscore.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -137,9 +128,14 @@
 
     </script>
 
-    <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/iscroll/build/iscroll.js"></script>
+    <!-- endbower -->
     <!-- endbuild -->
+    <script src="scripts/main.js"></script>
 
     <script type="text/javascript">
     $(function() {
