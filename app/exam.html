@@ -17,6 +17,10 @@
         <link rel="stylesheet" href="styles/reset.css">
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/sprite.css">
+        <!-- endbuild -->
+
+
+        <!-- build:css styles/exam.css -->
         <link rel="stylesheet" href="styles/exam.css">
         <!-- endbuild -->
     </head>
@@ -160,6 +164,7 @@
         initMenu();
         bindEvents();
 
+        alert('domloaded  iscroll    :'+IScroll);
         var scrollNav = new IScroll('.nav_mask', {
             scrollX: true
         });
