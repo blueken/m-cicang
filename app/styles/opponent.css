@@ -1,6 +1,12 @@
+/*muti-browser capability*/
+/*muti-browser capability end*/
 .hmiddle {
   position: absolute;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 .content .user_info {
@@ -17,6 +23,10 @@
 .content .user_info .pic .wave_containter {
   position: absolute;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   top: 13%;
 }
@@ -24,6 +34,10 @@
   max-height: 100%;
   position: absolute;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   boder: #e2e2e2 1px solid;
   border-radius: 50%;
@@ -57,6 +71,10 @@
   margin-right: 1.87%;
   position: relative;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .content .clouds {
@@ -73,6 +91,10 @@
 .me_done .wave {
   position: absolute;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 50.45%;
   height: 54.72%;
@@ -86,6 +108,10 @@
   height: 72.45%;
   position: absolute;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   text-align: center;
 }

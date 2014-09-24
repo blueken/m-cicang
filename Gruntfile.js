@@ -200,8 +200,8 @@ module.exports = function (grunt) {
                 '<%= config.app %>/opponent.html',
                 '<%= config.app %>/wait_opp_done.html',
                 '<%= config.app %>/win1.html',
-                '<%= config.app %>/win2.html',
-                ]
+                '<%= config.app %>/win2.html'
+            ]
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration

@@ -1,3 +1,5 @@
+/*muti-browser capability*/
+/*muti-browser capability end*/
 .adjust {
   zoom: 0.7;
   float: left;
@@ -18,6 +20,10 @@
 }
 .content .carousel .prev {
   left: 0;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 .content .carousel .next {
@@ -47,6 +53,10 @@
   float: left;
   position: relative;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 .content .info {
@@ -92,3 +102,30 @@
   color: #fff;
   border-radius: 0.5rem;
 }
+/* MEDIA QUERY BEGIN */
+@media screen and (max-width: 601px) {
+  .adjust {
+    zoom: 0.7;
+  }
+}
+@media screen and (max-width: 471px) {
+  .adjust {
+    zoom: 0.63;
+  }
+}
+@media screen and (max-width: 421px) {
+  .adjust {
+    zoom: 0.56;
+  }
+}
+@media screen and (max-width: 361px) {
+  .adjust {
+    zoom: 0.5;
+  }
+}
+@media screen and (max-width: 321px) {
+  .adjust {
+    zoom: 0.36;
+  }
+}
+/* MEDIA QUERY END */
