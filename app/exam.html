@@ -37,12 +37,15 @@
 
                         <div class="nav_mask">
                             <ul>
-                                <li><a href="#"><span class="rvmiddle">英语</span></a></li>
+                                <li><a href="#"><span class="selected rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
 
                             </ul>
+                            <div class="indicator">
+                                <div class="highlight"></div>
+                            </div>
                         </div>
                         
                         <p class="choose">选择语言词书</p>
@@ -141,7 +144,7 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
-    // <script src="../bower_components/iscroll/build/iscroll.js"></script>
+    <script src="../bower_components/iscroll/build/iscroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -163,7 +166,6 @@
             scrollX: true
         });
 
-
         var scrollList = new IScroll('.booklist_mask', {
             scrollX: true,
             scrollY: false,
@@ -171,13 +173,15 @@
             snap: true,
             snapSpeed: 600,
             click: true,
-
+            indicators: {
+                el: '.indicator',
+                resize: false
+            }
         });
 
-
-
         $(".books").each(function(idx, val) {
-            new IScroll(this);
+            var self = this;
+            setTimeout(function() {new IScroll(self);}, 100*idx);
         });
 
     });

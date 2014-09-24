@@ -90,13 +90,14 @@ header a {
   color: #fff;
 }
 header .page_name {
+  position: relative;
   width: 50%;
   display: inline-block;
   margin-left: 5%;
   margin-top: 4.37%;
 }
 header .page_name span.name_txt {
-  margin-left: 5%;
+  margin-left: 15%;
 }
 header .btn_download {
   position: absolute;
@@ -345,25 +346,25 @@ header .btn_menu_on {
   opacity: 0.8;
   position: absolute;
   bottom: 0;
-  -webkit-animation: cloud_move 250s linear infinite;
-  -moz-animation: cloud_move 250s linear infinite;
-  -o-animation: cloud_move 250s linear infinite;
-  -ms-animation: cloud_move 250s linear infinite;
-  animation: cloud_move 250s linear infinite;
+  -webkit-animation: cloud_move 300s linear infinite;
+  -moz-animation: cloud_move 300s linear infinite;
+  -o-animation: cloud_move 300s linear infinite;
+  -ms-animation: cloud_move 300s linear infinite;
+  animation: cloud_move 300s linear infinite;
 }
 .clouds .cloud_parallax .cloud_f {
   display: inline-block;
-  width: 4000px;
+  width: 8000px;
   height: 67px;
   background: url("../images/cloud_f.png");
   background-size: contain;
   position: absolute;
   bottom: 0;
-  -webkit-animation: cloud_move 100s linear infinite;
-  -moz-animation: cloud_move 100s linear infinite;
-  -o-animation: cloud_move 100s linear infinite;
-  -ms-animation: cloud_move 100s linear infinite;
-  animation: cloud_move 100s linear infinite;
+  -webkit-animation: cloud_move 400s linear infinite;
+  -moz-animation: cloud_move 400s linear infinite;
+  -o-animation: cloud_move 400s linear infinite;
+  -ms-animation: cloud_move 400s linear infinite;
+  animation: cloud_move 400s linear infinite;
 }
 .ani_cloud_down {
   -webkit-animation: cloud_down 0.2s ease forwards;
@@ -519,7 +520,11 @@ header .btn_menu_on {
     font-size: 34%;
   }
   .sprite {
-    zoom: 0.52;
+    zoom: 0.55;
+  }
+  .rarrow_gray,
+  .rarrow_white {
+    width: 20px;
   }
 }
 /* MEDIA QUERY END */

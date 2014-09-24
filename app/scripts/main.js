@@ -61,7 +61,7 @@ function initCloud() {
 	var cloud_f_actua_h = cloud_f_stand_h * ratio;
 
 
-	$('.cloud_b').css('height', cloud_b_actua_h);
+	$('.cloud_b').css('height', cloud_b_actua_h*1.2);
 	$('.cloud_f').css('height', cloud_f_actua_h);
 }
 

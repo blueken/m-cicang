@@ -25,6 +25,24 @@
   width: 100%;
   height: 100%;
 }
+.content .nav_mask ul li a span {
+  color: #a9e2fb;
+}
+.content .nav_mask ul li a span.selected {
+  color: #fff;
+}
+.content .nav_mask .indicator {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6%;
+}
+.content .nav_mask .indicator .highlight {
+  width: 25%;
+  height: 100%;
+  border-radius: 2px;
+  background-color: #ffd700;
+}
 .content .choose {
   position: relative;
   z-index: 2;
