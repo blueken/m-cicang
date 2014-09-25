@@ -48,6 +48,7 @@ transform()
 		.prev
 			left 0
 			transform rotateY(180deg)
+			-webkit-tap-highlight-color: rgba(255,0,0,0);
 		.next 
 			right 0
 		.outer
@@ -56,6 +57,7 @@ transform()
 				width (492 * 100 / 640)%
 				height 100%
 				margin 0 auto
+				overflow hidden
 				// background-color gold
 				.scroller 
 					width ($carousel_num * 100)%
@@ -85,7 +87,7 @@ transform()
 		// background-color gold
 		p 
 			margin-top (20/492) * 100%
-			margin-left ((120 + 28)/492) * 100%
+			margin-left ((120 + 45)/492) * 100%
 
 			color #666
 
@@ -115,7 +117,7 @@ transform()
 			font-size 2.8rem
 			color white
 
-			border-radius 0.5rem
+			border-radius 1rem
 				
 
 
@@ -124,17 +126,15 @@ transform()
 
 @media screen and (max-width: 601px)
 	.adjust
-		zoom 0.7
-@media screen and (max-width: 471px)
-	.adjust
-		zoom 0.63
-@media screen and (max-width: 421px)
-	.adjust
-		zoom 0.56
-@media screen and (max-width: 361px)
+		zoom 0.61
+@media screen and (max-width: 481px)
 	.adjust
 		zoom 0.5
-@media screen and (max-width: 321px)
+@media screen and (max-width: 421px)
 	.adjust
-		zoom 0.36
+		zoom 0.45
+@media screen and (max-width: 361px)
+	.adjust
+		zoom 0.37
+
 /* MEDIA QUERY END */

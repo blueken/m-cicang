@@ -488,7 +488,7 @@ header .btn_menu_on {
     font-size: 53.13%;
   }
   .sprite {
-    zoom: 1;
+    zoom: 0.5;
   }
 }
 @media screen and (max-width: 550px) {
@@ -517,7 +517,7 @@ header .btn_menu_on {
 }
 @media screen and (max-width: 360px) {
   html {
-    font-size: 34%;
+    font-size: 32%;
   }
   .sprite {
     zoom: 0.55;
