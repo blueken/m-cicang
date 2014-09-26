@@ -8,8 +8,9 @@
 		// background-color gold
 
 		position absolute
+		z-index 1
 
-		margin-top (115 * 100 / 640)%
+		margin-top (100 * 100 / 640)%
 		margin-left (30 * 100 / 640)%
 		.result_img 
 			width 100%
@@ -47,6 +48,8 @@
 				margin-left (72*100 / $result_w)%
 
 		.info
+			$info_w = $result_w
+			$info_h = 256
 			width ($result_w*100/$result_w)%
 			height (256*100/$result_h)%
 			// background-color gold
@@ -59,36 +62,36 @@
 				height (130*100/256)%
 				border-radius 50%
 
-				margin-top (64*100/$result_w)%
-				margin-left (9*100/$result_w)%
+				top (64*100/$info_h)%
+				left (9*100/$info_w)%
 			.nick
 				position absolute
-				margin-top (204*100/$result_w)%
-				margin-left (24*100/$result_w)%
+				top (204*100/$info_h)%
+				left (24*100/$info_w)%
 				font-size 2.0rem
 				color white
 			.total
 				position absolute
-				margin-top (170*100/$result_w)%
-				margin-left (165*100/$result_w)%
+				top (170*100/$info_h)%
+				left (165*100/$info_w)%
 				font-size 5.4rem
 				color white
 			.correct
 				position absolute
-				margin-top (15*100/$result_w)%
-				margin-left (396*100/$result_w)%
+				top (15*100/$info_h)%
+				left (396*100/$info_w)%
 				font-size 3.2rem
 				color white
 			.time
 				position absolute
-				margin-top (110*100/$result_w)%
-				margin-left (396*100/$result_w)%
+				top (110*100/$info_h)%
+				left (396*100/$info_w)%
 				font-size 3.2rem
 				color white
 			.combo
 				position absolute
-				margin-top (198*100/$result_w)%
-				margin-left (396*100/$result_w)%
+				top (198*100/$info_h)%
+				left (396*100/$info_w)%
 				font-size 3.2rem
 				color white
 	.btns

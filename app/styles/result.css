@@ -2,7 +2,8 @@
   width: 90.15625%;
   height: 72.71739130434783%;
   position: absolute;
-  margin-top: 17.96875%;
+  z-index: 1;
+  margin-top: 15.625%;
   margin-left: 4.6875%;
 }
 .content .result .result_img {
@@ -47,41 +48,41 @@
   width: 22.530329289428078%;
   height: 50.78125%;
   border-radius: 50%;
-  margin-top: 11.091854419410746%;
-  margin-left: 1.559792027729636%;
+  top: 25%;
+  left: 1.559792027729636%;
 }
 .content .result .info .nick {
   position: absolute;
-  margin-top: 35.35528596187175%;
-  margin-left: 4.15944540727903%;
+  top: 79.6875%;
+  left: 4.15944540727903%;
   font-size: 2rem;
   color: #fff;
 }
 .content .result .info .total {
   position: absolute;
-  margin-top: 29.462738301559792%;
-  margin-left: 28.596187175043326%;
+  top: 66.40625%;
+  left: 28.596187175043326%;
   font-size: 5.4rem;
   color: #fff;
 }
 .content .result .info .correct {
   position: absolute;
-  margin-top: 2.599653379549393%;
-  margin-left: 68.63084922010398%;
+  top: 5.859375%;
+  left: 68.63084922010398%;
   font-size: 3.2rem;
   color: #fff;
 }
 .content .result .info .time {
   position: absolute;
-  margin-top: 19.064124783362217%;
-  margin-left: 68.63084922010398%;
+  top: 42.96875%;
+  left: 68.63084922010398%;
   font-size: 3.2rem;
   color: #fff;
 }
 .content .result .info .combo {
   position: absolute;
-  margin-top: 34.31542461005199%;
-  margin-left: 68.63084922010398%;
+  top: 77.34375%;
+  left: 68.63084922010398%;
   font-size: 3.2rem;
   color: #fff;
 }
