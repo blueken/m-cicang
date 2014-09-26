@@ -50,10 +50,10 @@
                             <div class="info">
                                 <img src="images/photo.png" />
                                 <span class="nick">小杨学学</span>
-                                <span class="total">3690</span>
+                                <span class="total">0</span>
                                 <span class="correct">21</span>
                                 <span class="time">300</span>
-                                <span class="combo">20</span>
+                                <span class="combo">200</span>
                             </div>
 
                         </div>
@@ -114,6 +114,13 @@
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <!-- build:js scripts/countUp.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/countUp.js/countUp.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
     <script src="scripts/main.js"></script>
     <script type="text/javascript">
     $(function() {
@@ -121,7 +128,6 @@
             'title': 'PK胜利',
             'back_url': 'http://www.baidu.com',
         };
-
 
         initHeader(pageData);
         initMenu();
@@ -131,6 +137,11 @@
         cloudDown();
 
         initPage();
+
+        
+    });
+    $(window).on('load', function() {
+        testCountUp();
     });
 
     function initPage() {
@@ -151,7 +162,18 @@
             
         }) ;
     }
+
+    function testCountUp() {
+        var options = {
+          useEasing : true, 
+          useGrouping : true, 
+          separator : ',', 
+          decimal : '.' 
+        }
+        var xxx = $('.total').get(0);
+        var demo = new countUp(xxx, 0, 3690, 0, 2, options);
+        demo.start();
+    }
     </script>
-    <script src="http://172.16.8.15:8080/target/target-script-min.js"></script>
     <!--script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script-->
 </html>
