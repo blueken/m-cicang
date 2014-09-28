@@ -15,6 +15,9 @@
         <!-- endbuild -->
 
         <!-- build:css styles/result.css -->
+        <link rel="stylesheet" href="styles/animate.min.css">
+        <!-- endbuild -->
+        <!-- build:css styles/result.css -->
         <link rel="stylesheet" href="styles/result.css">
         <!-- endbuild -->
     </head>
@@ -49,11 +52,11 @@
                             </div>
                             <div class="info">
                                 <img src="images/photo.png" />
-                                <span class="nick">小杨学学</span>
-                                <span class="total">0</span>
-                                <span class="correct">21</span>
-                                <span class="time">300</span>
-                                <span class="combo">200</span>
+                                <span class="nick ">小杨学学</span>
+                                <span class="total hidden">0</span>
+                                <span class="correct hidden">0</span>
+                                <span class="time hidden">0</span>
+                                <span class="combo hidden">0</span>
                             </div>
 
                         </div>
@@ -122,58 +125,6 @@
     <!-- endbuild -->
 
     <script src="scripts/main.js"></script>
-    <script type="text/javascript">
-    $(function() {
-        var pageData = {
-            'title': 'PK胜利',
-            'back_url': 'http://www.baidu.com',
-        };
+    <script src="scripts/result.js"></script>
 
-        initHeader(pageData);
-        initMenu();
-        initCloud();
-        bindEvents();
-
-        cloudDown();
-
-        initPage();
-
-        
-    });
-    $(window).on('load', function() {
-        testCountUp();
-    });
-
-    function initPage() {
-        $('.btn.show').on('click', function() {
-            $(".overlay").removeClass('hidden')
-            return false;
-        });
-        $('.overlay').on('click', function() {
-            $(".overlay").addClass('hidden')
-            return false;
-        });
-
-        $('.shares_wrapper').on('click', function(e) {
-            e.stopPropagation();
-        });
-
-        $.getScript('http://v3.jiathis.com/code/jia.js',function(){
-            
-        }) ;
-    }
-
-    function testCountUp() {
-        var options = {
-          useEasing : true, 
-          useGrouping : true, 
-          separator : ',', 
-          decimal : '.' 
-        }
-        var xxx = $('.total').get(0);
-        var demo = new countUp(xxx, 0, 3690, 0, 2, options);
-        demo.start();
-    }
-    </script>
-    <!--script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script-->
 </html>

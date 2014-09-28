@@ -15,6 +15,7 @@
         <!-- endbuild -->
 
         <!-- build:css styles/result.css -->
+        <link rel="stylesheet" href="styles/animate.min.css">
         <link rel="stylesheet" href="styles/result.css">
         <!-- endbuild -->
     </head>
@@ -50,10 +51,10 @@
                             <div class="info">
                                 <img src="images/photo.png" />
                                 <span class="nick">小杨学学</span>
-                                <span class="total">3690</span>
-                                <span class="correct">21</span>
-                                <span class="time">300</span>
-                                <span class="combo">20</span>
+                                <span class="total hidden">3690</span>
+                                <span class="correct hidden">21</span>
+                                <span class="time hidden">300</span>
+                                <span class="combo hidden">20</span>
                             </div>
 
                         </div>
@@ -109,45 +110,14 @@
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <!-- build:js scripts/countUp.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/countUp.js/countUp.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
     <script src="scripts/main.js"></script>
-
+    <script src="scripts/result.js"></script>
     
-
-    <script type="text/javascript">
-    $(function() {
-        var pageData = {
-            'title': 'PK胜利',
-            'back_url': 'http://www.baidu.com',
-        };
-
-
-        initHeader(pageData);
-        initMenu();
-        // initCloud();
-        bindEvents();
-
-        // cloudDown();
-        initPage();
-    });
-    function initPage() {
-        $('.btn.show3').on('click', function() {
-            $(".overlay").removeClass('hidden')
-            return false;
-        });
-        $('.overlay').on('click', function() {
-            $(".overlay").addClass('hidden')
-            return false;
-        });
-
-        $('.shares_wrapper').on('click', function(e) {
-            e.stopPropagation();
-        });
-
-        $.getScript('http://v3.jiathis.com/code/jia.js',function(){
-            
-        }) ;
-    }
-    </script>
 </html>
 
 
