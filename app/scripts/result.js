@@ -17,6 +17,7 @@ $(function() {
 });
 $(window).on('load', function() {
     // testCountUp();
+    showResult();
     showCorrect(20);
     showTime(500);
     showCombo(11);
@@ -33,35 +34,43 @@ function dummyAnimate(sel, sAnim, func) {
         $sel.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', func);
     };
 }
+
+function showResult() {
+    setTimeout(function() {
+        $('.winorlose').removeClass('hidden');
+        dummyAnimate('.winorlose', 'animated zoomIn');
+    }, 100);
+}
 function showCorrect(n) {
     setTimeout(function() {
         $('.correct').html(n).removeClass('hidden');
         dummyAnimate('.correct', 'animated fadeIn');
-    }, 200);
+    }, 1500);
 }
 function showTime(n) {
     setTimeout(function() {
         $('.time').html(n).removeClass('hidden');
         dummyAnimate('.time', 'animated fadeIn');
-    }, 1200);
+    }, 2500);
     
 }
 function showCombo(n) {
     setTimeout(function() {
         $('.combo').html(n).removeClass('hidden');
         dummyAnimate('.combo', 'animated fadeIn');
-    }, 2200);
+    }, 3500);
 }
 function showTotal(n) {
     setTimeout(function() {
         $('.total').removeClass('hidden');
         totalCountUp();
-    }, 3200);
+    }, 4500);
 }
 function animeSocial(n) {
     setTimeout(function() {
         dummyAnimate('.btns a:last', 'animated tada');
-    }, 5200);
+        
+    }, 6500);
 }
 function initPage() {
     $('.btns a:last').on('click', function() {
