@@ -165,6 +165,8 @@
     <script src="scripts/main.js"></script>
 
     <script type="text/javascript">
+    var gScrollerNav = null;
+    var gScrollerList = null;
     $(function() {
         var pageData = {
             'title': '学门语言',
@@ -175,34 +177,47 @@
         initHeader(pageData);
         initMenu();
         bindEvents();
+        iniTabEvents();
+        initScroller();
 
-        var scrollNav = new IScroll('.nav_mask', {
+    });
+    function iniTabEvents() {
+        $('.nav_mask').on('click', 'li>a', function() {
+            var idx = $(this).parent().index();
+            highlightTab(idx);
+
+            if (gScrollerList != null) {
+                gScrollerList.goToPage(idx, 0, 1000);
+            };
+        });
+
+    }
+    function highlightTab(idx) {
+        $('.nav_mask>ul>li>a>span').attr('class', 'rvmiddle');
+        $('.nav_mask').find('a').eq(idx).find('span').addClass('selected');
+    }
+    function initScroller() {
+        gScrollerNav = new IScroll('.nav_mask', {
             scrollX: true
         });
 
-
-        var scrollList = new IScroll('.booklist_mask', {
+        gScrollerList = new IScroll('.booklist_mask', {
             scrollX: true,
             scrollY: false,
             bounce: false,
             snap: true,
             snapSpeed: 600,
         });
+        gScrollerList.on('scrollEnd', function() {
+            var idx = this.currentPage.pageX;
+            if (gScrollerNav != null) {
+                highlightTab(idx);
+            };
 
-        scrollList.on('beforeScrollStart', function() {
-            // console.log("beforeScrollStart!!!!");
-            // console.log(abc);
-            // abc.disable();
         });
-        scrollList.on('scrollEnd', function() {
-            // abc.enable();
-        });
-
         $(".books").each(function(idx, val) {
             new IScroll(this);
         });
-
-    });
-
+    }
     </script>
 </html>
