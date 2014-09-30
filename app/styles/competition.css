@@ -124,6 +124,9 @@
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+.overlay {
+  display: none;
+}
 .overlay .quit {
   width: 84.375%;
   height: 33.369565217391305%;

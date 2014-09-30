@@ -60,20 +60,23 @@ transform()
 			margin-top 1.57% //10/640
 			font-size 2.4rem
 	.opp_info
+		width 100%
 		height 32.61% //300/920
-		top 22.65% //145/640
-		position relative
+		bottom 0
+		position absolute
 		z-index 2
 		ul
 			overflow hidden
+			width 300% //640*3
 			height 64% //192/300
-			padding 0 5% //32/640
+			padding 0 1.66% //32/640*3
 			li 
 				float left
-				margin-right 1.87% //12/640
+				margin-right 0.8% //16/640*3
 				position relative
 				top 50%
 				transform translateY(-50%)
+				
 	.clouds
 		z-index 1
 .waiting, .me_done

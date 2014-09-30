@@ -103,6 +103,6 @@ function totalCountUp() {
       separator : ',', 
       decimal : '.' 
     }
-    var demo = new countUp($('.total').get(0), 0, 3690, 0, 2, options);
-    demo.start();
+    var total = new countUp($('.total').get(0), 0, 3690, 0, 2, options);
+    total.start();
 }
