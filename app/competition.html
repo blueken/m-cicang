@@ -135,8 +135,14 @@
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    <script src="scripts/main.js"></script>
 
+    <!-- build:js scripts/store.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/store.js/store.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script src="scripts/main.js"></script>
     <script type="text/javascript">
     $(function() {
         var pageData = {
@@ -151,9 +157,15 @@
         bindEvents();
 
         cloudDown();
+
+        getOppInfo();
     });
 
-
+    function getOppInfo() {
+        // hjKxccData = {"UserId":25710160,"UserName":"AirSky_Ten","BookId":10232,"PKUserId":0,"IsWin":false,"MatchTime":135925,"WordCount":15,"RightWordCount":6,"Score":40,"WrongWords":"010100000000000","IsMockup":false};
+        var hjKxccData = store.get('hjKxccData');
+        console.log(hjKxccData.UserId);
+    }
     $(".questions").animate({left:"-=100%"},{duration:'250'});
     </script>
 </html>

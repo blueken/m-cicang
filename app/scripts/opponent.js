@@ -27,6 +27,8 @@ function saveOppData(data) {
     console.log('MatchTime:'+data.MatchTime);
     console.log('WrongWords:'+data.WrongWords);
     console.log('Score:'+data.Score);
+
+    store.set('hjKxccData', data);
 }
 function searching() {
     var num = 0;
