@@ -63,6 +63,9 @@
   z-index: 2;
 }
 .content .opp_info ul {
+  position: relative;
+  left: -4%;
+  top: -20%;
   overflow: hidden;
   width: 300%;
   height: 64%;
@@ -78,6 +81,43 @@
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+.content .selected {
+  position: absolute;
+  top: 60.61%;
+  left: 34.84%;
+  width: 30%;
+  height: 32.6%;
+  z-index: 2;
+}
+.content .selected img {
+  height: 64%;
+  max-width: 100%;
+  border-radius: 50%;
+}
+.content .selected .opp_txt {
+  text-align: center;
+}
+.content .selected .opp_name {
+  font-size: 3.4rem;
+  color: #666;
+  margin-top: 14.58%;
+}
+.content .selected .opp_status {
+  font-size: 2.4rem;
+  color: #29b6f6;
+  margin-top: 5.2%;
+}
+.content .pk {
+  position: absolute;
+  top: 53%;
+  z-index: 1;
+  width: 17.18%;
+  height: 11.96%;
+  border-radius: 50%;
+  background-color: #fdcc41;
+  font-size: 4rem;
+  color: #fff;
 }
 .content .clouds {
   z-index: 1;

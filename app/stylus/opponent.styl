@@ -66,6 +66,9 @@ transform()
 		position absolute
 		z-index 2
 		ul
+			position relative
+			left -4%
+			top -20%
 			overflow hidden
 			width 300% //640*3
 			height 64% //192/300
@@ -76,6 +79,38 @@ transform()
 				position relative
 				top 50%
 				transform translateY(-50%)
+	.selected
+		position absolute
+		top 60.61% 
+		left 34.84% //223/640
+		width 30% //192/640
+		height 32.6% //300/920
+		z-index 2
+		img 
+			height 64% //192/300
+			max-width 100%
+			border-radius 50%
+		.opp_txt
+			text-align center
+		.opp_name
+			font-size 3.4rem
+			color #666666
+			margin-top 14.58% //28/192
+		.opp_status
+			font-size 2.4rem
+			color #29b6f6
+			margin-top 5.2% //10/192
+	.pk
+		position absolute
+		top 53%
+		z-index 1
+		width 17.18% //110/640
+		height 11.96% //110/920
+
+		border-radius 50%
+		background-color #fdcc41
+		font-size 4.0rem
+		color white
 				
 	.clouds
 		z-index 1

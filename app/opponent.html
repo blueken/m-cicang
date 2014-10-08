@@ -69,7 +69,15 @@
                             </ul>
 
                         </div>
+                        <div class="selected">
+                            <img src="images/photo.png" alt="对手头像"/>
+                            <p class="opp_txt opp_name">路人小词霸</p>
+                            <p class="opp_txt opp_status">胜率 75%</p>
+                        </div>
                         
+                        <div class="pk hvmiddle hidden">
+                            <span class="hvmiddle">PK</span>
+                        </div>
                     </article>
 
 
@@ -107,20 +115,5 @@
     <!-- endbower -->
     <!-- endbuild -->
     <script src="scripts/main.js"></script>
-
-    <script type="text/javascript">
-    $(function() {
-        var pageData = {
-            'title': 'PK',
-            'back_url': 'competition.html',
-        };
-
-        initHeader(pageData);
-        initMenu();
-        initCloud();
-        bindEvents();
-        cloudDown('-9%');
-
-    });
-    </script>
+    <script src="scripts/opponent.js" ></script>
 </html>
