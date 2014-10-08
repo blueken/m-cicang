@@ -37,12 +37,12 @@
 
                         <div class="nav_mask">
                             <ul>
-                                <li><a href="#"><span class="selected rvmiddle">英语</span></a></li>
+                                <!--li><a href="#"><span class="selected rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
-                                <li><a href="#"><span class="rvmiddle">英语</span></a></li>
+                                <li><a href="#"><span class="rvmiddle">英语</span></a></li-->
                             </ul>
                         </div>
                         
@@ -177,10 +177,52 @@
         initHeader(pageData);
         initMenu();
         bindEvents();
-        iniTabEvents();
-        initScroller();
+
+        getData();
+        
 
     });
+    function getData() {
+        // var Key = getParameterByName('k');
+        // var lang = getParameterByName('l');
+        // $.get('http://beta.mci.hujiang.com/services/InterestLang.ashx', function(data) {
+        $.get('data/language.js', function(data) {
+            var data = eval(data);
+            // console.log(data);
+            genHtml(data);
+        
+            iniTabEvents();
+            initScroller();
+        });
+        
+         
+    }
+    function genHtml(data) {
+        var strNav = '';
+        var strList = '';
+        _.each(data, function(v,k) {
+            var tmpl = _.template('<li><a href="#"><span class="rvmiddle"><%=Name%></span></a></li>');
+            var html = tmpl(v);
+
+            strNav += html;
+
+
+            strList += '<div class="books"><ul>';
+            _.each(v.Books, function(b,i) {
+                b.BookIntro = b.BookIntro.slice(0,20);
+                var tmpl = _.template('<li><a href="#"><img src="images/book_cover1.jpg" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
+                var html = tmpl(b);
+                 strList += html;
+            });
+            strList += '</ul></div>';
+
+        });
+
+        $('.nav_mask>ul').html(strNav);
+        $('.booklist_scroller').html(strList);
+        highlightTab(0);
+    }
+
     function iniTabEvents() {
         $('.nav_mask').on('click', 'li>a', function() {
             var idx = $(this).parent().index();
@@ -198,7 +240,8 @@
     }
     function initScroller() {
         gScrollerNav = new IScroll('.nav_mask', {
-            scrollX: true
+            scrollX: true,
+            click: true
         });
 
         gScrollerList = new IScroll('.booklist_mask', {
