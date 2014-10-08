@@ -210,7 +210,7 @@
             strList += '<div class="books"><ul>';
             _.each(v.Books, function(b,i) {
                 b.BookIntro = b.BookIntro.slice(0,20);
-                var tmpl = _.template('<li><a href="#"><img src="images/book_cover1.jpg" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
+                var tmpl = _.template('<li><a href="http://localhost:9000/info_book.html?bid=<%=BookID%>"><img src="images/book_cover1.jpg" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
                 var html = tmpl(b);
                  strList += html;
             });
