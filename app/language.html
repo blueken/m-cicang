@@ -170,7 +170,7 @@
     $(function() {
         var pageData = {
             'title': '学门语言',
-            'back_url': 'http://www.baidu.com',
+            'back_url': 'index.html',
         };
 
 
@@ -250,6 +250,7 @@
             bounce: false,
             snap: true,
             snapSpeed: 600,
+            click: true
         });
         gScrollerList.on('scrollEnd', function() {
             var idx = this.currentPage.pageX;

@@ -1,7 +1,7 @@
 $(function() {
     var pageData = {
         'title': '第 1 题',
-        'back_url': 'http://www.baidu.com',
+        'back_url': 'javascript:tryQuit()',
     };
     gComp = new Competition();
 
@@ -97,7 +97,10 @@ function showRight(obj, correntIdx) {
     // dummyAnimate(rightItem[0], 'animated tada');
 }
 
-
+function tryQuit() {
+    alert('想离开? 没那么容易!');
+    // $('.overlay').show();
+}
 function Competition() {
     this.curr = 1;
     this.total = 1;
@@ -105,7 +108,7 @@ function Competition() {
     this.duration = 0;
     this.numCombo = -1;
     this.maxCombo = 0;
-    this.questionLimit = 5000; //max time to think
+    this.questionLimit = 10000; //max time to think
     this.correctShow = 1200; // delay to show next 
     this.questionHandler = null; //questionLimit handler
 
@@ -180,7 +183,7 @@ Competition.prototype.nextQuestion = function(a) {
 
             var pageData = {
                 'title': '第 '+self.curr+'/'+self.total+' 题',
-                'back_url': 'http://www.baidu.com',
+                'back_url': 'javascript:tryQuit()',
             };
 
 

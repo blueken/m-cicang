@@ -1,7 +1,7 @@
 $(function() {
     var pageData = {
         'title': 'PK结果',
-        'back_url': 'http://www.baidu.com',
+        'back_url': '',
     };
 
     initHeader(pageData);

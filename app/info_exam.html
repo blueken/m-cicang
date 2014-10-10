@@ -112,10 +112,9 @@
     $(function() {
         var pageData = {
             'title': '英语四级词汇',
-            'back_url': 'http://www.baidu.com',
+            'back_url': 'exam.html',
         };
 
-        var pageData = {};
         initHeader(pageData);
         initMenu();
         initCloud();
@@ -125,8 +124,8 @@
         getData();
     });
     function getData() {
-        var Key = getParameterByName('k');
-        var lang = getParameterByName('l');
+        var Key = getParam('k');
+        var lang = getParam('l');
         // $.get('http://beta.mci.hujiang.com/Services/BookCategory.ashx?categoryKey='+Key+'&lang='+lang, function(data) {
             
         // });

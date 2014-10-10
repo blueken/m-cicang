@@ -1,7 +1,7 @@
 $(function() {
     var pageData = {
         'title': 'PK',
-        'back_url': 'competition.html',
+        'back_url': 'javascript:history.back()',
     };
 
     initHeader(pageData);
