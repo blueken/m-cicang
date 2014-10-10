@@ -1,0 +1,210 @@
+$(function() {
+    var pageData = {
+        'title': '第 1 题',
+        'back_url': 'http://www.baidu.com',
+    };
+    gComp = new Competition();
+
+    initHeader(pageData);
+    initMenu();
+    initCloud();
+    bindEvents();
+
+    cloudDown();
+
+    getOppInfo();
+    getQuestions();
+
+    
+});
+
+function getOppInfo() {
+    // hjKxccData = {"UserId":25710160,"UserName":"AirSky_Ten","BookId":10232,"PKUserId":0,"IsWin":false,"MatchTime":135925,"WordCount":15,"RightWordCount":6,"Score":40,"WrongWords":"010100000000000","IsMockup":false};
+    var hjKxccData = store.get('hjKxccData');
+    $('.his_name').html(hjKxccData.UserName);
+}
+
+function getQuestions() {
+    var bid = getParam('bid');
+
+
+    // $.get('http://beta.mci.hujiang.com/Services/PKQuestion.ashx?bookid=10441'+bid, function(data) {
+        
+    // });
+    gComp.data = {"result":[{"question":"She [____ed] some sugar to her tea.","pro":null,"audio":null,"correctOption":2,"options":["position","VCD","add","gesture"]},{"question":"Radio and television are important means of ____.","pro":null,"audio":null,"correctOption":2,"options":["gesture","president","communication","mad"]},{"question":"VCD","pro":"viːsiː'diː","audio":"http://c1.g.hjfile.cn/yuliao/word/36/c4876ba42dddc92376b8ee5e686e7441.mp3","correctOption":1,"options":["v. 管理，负责","n. 影碟光盘","adj. 发疯的，生气的","n. 位置，职位，立场"]},{"question":"position","pro":"pə'zɪʃən","audio":"http://d1.g.hjfile.cn/voice/voice2/p/position.mp3","correctOption":2,"options":["v. 取消，废除；使…停止，使…作废；","n. 蝴蝶","n. 位置，职位，立场","n. 交流； 通信"]},{"question":"adj. 顺利的；光滑的；平稳的","pro":null,"audio":null,"correctOption":1,"options":["president","smooth","wolf","communication"]},{"question":"president","pro":"'prezidәnt","audio":"http://d1.g.hjfile.cn/voice/voice2/p/president.mp3","correctOption":0,"options":["n. 总统，主席","n. 同意，一致，协定，协议","n. 狼","n. 位置，职位，立场"]},{"question":"butterfly","pro":"ˈbʌtərˌflaɪ","audio":"http://c1.g.hjfile.cn/yuliao/word/-16/6ab4c2e2fa53e7591e98c2ebc71bc7c3.mp3","correctOption":1,"options":["n. 政策，方针","n. 蝴蝶","n. 交流； 通信","v. 取消，废除；使…停止，使…作废；"]},{"question":"n. 同意，一致，协定，协议","pro":null,"audio":null,"correctOption":3,"options":["cancel","wolf","policy","agreement"]},{"question":"policy","pro":"'pɒləsi","audio":"http://c1.g.hjfile.cn/yuliao/word/-177/e43e636db6f90d79bfc0262fd6ae222a.mp3","correctOption":1,"options":["v. 取消，废除；使…停止，使…作废；","n. 政策，方针","n. 交流； 通信","n. 劳动(Am labor)"]},{"question":"He made a rude ____ at his friend.","pro":null,"audio":null,"correctOption":2,"options":["communication","agreement","gesture","cancel"]},{"question":"adj. 发疯的，生气的","pro":null,"audio":null,"correctOption":2,"options":["labour","smooth","mad","gesture"]},{"question":"It takes a lot of ____ to build a railway.","pro":null,"audio":null,"correctOption":2,"options":["smooth","butterfly","labour","add"]},{"question":"v. 管理，负责","pro":null,"audio":null,"correctOption":0,"options":["manage","butterfly","cancel","VCD"]},{"question":"The heavy workload forced me to ____ the camping trip.","pro":null,"audio":null,"correctOption":2,"options":["agreement","VCD","cancel","communication"]},{"question":"n. 狼","pro":null,"audio":null,"correctOption":3,"options":["gesture","add","labour","wolf"]}],"responseStatus":{"errorCode":"","message":null,"stackTrace":null,"errors":null}};
+    gComp.total = gComp.data.result.length;
+
+    var quesStr = '';
+                              
+    _.each(gComp.data.result, function(v,k) {
+        var tmp = _.template('<section class="question"><h2><%=question%></h2><ul>');
+        var sectionStr = tmp(v);
+
+        _.each(v.options, function(o,i) {
+            var alpha = 'A';
+            switch(i) {
+                case 0 :
+                    alpha = 'A';
+                    break;
+                case 1 :
+                    alpha = 'B';
+                    break;
+                case 2 :
+                    alpha = 'C';
+                    break;
+                case 3 :
+                    alpha = 'D';
+                    break;
+            }
+
+            sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, '+k+','+i+','+v.correctOption+')"><span class="circle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span></a></li>';
+        });
+        sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, '+k+',4,'+v.correctOption+')"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>';
+        sectionStr += '</ul></section>';
+        quesStr += sectionStr;
+    });
+
+    $('.questions').html(quesStr);
+}
+
+function answer(o, quesIdx, answerIdx, correntIdx) {
+    // alert(quesIdx+"---"+answerIdx+"---"+correntIdx);
+    if (answer.done) {
+        return;
+    };
+    if (answerIdx === correntIdx) {
+        //get correct
+        gComp.combo(1);
+        gComp.nextQuestion(1);
+        $(o).addClass('right');
+    } else {
+        //get wrong
+        gComp.combo(0);
+        gComp.nextQuestion(0);
+        showRight(o, correntIdx);
+        if (answerIdx === 4) {
+            $(o).addClass('selected'); 
+        } else {
+            $(o).addClass('wrong'); 
+        }
+    }
+    
+    answer.done = true;
+}
+function showRight(obj, correntIdx) {
+    var rightItem = $(obj).parent().parent().children().eq(correntIdx).find('a');
+    rightItem.addClass('right');
+    // dummyAnimate(rightItem[0], 'animated tada');
+}
+
+
+function Competition() {
+    this.curr = 1;
+    this.total = 1;
+    this.corret = 0;
+    this.duration = 0;
+    this.numCombo = -1;
+    this.maxCombo = 0;
+    this.questionLimit = 5000; //max time to think
+    this.correctShow = 1200; // delay to show next 
+    this.questionHandler = null; //questionLimit handler
+
+    this.start();
+}
+Competition.prototype.combo = function(a) {
+    //a = 0, 1, null   0: wrong,  1: right,  null: getCombo
+    if (a===0) {
+        //wrong
+        if (this.numCombo > this.maxCombo) {
+            this.maxCombo = this.numCombo;
+        };
+        this.numCombo = 0;
+    } else if (a===1) {
+        //right
+        if (this.numCombo <= 0) { 
+            this.numCombo = 1;
+        } else {
+            this.numCombo += 1;
+            var ttt = '正确:'+this.numCombo;
+            console.log(ttt);
+
+            // $('.bubble').removeClass('hidden');
+
+        }
+    }
+    
+    return this.numCombo;
+}
+Competition.prototype.start = function() {
+    this.duration = _.now();
+    // this.questionEnd();
+    this.questionStart();
+}
+Competition.prototype.end = function() {
+    this.duration = Math.floor((_.now() - this.duration) / 1000);
+
+    console.log('save---'+this.corret+','+this.duration+','+this.maxCombo);
+    store.set('hjKxccResult', {correct: this.correct,  duration: this.duration, combo: this.maxCombo});
+    document.location = 'wait_opp_done.html';
+}
+
+
+Competition.prototype.nextQuestion = function(a) {
+    //a = 0, 1, null   0: wrong,  1: right,  null: getCombo
+    if (a===0) {
+        //wrong
+        this.numCombo = 0;
+    } else if (a===1) {
+        //right
+        this.corret += 1;
+    } else {
+        //timeout
+        gComp.combo(0);
+        console.log('this.curr:'+this.curr+','+this.total);
+        if (this.curr <= this.total) {
+            var o = $('.question').eq(this.curr - 1).find('li>a').eq(4).get(0);
+            var correntIdx = this.data.result[this.curr-1].correctOption;
+            $(o).addClass('selected'); 
+            showRight(o, correntIdx);
+        };
+        
+    }
+    this.questionEnd();
+    var self = this;
+    setTimeout(function() {
+        self.curr += 1;
+        if (self.curr <= self.total) {
+            $(".questions").animate({left:"-=100%"},{duration:'250',complete:function() {
+                answer.done = false;
+            }});
+
+            var pageData = {
+                'title': '第 '+self.curr+'/'+self.total+' 题',
+                'back_url': 'http://www.baidu.com',
+            };
+
+
+            initHeader(pageData);
+        } else {
+            self.end();
+        }
+        self.questionStart();
+    }, self.correctShow);
+
+}
+Competition.prototype.questionStart = function() {
+    var self = this;
+    if (self.curr <= self.total) {
+        self.questionHandler = setTimeout(function() {
+            self.nextQuestion();
+        }, self.questionLimit);
+    }
+    
+}
+Competition.prototype.questionEnd = function() {
+    var self = this;
+    if ( self.questionHandler ) {
+        clearTimeout(self.questionHandler);
+    };
+    answer.done = true;
+}

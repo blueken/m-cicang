@@ -102,3 +102,13 @@ function getParam(name) {
         results = regex.exec(location.search);
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+function dummyAnimate(sel, sAnim, func) {
+    var $sel = $(sel);
+    $sel.addClass(sAnim);
+    var wait = setTimeout(function() {
+        $sel.removeClass(sAnim);
+    }, 1300);
+    if (func instanceof Function) {
+        $sel.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', func);
+    };
+}

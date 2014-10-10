@@ -107,6 +107,14 @@
         bindEvents();
 
         cloudDown();
+        gotoResult();
     });
+
+    function gotoResult() {
+        var rand = _.random(1,6);
+        setTimeout(function() {
+            document.location = 'win1.html';
+        }, rand*1000);
+    }
     </script>
 </html>

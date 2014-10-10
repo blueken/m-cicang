@@ -24,16 +24,7 @@ $(window).on('load', function() {
     showTotal(2960);
     animeSocial();
 });
-function dummyAnimate(sel, sAnim, func) {
-    var $sel = $(sel);
-    $sel.addClass(sAnim);
-    var wait = setTimeout(function() {
-        $sel.removeClass(sAnim);
-    }, 1300);
-    if (func instanceof Function) {
-        $sel.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', func);
-    };
-}
+
 
 function showResult() {
     setTimeout(function() {

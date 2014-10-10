@@ -13,9 +13,12 @@
         <link rel="stylesheet" href="styles/sprite.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-
+        <!-- build:css styles/animate.css -->
+        <link rel="stylesheet" href="styles/animate.min.css">
+        <!-- endbuild -->
         <!-- build:css styles/competition.css -->
         <link rel="stylesheet" href="styles/competition.css">
+        <link rel="stylesheet" href="styles/grumble.min.css">
         <!-- endbuild -->
     </head>
     <body>
@@ -42,7 +45,7 @@
                         </div>
 
                         <div class="questions">
-                            <section class="question">
+                            <!--section class="question">
                                 <h2>Contratulations</h2>
                                 <ul>
                                     <li><a href="javascript:void(0)" class="right"><span class="circle"><b>A</b></span><span class="answer vmiddle">谈话；会谈；社交的；</span></a></li>
@@ -73,7 +76,7 @@
                                     <li><a href="javascript:void(0)"><span class="circle"><b>D</b></span><span class="answer vmiddle">与。。。相同</span></a></li>
                                     <li><a href="javascript:void(0)"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>
                                 </ul>
-                            </section>
+                            </section-->
                         </div>
 
 
@@ -90,6 +93,7 @@
                             </div>
                             
                         </div>
+                        <div class="sprite bubble combo hidden"><span class="combo_txt">Combo 7</span></div>
                         
                     </article>
 
@@ -142,31 +146,11 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <!-- build:js scripts/grumble.js -->
+    <script src="../bower_components/grumble.js/js/jquery.grumble.min.js"></script>
+    <!-- endbuild -->
     <script src="scripts/main.js"></script>
-    <script type="text/javascript">
-    $(function() {
-        var pageData = {
-            'title': '第 1/40 题',
-            'back_url': 'http://www.baidu.com',
-        };
-
-
-        initHeader(pageData);
-        initMenu();
-        initCloud();
-        bindEvents();
-
-        cloudDown();
-
-        getOppInfo();
-    });
-
-    function getOppInfo() {
-        // hjKxccData = {"UserId":25710160,"UserName":"AirSky_Ten","BookId":10232,"PKUserId":0,"IsWin":false,"MatchTime":135925,"WordCount":15,"RightWordCount":6,"Score":40,"WrongWords":"010100000000000","IsMockup":false};
-        var hjKxccData = store.get('hjKxccData');
-        console.log(hjKxccData.UserId);
-    }
-    $(".questions").animate({left:"-=100%"},{duration:'250'});
-    </script>
+    <script src="scripts/competition.js"></script>
+    
 </html>
 

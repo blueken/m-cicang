@@ -5,7 +5,7 @@
 	.questions
 		$questions_w = 640
 		$questions_h = 572
-		$questions_num = 10
+		$questions_num = 15
 		position absolute
 		top 14.35% // 88+44 / 920
 
@@ -91,6 +91,7 @@
 		.pho
 			width (82 * 100 / $vs_w)%
 			height 100%
+			border-radius 50%
 		.me 
 			float left
 		.him
@@ -138,6 +139,18 @@
 					float right
 					border-top-right-radius 0.5rem
 					border-bottom-right-radius 0.5rem
+	.combo
+		position absolute
+		top 78%
+		left 10%
+		z-index 1
+		font-size 2.4rem
+		color white
+		.combo_txt
+			position absolute
+			left 49%
+			top 45%
+			transform translateY(-50%) translateX(-50%)
 
 
 .overlay

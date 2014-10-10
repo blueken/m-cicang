@@ -6,7 +6,8 @@
     "underscore": "~1.6.0",
     "iscroll": "~5.1.2",
     "countUp.js": "~1.3.1",
-    "store.js": "~1.3.16"
+    "store.js": "~1.3.16",
+    "grumble.js": "*"
   },
   "devDependencies": {}
 }
