@@ -167,13 +167,14 @@
     });
 
     function getData() {
-        // $.get('http://beta.mci.hujiang.com/Services/ExamBackWord.ashx', function(data) {
-            
-        // });
         var data = [ { "Lang" : "en" , "Name" : "\u82F1\u8BED" , "BookCategorys" : [ { "Key" : "yybb" , "Name" : "\u7F8E\u8BED\u5FC5\u80CC" , "Icon" : "" , "Books" : [ { "BookID" : 10719 , "Name" : null , "Icon" : null , "UserCount" : 0 } ] } ] },{ "Lang" : "jp" , "Name" : "\u65E5\u8BED" , "BookCategorys" : [ { "Key" : "ryjp" , "Name" : "\u65E5\u8BED\u7CBE\u54C1" , "Icon" : "" , "Books" : [ { "BookID" : 11096 , "Name" : null , "Icon" : null , "UserCount" : 0 } ] } ] } ];
-        getLangData(data);
-        getBooksData(data);
-        genScroller();
+
+        // $.get('http://beta.mci.hujiang.com/Services/ExamBackWord.ashx', function(data) {
+            getLangData(data);
+            getBooksData(data);
+            genScroller();
+        // });
+        
     }
     function getLangData(data) {
         var strUlNavMask = '';
