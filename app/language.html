@@ -185,15 +185,45 @@
     function getData() {
         // var Key = getParameterByName('k');
         // var lang = getParameterByName('l');
-        // $.get('http://beta.mci.hujiang.com/services/InterestLang.ashx', function(data) {
-        $.get('data/language.js', function(data) {
-            var data = eval(data);
-            // console.log(data);
+
+        // var data = [{
+        //     Lang: "en",
+        //     Name: "英语",
+        //     Books: [
+        //     {
+        //     BookID: 10625,
+        //     BookName: "学英语绕不过的1000词",
+        //     BookType: "Public",
+        //     BookMode: "Sentence, SentenceDef, Phonetic",
+        //     Langs: "en",
+        //     BookIntro: "根据百度谷歌权威指数排行，结合小D词典热词数据，收录中国网民最常用1000词，反映了最贴近生活的词汇应用场景，适合各层次英语学习者背诵。",
+        //     ItemNum: 1000,
+        //     UnitNum: 50,
+        //     DateAdded: "2012-02-23",
+        //     DateUpdated: "2013-08-23",
+        //     IsPublic: false,
+        //     IsPublish: true,
+        //     RecommendTID: "140,37,161",
+        //     PlanNum: 60,
+        //     Mark: "",
+        //     RealmID: 1001,
+        //     UserCount: 708290,
+        //     IsBest: 0,
+        //     PicUrl: null,
+        //     BookTypeString: "公共",
+        //     IsMy: false,
+        //     IsFinished: false,
+        //     MaxUnitIndex: 0,
+        //     ParentID: 0,
+        //     IsFav: false
+        //     }
+        // ]}]
+        $.get('http://beta.mci.hujiang.com/services/InterestLang.ashx', function(data) {
             genHtml(data);
         
             iniTabEvents();
             initScroller();
-        });
+        },'JSON');
         
          
     }
@@ -210,7 +240,7 @@
             strList += '<div class="books"><ul>';
             _.each(v.Books, function(b,i) {
                 b.BookIntro = b.BookIntro.slice(0,20);
-                var tmpl = _.template('<li><a href="http://localhost:9000/info_book.html?bid=<%=BookID%>"><img src="images/book_cover1.jpg" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
+                var tmpl = _.template('<li><a href="info_book.html?bid=<%=BookID%>"><img src="images/book_cover1.jpg" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
                 var html = tmpl(b);
                  strList += html;
             });

@@ -15,11 +15,11 @@ $(function() {
 });
 
  function getData() {
-    data = {"UserId":25710160,"UserName":"AirSky_Ten","BookId":10232,"PKUserId":0,"IsWin":false,"MatchTime":135925,"WordCount":15,"RightWordCount":6,"Score":40,"WrongWords":"010100000000000","IsMockup":false};
+    // data = {"UserId":25710160,"UserName":"AirSky_Ten","BookId":10232,"PKUserId":0,"IsWin":false,"MatchTime":135925,"WordCount":15,"RightWordCount":6,"Score":40,"WrongWords":"010100000000000","IsMockup":false};
     var bid = getParam('bid');
-    // $.get('http://beta.mci.hujiang.com/Services/PKUserInfo.ashx?bookid=10232&userid=2203265', function(data) {
+    $.get('http://beta.mci.hujiang.com/Services/PKUserInfo.ashx?bookid=10232&userid=2203265', function(data) {
         saveOppData(data);
-    // });
+    },'JSON');
 
 }
 function saveOppData(data) {

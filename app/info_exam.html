@@ -124,16 +124,17 @@
         getData();
     });
     function getData() {
-        gData = { "Key" : "yybb" , "Name" : "\u7F8E\u8BED\u5FC5\u80CC" , "Icon" : "" , "Books" : [ { "BookID" : 10719 , "Name" : "\u7F8E\u8BED\u5FC5\u80CC\u53E3\u8BED800\u53E5" , "Icon" : null , "UserCount" : 170671 } ] };
+        // gData = { "Key" : "yybb" , "Name" : "\u7F8E\u8BED\u5FC5\u80CC" , "Icon" : "" , "Books" : [ { "BookID" : 10719 , "Name" : "\u7F8E\u8BED\u5FC5\u80CC\u53E3\u8BED800\u53E5" , "Icon" : null , "UserCount" : 170671 } ] };
         
 
         var Key = getParam('k');
         var lang = getParam('l');
 
-        // $.get('http://beta.mci.hujiang.com/Services/BookCategory.ashx?categoryKey='+Key+'&lang='+lang, function(gData) {
+        $.get('http://beta.mci.hujiang.com/Services/BookCategory.ashx?categoryKey='+Key+'&lang='+lang, function(data) {
+            gData = data;
             getBooksData(gData);
             initScroller();
-        // });
+        },'JSON');
 
         
     }
