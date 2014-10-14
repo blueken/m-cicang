@@ -109,6 +109,7 @@
     <script src="scripts/main.js"></script>
 
     <script type="text/javascript">
+    gScroller = null;
     $(function() {
         var pageData = {
             'title': '英语四级词汇',
@@ -124,21 +125,35 @@
         getData();
     });
     function getData() {
-        // gData = { "Key" : "yybb" , "Name" : "\u7F8E\u8BED\u5FC5\u80CC" , "Icon" : "" , "Books" : [ { "BookID" : 10719 , "Name" : "\u7F8E\u8BED\u5FC5\u80CC\u53E3\u8BED800\u53E5" , "Icon" : null , "UserCount" : 170671 } ] };
+        var data = { "Key" : "yybb" , "Name" : "\u7F8E\u8BED\u5FC5\u80CC" , "Icon" : "" , "Books" : [ { "BookID" : 10719 , "Name" : "\u7F8E\u8BED\u5FC5\u80CC\u53E3\u8BED800\u53E5" , "Icon" : null , "UserCount" : 170671 },{ "BookID" : 10719 , "Name" : "\u7F8E\u8BED\u5FC5\u80CC\u53E3\u8BED800\u53E5" , "Icon" : null , "UserCount" : 170671 },{ "BookID" : 10719 , "Name" : "\u7F8E\u8BED\u5FC5\u80CC\u53E3\u8BED800\u53E5" , "Icon" : null , "UserCount" : 170671 },{ "BookID" : 10719 , "Name" : "\u7F8E\u8BED\u5FC5\u80CC\u53E3\u8BED800\u53E5" , "Icon" : null , "UserCount" : 170671 } ] };
         
 
         var Key = getParam('k');
         var lang = getParam('l');
 
-        $.get('http://beta.mci.hujiang.com/Services/BookCategory.ashx?categoryKey='+Key+'&lang='+lang, function(data) {
+        // $.get('http://beta.mci.hujiang.com/Services/BookCategory.ashx?categoryKey='+Key+'&lang='+lang, function(data) {
             gData = data;
             getBooksData(gData);
             initScroller();
-        },'JSON');
+            dealArrows();
+        // },'JSON');
 
         
     }
-
+    function dealArrows() {
+        if (gScroller) {
+            var total = gScroller.pages.length;
+            var curr = gScroller.currentPage.pageX;
+            
+            $('.prev').show();
+            $('.next').show();
+            if (curr === 0) {
+                $('.prev').hide();
+            } else if (curr === total-1) {
+                $('.next').hide();
+            }
+        };
+    }
     function getBooksData(data) {
         var strScroller = '';
         _.each(data.Books, function(v,k) {
@@ -150,7 +165,7 @@
     }
     
     function initScroller() {
-        var scroller = new IScroll('.swrapper', {
+        gScroller = new IScroll('.swrapper', {
             scrollX: true,
             scrollY: false,
             snap: true,
@@ -159,12 +174,12 @@
 
         });
 
-        scroller.on('scrollEnd', function() {
-            var idx = scroller.currentPage.pageX;
+        gScroller.on('scrollEnd', function() {
+            var idx = gScroller.currentPage.pageX;
             countUpNum(idx);
         });
-        $('.prev').on('click', function() { scroller.prev(); });
-        $('.next').on('click', function() { scroller.next(); });
+        $('.prev').on('click', function() { gScroller.prev(); dealArrows(); });
+        $('.next').on('click', function() { gScroller.next(); dealArrows(); });
     }
     function countUpNum(idx) {
         $('.num').html(0);
@@ -178,7 +193,7 @@
           separator : ',', 
           decimal : '.' 
         }
-        var cuNum = new countUp($('.num').get(0), 0, num, 0, 2, options);
+        var cuNum = new countUp($('.num').get(0), 0, num, 0, 0.8, options);
         cuNum.start();
     }
     
