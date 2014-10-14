@@ -1,7 +1,7 @@
 $(function() {
     var pageData = {
         'title': 'PK结果',
-        'back_url': '',
+        'back_url': 'index.html',
     };
 
     initHeader(pageData);
@@ -17,11 +17,18 @@ $(function() {
 });
 $(window).on('load', function() {
     // testCountUp();
+    var o = store.get('hjKxccResult');
+    //o = {correct: this.correct,  duration: this.duration, combo: this.maxCombo};
+    console.log('get hjKxccResult:---correct:'+o.correct+', duration:'+o.duration+',combo:'+o.maxCombo);
+    var correntNum = o.correct * 100;
+    var durationNum = 300 - o.duration;
+    var maxComboNum = o.maxCombo * 10;
+    var totalNum = correntNum + durationNum + maxComboNum;
     showResult();
-    showCorrect(20);
-    showTime(500);
-    showCombo(11);
-    showTotal(2960);
+    showCorrect(correntNum);
+    showTime(durationNum);
+    showCombo(maxComboNum);
+    showTotal(totalNum);
     animeSocial();
 });
 
@@ -54,7 +61,7 @@ function showCombo(n) {
 function showTotal(n) {
     setTimeout(function() {
         $('.total').removeClass('hidden');
-        totalCountUp();
+        totalCountUp(n);
     }, 4500);
 }
 function animeSocial(n) {
@@ -87,13 +94,13 @@ function initPage() {
     }) ;
 }
 
-function totalCountUp() {
+function totalCountUp(n) {
     var options = {
       useEasing : true, 
       useGrouping : true, 
       separator : ',', 
       decimal : '.' 
     }
-    var total = new countUp($('.total').get(0), 0, 3690, 0, 2, options);
+    var total = new countUp($('.total').get(0), 0, n, 0, 2, options);
     total.start();
 }

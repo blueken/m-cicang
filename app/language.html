@@ -239,7 +239,8 @@
 
             strList += '<div class="books"><ul>';
             _.each(v.Books, function(b,i) {
-                b.BookIntro = b.BookIntro.slice(0,20);
+                // b.BookIntro = b.BookIntro.slice(0,20);
+                b.BookIntro = autoAddEllipsis(b.BookIntro, 22);
                 var tmpl = _.template('<li><a href="info_book.html?bid=<%=BookID%>"><img src="images/book_cover1.jpg" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
                 var html = tmpl(b);
                  strList += html;

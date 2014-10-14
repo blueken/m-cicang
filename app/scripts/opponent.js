@@ -45,7 +45,6 @@ function searching() {
         {name: '小河叮咚', pic: '110.jpg', win: '90%'},
     ];
     var oppsshuffle = _.shuffle(opps);
-    console.log(oppsshuffle);
 
     var searchItv = setInterval(function() {
         var w = $('.anonymous').width();
@@ -54,13 +53,17 @@ function searching() {
         var step = (w*z) + parseInt(mr);
         $('.opp_info').animate({
             left: '-='+(step)
+        }, {
+            complete:function() {
+                num += 1;
+                showOpp(oppsshuffle, num);
+                if (num == 5) {
+                    clearInterval(searchItv);
+                    showPK();
+                };
+            }
         });
-        num += 1;
-        showOpp(oppsshuffle, num);
-        if (num == 5) {
-            clearInterval(searchItv);
-            showPK();
-        };
+        
     }, 1500);
 }
 
@@ -131,17 +134,4 @@ function showPK() {
         complete: function() {}
     });
 
-
-    
-    // $('.opp_info').animate({
-    //         left: '-='+(step)
-    //     });
-
-    // $('.opp_info').animate({
-    //         left: '-='+(step)
-    //     });
-
-    // $('.opp_info').animate({
-    //         left: '-='+(step)
-    //     });
 }

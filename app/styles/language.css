@@ -45,12 +45,12 @@
   background-color: #fff;
 }
 .content .booklist_mask .booklist_scroller {
-  width: 600%;
+  width: 200%;
   height: 100%;
 }
 .content .booklist_mask .booklist_scroller .books {
-  width: 15.833333333333334%;
-  padding-left: 0.833333333333333%;
+  width: 47.5%;
+  padding-left: 2.5%;
   height: 100%;
   overflow: hidden;
   float: left;
@@ -80,13 +80,13 @@
 .content .booklist_mask .booklist_scroller .books ul li a h4 {
   color: #333;
   font-size: 3rem;
-  margin-top: 6.578947368421052%;
+  margin-top: 4.934210526315789%;
 }
 .content .booklist_mask .booklist_scroller .books ul li a p {
   width: 87.5%;
   margin-top: 4.111842105263158%;
   color: #999;
   font-size: 2.5rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   line-height: 3rem;
 }

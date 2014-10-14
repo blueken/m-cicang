@@ -49,7 +49,7 @@
 .content .user_info .user_name {
   margin-top: 4.38%;
   font-size: 3.4rem;
-  letter-spacing: 3px;
+  letter-spacing: 0.1rem;
 }
 .content .user_info .user_status {
   margin-top: 1.57%;

@@ -9,7 +9,7 @@ $(function() {
     initMenu();
     initCloud();
     bindEvents();
-
+    bindQuitEvents();
     cloudDown();
 
     getOppInfo();
@@ -17,6 +17,15 @@ $(function() {
 
     
 });
+
+function bindQuitEvents() {
+    $('.confirm').on('click', function() {
+        document.location = 'index.html';
+    });
+    $('.cancel').on('click', function() {
+        $('.overlay').hide();
+    });
+}
 
 function getOppInfo() {
     // hjKxccData = {"UserId":25710160,"UserName":"AirSky_Ten","BookId":10232,"PKUserId":0,"IsWin":false,"MatchTime":135925,"WordCount":15,"RightWordCount":6,"Score":40,"WrongWords":"010100000000000","IsMockup":false};
@@ -26,14 +35,21 @@ function getOppInfo() {
 
 function getQuestions() {
     // var data = {"result":[{"question":"She [____ed] some sugar to her tea.","pro":null,"audio":null,"correctOption":2,"options":["position","VCD","add","gesture"]},{"question":"Radio and television are important means of ____.","pro":null,"audio":null,"correctOption":2,"options":["gesture","president","communication","mad"]},{"question":"VCD","pro":"viːsiː'diː","audio":"http://c1.g.hjfile.cn/yuliao/word/36/c4876ba42dddc92376b8ee5e686e7441.mp3","correctOption":1,"options":["v. 管理，负责","n. 影碟光盘","adj. 发疯的，生气的","n. 位置，职位，立场"]},{"question":"position","pro":"pə'zɪʃən","audio":"http://d1.g.hjfile.cn/voice/voice2/p/position.mp3","correctOption":2,"options":["v. 取消，废除；使…停止，使…作废；","n. 蝴蝶","n. 位置，职位，立场","n. 交流； 通信"]},{"question":"adj. 顺利的；光滑的；平稳的","pro":null,"audio":null,"correctOption":1,"options":["president","smooth","wolf","communication"]},{"question":"president","pro":"'prezidәnt","audio":"http://d1.g.hjfile.cn/voice/voice2/p/president.mp3","correctOption":0,"options":["n. 总统，主席","n. 同意，一致，协定，协议","n. 狼","n. 位置，职位，立场"]},{"question":"butterfly","pro":"ˈbʌtərˌflaɪ","audio":"http://c1.g.hjfile.cn/yuliao/word/-16/6ab4c2e2fa53e7591e98c2ebc71bc7c3.mp3","correctOption":1,"options":["n. 政策，方针","n. 蝴蝶","n. 交流； 通信","v. 取消，废除；使…停止，使…作废；"]},{"question":"n. 同意，一致，协定，协议","pro":null,"audio":null,"correctOption":3,"options":["cancel","wolf","policy","agreement"]},{"question":"policy","pro":"'pɒləsi","audio":"http://c1.g.hjfile.cn/yuliao/word/-177/e43e636db6f90d79bfc0262fd6ae222a.mp3","correctOption":1,"options":["v. 取消，废除；使…停止，使…作废；","n. 政策，方针","n. 交流； 通信","n. 劳动(Am labor)"]},{"question":"He made a rude ____ at his friend.","pro":null,"audio":null,"correctOption":2,"options":["communication","agreement","gesture","cancel"]},{"question":"adj. 发疯的，生气的","pro":null,"audio":null,"correctOption":2,"options":["labour","smooth","mad","gesture"]},{"question":"It takes a lot of ____ to build a railway.","pro":null,"audio":null,"correctOption":2,"options":["smooth","butterfly","labour","add"]},{"question":"v. 管理，负责","pro":null,"audio":null,"correctOption":0,"options":["manage","butterfly","cancel","VCD"]},{"question":"The heavy workload forced me to ____ the camping trip.","pro":null,"audio":null,"correctOption":2,"options":["agreement","VCD","cancel","communication"]},{"question":"n. 狼","pro":null,"audio":null,"correctOption":3,"options":["gesture","add","labour","wolf"]}],"responseStatus":{"errorCode":"","message":null,"stackTrace":null,"errors":null}};
-    var bid = getParam('bid');
-    $.get('http://beta.mci.hujiang.com/Services/PKQuestion.ashx?bookid=10441', function(data) {
+    // var bid = getParam('bid');
+    var bid = store.get('hjKxccBookid');
+    bid = bid ? bid : 10441;
+    $.get('http://beta.mci.hujiang.com/Services/PKQuestion.ashx?bookid='+bid, function(data) {
         _.extend(gComp, {'data':data});
         gComp.total = data.result.length;
 
         var quesStr = '';
         _.each(data.result, function(v,k) {
-            var tmp = _.template('<section class="question"><h2><%=question%></h2><ul>');
+            var maxBytes = 24;
+            var quesBytes = v.question.getBytesLength();
+            var fs = maxBytes / quesBytes;
+            fs = (fs >= 1) ? 5 : (5*fs);
+            var fsstr = 'style="font-size:'+ fs +'rem"';
+            var tmp = _.template('<section class="question"><h2 '+ fsstr +'><%=question%></h2><ul>');
             var sectionStr = tmp(v);
 
             _.each(v.options, function(o,i) {
@@ -70,7 +86,6 @@ function getQuestions() {
 }
 
 function answer(o, quesIdx, answerIdx, correntIdx) {
-    // alert(quesIdx+"---"+answerIdx+"---"+correntIdx);
     if (answer.done) {
         return;
     };
@@ -100,13 +115,12 @@ function showRight(obj, correntIdx) {
 }
 
 function tryQuit() {
-    alert('想离开? 没那么容易!');
-    // $('.overlay').show();
+    $('.overlay').show();
 }
 function Competition() {
     this.curr = 1;
     this.total = 1;
-    this.corret = 0;
+    this.correct = 0;
     this.duration = 0;
     this.numCombo = -1;
     this.maxCombo = 0;
@@ -148,8 +162,8 @@ Competition.prototype.start = function() {
 Competition.prototype.end = function() {
     this.duration = Math.floor((_.now() - this.duration) / 1000);
 
-    console.log('save---'+this.corret+','+this.duration+','+this.maxCombo);
-    store.set('hjKxccResult', {correct: this.correct,  duration: this.duration, combo: this.maxCombo});
+    console.log('save---'+this.correct+','+this.duration+','+this.maxCombo);
+    store.set('hjKxccResult', {correct: this.correct,  duration: this.duration, maxCombo: this.maxCombo});
     document.location = 'wait_opp_done.html';
 }
 
@@ -161,7 +175,7 @@ Competition.prototype.nextQuestion = function(a) {
         this.numCombo = 0;
     } else if (a===1) {
         //right
-        this.corret += 1;
+        this.correct += 1;
     } else {
         //timeout
         gComp.combo(0);
@@ -183,13 +197,8 @@ Competition.prototype.nextQuestion = function(a) {
                 answer.done = false;
             }});
 
-            var pageData = {
-                'title': '第 '+self.curr+'/'+self.total+' 题',
-                'back_url': 'javascript:tryQuit()',
-            };
-
-
-            initHeader(pageData);
+            var pageName = '第 '+self.curr+'/'+self.total+' 题';
+            $('.name_txt').html(pageName);
         } else {
             self.end();
         }
