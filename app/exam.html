@@ -151,7 +151,11 @@
     <script src="scripts/main.js"></script>
 
     <script type="text/javascript">
+    gScrollList = null;
+    gScrollNav = null;
+
     $(function() {
+        var xxx = 'bobalan';
         var pageData = {
             'title': '考前背词',
             'back_url': 'index.html',
@@ -179,10 +183,15 @@
     function getLangData(data) {
         var strUlNavMask = '';
         _.each(data, function(v,k) {
-            var html = _.template('<li><a href="#"><span class="selected rvmiddle"><%=Name%></span></a></li>', v);
+            var html = _.template('<li><a href="javascript:gotoBook('+k+')"><span class="selected rvmiddle"><%=Name%></span></a></li>', v);
             strUlNavMask += html;
         });
         $('.nav_mask>ul').html(strUlNavMask);
+    }
+    function gotoBook(i) {
+        if (gScrollList != null) {
+            gScrollList.goToPage(i, 0, 600);
+        };
     }
     function getBooksData(data) {
         var strBooklist = '';
@@ -201,11 +210,12 @@
         $('.booklist_scroller').html(strBooklist);
     }
     function genScroller() {
-        var scrollNav = new IScroll('.nav_mask', {
-            scrollX: true
+        gScrollNav = new IScroll('.nav_mask', {
+            scrollX: true,
+            click: true
         });
 
-        var scrollList = new IScroll('.booklist_mask', {
+        gScrollList = new IScroll('.booklist_mask', {
             scrollX: true,
             scrollY: false,
             bounce: false,

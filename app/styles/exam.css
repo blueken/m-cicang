@@ -57,12 +57,12 @@
   background-color: #fff;
 }
 .content .booklist_mask .booklist_scroller {
-  width: 400%;
+  width: 300%;
   height: 100%;
 }
 .content .booklist_mask .booklist_scroller .books {
-  width: 23.75%;
-  padding-left: 1.25%;
+  width: 31.666666666666668%;
+  padding-left: 1.666666666666667%;
   height: 100%;
   overflow: hidden;
   float: left;
