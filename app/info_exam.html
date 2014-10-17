@@ -98,17 +98,11 @@
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js scripts/countUp.js -->
-    <!-- bower:js -->
+        <script src="../bower_components/store.js/store.js"></script>
     <script src="../bower_components/countUp.js/countUp.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:js scripts/store.js -->
-    <script src="../bower_components/store.js/store.js"></script>
-    <!-- endbuild -->
+
     <script src="scripts/main.js"></script>
 
     <script type="text/javascript">
@@ -148,17 +142,29 @@
     }
     function dealArrows() {
         if (gScroller) {
-            var total = gScroller.pages.length;
+            var total = gData.Books.length;
             var curr = gScroller.currentPage.pageX;
             
             $('.prev').show();
             $('.next').show();
+
+            if (total <= 1) {
+                $('.prev').hide();
+                $('.next').hide();
+            } else {
+
+            }
             if (curr === 0) {
                 $('.prev').hide();
-            }
-            if (curr === total-1) {
+                $('.next').show();
+            } else if (curr === total-1) {
+                $('.prev').show();
                 $('.next').hide();
+            } else {
+                $('.prev').show();
+                $('.next').show();
             }
+
         };
 
         storeBookId(curr);
@@ -170,7 +176,7 @@
     function getBooksData(data) {
         var strScroller = '';
         _.each(data.Books, function(v,k) {
-            var html = _.template('<div class="pic"><img src="images/book_cover1.jpg" title="<%=Name%>" /></div>', v);
+            var html = _.template('<div class="pic"><img src="<%=Icon%>" title="<%=Name%>" /></div>', v);
             strScroller += html;
         });
         $('.scroller').html(strScroller);

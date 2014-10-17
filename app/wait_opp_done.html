@@ -51,7 +51,7 @@
 
                     <div class="waiting">
                         <div class="wave"></div>
-                        <div class="opp_photo"><img src="images/photo.png" alt="对手头像"/></div>
+                        <div class="opp_photo"><img src="images/unknown.png" alt="对手头像"/></div>
                         <p>等待对手答完...</p>
                     </div>
                     
@@ -89,6 +89,8 @@
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
+    <script src="../bower_components/store.js/store.js"></script>
+    <script src="../bower_components/countUp.js/countUp.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script src="scripts/main.js"></script>
@@ -106,6 +108,7 @@
         initCloud();
         bindEvents();
 
+        getUserData();
         cloudDown();
         gotoResult();
     });
@@ -115,6 +118,13 @@
         setTimeout(function() {
             document.location = 'win1.html';
         }, rand*1000);
+    }
+    function getUserData() {
+        // { "UserId" : 0 , "UserName" : null , "Avatar" : null };
+        var data = store.get('hjKxccUserInfo');
+        if (data && (data.UserId > 0)) {
+            $('.opp_photo').attr('src', data.Avatar);
+        };
     }
     </script>
 </html>

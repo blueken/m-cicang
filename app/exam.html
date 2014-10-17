@@ -54,16 +54,13 @@
                             <div class="booklist_scroller">
                                 <!--div class="books">
                                      <ul>
-                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言6级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言8级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
-                                        
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
+                                       
                                     </ul>   
                                 </div>
                                 
@@ -145,6 +142,8 @@
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
+    <script src="../bower_components/store.js/store.js"></script>
+    <script src="../bower_components/countUp.js/countUp.js"></script>    
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -200,7 +199,9 @@
             var url = 'info_exam.html?k=<%=Key%>&l='+v.Lang;
             _.each(v.BookCategorys, function(v,k) {
                 // var.lang = lang;
-                var tmpl = _.template('<li><a href="'+url+'"><img src="images/cet.jpg" alt="<%=Key%>-<%=Icon%>" /><h4><%=Name%></h4></a></li>');
+
+                // var tmpl = _.template('<li><a href="'+url+'"><img src="images/cet.jpg" alt="<%=Key%>-<%=Icon%>" /><h4><%=Name%></h4></a></li>');
+                var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle"><%=Icon%></b></span><h4><%=Name%></h4></a></li>');
                 var html = tmpl(v);
                 strUlBooks += html;
             });

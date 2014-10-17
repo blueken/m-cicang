@@ -6,6 +6,9 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun";
   color: #333;
 }
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 300px;
@@ -97,7 +100,7 @@ header .page_name {
   margin-top: 4.37%;
 }
 header .page_name span.name_txt {
-  margin-left: 15%;
+  margin-left: 8%;
 }
 header .btn_download {
   position: absolute;
@@ -178,6 +181,7 @@ header .btn_menu_on {
   position: relative;
 }
 .menu_content .login .container .portrait {
+  position: relative;
   width: 32%;
   height: 100%;
   overflow: hidden;
@@ -189,6 +193,7 @@ header .btn_menu_on {
   border-radius: 50%;
   max-width: 100%;
   max-height: 100%;
+  border: #dcdcdc 1px solid;
 }
 .menu_content .login .container h3 {
   margin-top: 12.5%;
@@ -204,13 +209,38 @@ header .btn_menu_on {
   width: 24.22%;
   height: 30.24%;
   border: #d2d2d2 1px solid;
-  border-radius: 10px;
+  border-radius: 8px;
   display: inline-block;
   font-size: 2.4rem;
   position: absolute;
   left: 70.62%;
   top: 34.15%;
   color: #d2d2d2;
+}
+.menu_content .login .container a.regist {
+  width: 24.22%;
+  height: 30.24%;
+  border: #d2d2d2 1px solid;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 2.4rem;
+  position: absolute;
+  left: 41.4%;
+  top: 34.15%;
+  color: #d2d2d2;
+}
+.menu_content .login .container a.logon {
+  width: 24.22%;
+  height: 30.24%;
+  border: #d2d2d2 1px solid;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 2.4rem;
+  position: absolute;
+  left: 70.62%;
+  top: 34.15%;
+  color: #fff;
+  background-color: #29b6f6;
 }
 .menu_content .off a.regist {
   width: 77px;
@@ -322,6 +352,7 @@ header .btn_menu_on {
   overflow: hidden;
   position: absolute;
   bottom: 0px;
+  z-index: 0;
 }
 .clouds .cloud_bg {
   display: inline-block;
@@ -526,6 +557,10 @@ header .btn_menu_on {
   .rarrow_gray,
   .rarrow_white {
     width: 20px;
+  }
+  .boy_in_cloud {
+    zoom: 0.4;
+    top: 10%;
   }
 }
 /* MEDIA QUERY END */

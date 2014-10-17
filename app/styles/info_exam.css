@@ -26,9 +26,11 @@
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
   -webkit-tap-highlight-color: rgba(255,0,0,0);
+  display: none;
 }
 .content .carousel .next {
   right: 0;
+  display: none;
 }
 .content .carousel .outer {
   height: 100%;

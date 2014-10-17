@@ -2,7 +2,7 @@
   width: 90.15625%;
   height: 72.71739130434783%;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   margin-top: 15.625%;
   margin-left: 4.6875%;
 }
@@ -15,6 +15,11 @@
   height: 17.189835575485798%;
   position: absolute;
   top: 11.958146487294469%;
+  -webkit-animation-duration: 1.2s;
+  -moz-animation-duration: 1.2s;
+  -o-animation-duration: 1.2s;
+  -ms-animation-duration: 1.2s;
+  animation-duration: 1.2s;
 }
 .content .result .winorlose p.you {
   color: #fd585c;
@@ -53,9 +58,11 @@
 }
 .content .result .info .nick {
   position: absolute;
+  width: 17.96875%;
   top: 79.6875%;
   left: 4.15944540727903%;
   font-size: 2rem;
+  text-align: center;
   color: #fff;
 }
 .content .result .info .total {
@@ -71,6 +78,11 @@
   left: 68.63084922010398%;
   font-size: 3.2rem;
   color: #fff;
+  -webkit-animation-duration: 1.2s;
+  -moz-animation-duration: 1.2s;
+  -o-animation-duration: 1.2s;
+  -ms-animation-duration: 1.2s;
+  animation-duration: 1.2s;
 }
 .content .result .info .time {
   position: absolute;
@@ -78,6 +90,11 @@
   left: 68.63084922010398%;
   font-size: 3.2rem;
   color: #fff;
+  -webkit-animation-duration: 1.2s;
+  -moz-animation-duration: 1.2s;
+  -o-animation-duration: 1.2s;
+  -ms-animation-duration: 1.2s;
+  animation-duration: 1.2s;
 }
 .content .result .info .combo {
   position: absolute;
@@ -85,12 +102,17 @@
   left: 68.63084922010398%;
   font-size: 3.2rem;
   color: #fff;
+  -webkit-animation-duration: 1.2s;
+  -moz-animation-duration: 1.2s;
+  -o-animation-duration: 1.2s;
+  -ms-animation-duration: 1.2s;
+  animation-duration: 1.2s;
 }
 .content .btns {
   width: 100%;
   height: 7.826086956521739%;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   bottom: 3.478260869565217%;
 }
 .content .btns .btn {
@@ -122,6 +144,15 @@
 .content_bg3 {
   background: #c0c0c0 url("../images/bg3.jpg") center center no-repeat;
   background-size: cover;
+}
+.winxintips {
+  position: absolute;
+  right: 5.46875%;
+  width: 47.65625%;
+  height: 19.0217391304348%;
+}
+.winxintips img {
+  max-width: 100%;
 }
 .shares {
   position: absolute;

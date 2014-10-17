@@ -1,10 +1,18 @@
 
-<div class="login">
+<div id="logged" class="login hidden">
     <div class="container">
     <span class="portrait"><img src="images/photo.png" alt=""/></span>
     <h3>小杨同学</h3>
     <p>已登录</p>
-    <a href="#"><span class="hvmiddle">注销</span></a>
+    <a href="javascript:Passport.Logout()"><span class="hvmiddle">注销</span></a>
+    </div>
+</div> 
+<div id="unlogged" class="login">
+    <div class="container">
+    <span class="portrait "><img src="images/unknown.png" alt="我的头像"/></span>
+
+    <a class="regist" href="javascript:Passport.Signup()"><span class="hvmiddle">注册</span></a>
+    <a class="logon" href="javascript:Passport.Login()"><span class="logon hvmiddle">登录</span></a>
     </div>
 </div> 
 <div class="icon_links">
@@ -14,17 +22,17 @@
             <span class="pname">CCTalk</span>
         </a></li>
 
-        <li><a href="#">
+        <li><a href="http://mtk.hujiang.com/">
             <span class="sprite icon_hjtk"></span>
             <span class="pname">虎将题库</span>
         </a></li>
 
-        <li><a href="#">
+        <li><a href="http://m.hujiang.com/d">
             <span class="sprite icon_hjxd"></span>
             <span class="pname">沪江小D</span>
         </a></li>
 
-        <li><a href="#">
+        <li><a href="http://m.hujiang.com/ting">
             <span class="sprite icon_tlk"></span>
             <span class="pname">听力酷</span>
         </a></li>
@@ -35,8 +43,8 @@
 </div>
 <div class="txt_links">
     <ul>
-        <li><a href="#"><span class="hvmiddle">沪江网校</span></a></li>
-        <li><a href="#"><span class="hvmiddle">沪江网</span></a></li>
-        <li><a href="#"><span class="hvmiddle">沪江团购</span></a></li>
+        <li><a href="http://mc.hujiang.com"><span class="hvmiddle">沪江网校</span></a></li>
+        <li><a href="http://m.hujiang.com"><span class="hvmiddle">沪江网</span></a></li>
+        <li><a href="http://m.hujiang.com/tuan/"><span class="hvmiddle">沪江团购</span></a></li>
     </ul>
 </div>

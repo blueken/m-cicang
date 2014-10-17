@@ -4,7 +4,8 @@ body
     background #EEF3FA
     font-family "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun"
     color #333
-
+*
+    -webkit-tap-highlight-color rgba(0,0,0,0)
 
 
 .hero-unit
@@ -115,7 +116,7 @@ header
         margin-top 4.37% //28px/640
 
         span.name_txt
-            margin-left 15% //62px/320
+            margin-left 8% 
             // font-weight bold
 
     .btn_download
@@ -191,18 +192,19 @@ header
             color #d2d2d2
             position relative
             .portrait
+                position relative
                 width 32%   //205/640
                 height 100% //205/205
                 overflow hidden
                 float left
                 
                 img 
-                    
                     width 70.73% //145px/205
                     margin 15.6% // 32px/205
                     border-radius 50%
                     max-width 100%
                     max-height 100%
+                    border #dcdcdc 1px solid
                 
             h3 
                 margin-top 12.5% //80/640
@@ -216,7 +218,7 @@ header
                 width 24.22% //155px/640 
                 height 30.24% //62px/205
                 border #d2d2d2 1px solid
-                border-radius 10px
+                border-radius 8px
                 display inline-block
                 font-size 2.4rem
                 
@@ -224,6 +226,31 @@ header
                 left 70.62% //452px/640
                 top 34.15% //70/205
                 color #d2d2d2
+            a.regist
+                width 24.22% //155px/640 
+                height 30.24% //62px/205
+                border #d2d2d2 1px solid
+                border-radius 8px
+                display inline-block
+                font-size 2.4rem
+                
+                position absolute
+                left 41.4% //265px/640
+                top 34.15% //70/205
+                color #d2d2d2
+            a.logon
+                width 24.22% //155px/640 
+                height 30.24% //62px/205
+                border #d2d2d2 1px solid
+                border-radius 8px
+                display inline-block
+                font-size 2.4rem
+                
+                position absolute
+                left 70.62% //452px/640
+                top 34.15% //70/205
+                color white
+                background-color #29B6F6
                 
     .off
         a.regist
@@ -332,6 +359,7 @@ header
         overflow hidden
         position absolute
         bottom 0px
+        z-index 0
         // background-color gold
         .cloud_bg 
             display inline-block
@@ -518,6 +546,9 @@ header
     .rarrow_gray
     .rarrow_white
         width 20px
+    .boy_in_cloud
+        zoom 0.4
+        top 10%
 
 // @media screen and (max-width: 321px) 
     //iphone 3g 4 5 = 320

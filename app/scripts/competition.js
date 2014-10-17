@@ -4,7 +4,7 @@ $(function() {
         'back_url': 'javascript:tryQuit()',
     };
     gComp = new Competition();
-
+    gBlood = new BloodSystem();
     initHeader(pageData);
     initMenu();
     initCloud();
@@ -12,6 +12,7 @@ $(function() {
     bindQuitEvents();
     cloudDown();
 
+    getUserData();
     getOppInfo();
     getQuestions();
 
@@ -26,11 +27,19 @@ function bindQuitEvents() {
         $('.overlay').hide();
     });
 }
-
+function getUserData() {
+    // { "UserId" : 0 , "UserName" : null , "Avatar" : null };
+    var data = store.get('hjKxccUserInfo');
+    if (data && (data.UserId > 0)) {
+        $('.me').attr('src', data.Avatar);
+        $('.my_name').html(data.UserName);
+    };
+ }
 function getOppInfo() {
     // hjKxccData = {"UserId":25710160,"UserName":"AirSky_Ten","BookId":10232,"PKUserId":0,"IsWin":false,"MatchTime":135925,"WordCount":15,"RightWordCount":6,"Score":40,"WrongWords":"010100000000000","IsMockup":false};
     var hjKxccData = store.get('hjKxccData');
     $('.his_name').html(hjKxccData.UserName);
+    $('.him').attr('src', hjKxccData.Avatar);
 }
 
 function getQuestions() {
@@ -41,6 +50,7 @@ function getQuestions() {
     $.get('http://beta.mci.hujiang.com/Services/PKQuestion.ashx?bookid='+bid, function(data) {
         _.extend(gComp, {'data':data});
         gComp.total = data.result.length;
+        gComp.start();
 
         var quesStr = '';
         _.each(data.result, function(v,k) {
@@ -128,7 +138,6 @@ function Competition() {
     this.correctShow = 1200; // delay to show next 
     this.questionHandler = null; //questionLimit handler
 
-    this.start();
 }
 Competition.prototype.combo = function(a) {
     //a = 0, 1, null   0: wrong,  1: right,  null: getCombo
@@ -140,33 +149,38 @@ Competition.prototype.combo = function(a) {
         this.numCombo = 0;
     } else if (a===1) {
         //right
+
         if (this.numCombo <= 0) { 
             this.numCombo = 1;
         } else {
+            //combo
             this.numCombo += 1;
-            var ttt = '正确:'+this.numCombo;
-            console.log(ttt);
-
-            // $('.bubble').removeClass('hidden');
-
+            $('.combo_txt').html('Combo '+this.numCombo);
+            $('.combo').removeClass('hidden')
+            dummyAnimate($('.combo')[0], 'animated fadeInUp', function(){ 
+                setTimeout(function() {
+                    $('.combo').addClass('hidden');
+                }, 1000);
+            });
         }
+
+        if (gBlood) {
+            gBlood.Iamright();
+        };
     }
     
     return this.numCombo;
 }
 Competition.prototype.start = function() {
     this.duration = _.now();
-    // this.questionEnd();
     this.questionStart();
 }
 Competition.prototype.end = function() {
     this.duration = Math.floor((_.now() - this.duration) / 1000);
 
-    console.log('save---'+this.correct+','+this.duration+','+this.maxCombo);
     store.set('hjKxccResult', {correct: this.correct,  duration: this.duration, maxCombo: this.maxCombo});
     document.location = 'wait_opp_done.html';
 }
-
 
 Competition.prototype.nextQuestion = function(a) {
     //a = 0, 1, null   0: wrong,  1: right,  null: getCombo
@@ -221,4 +235,43 @@ Competition.prototype.questionEnd = function() {
         clearTimeout(self.questionHandler);
     };
     answer.done = true;
+}
+
+function BloodSystem() {
+    var self = this;
+    this.myPercent = 50;
+
+    this.hisData = store.get('hjKxccData');
+    this.hisPercent = 50;
+    this.hisProgressOriginalWidth = $('.his_progress').width();
+    this.hisIdx = 0;
+    this.hisAct = this.hisData.WrongWords.split('');
+    this.hisItv = this.hisData.MatchTime / this.hisData.WordCount;
+    this.hisItvHandler = setInterval(function() {
+        self.hisAction();
+    }, this.hisItv);
+
+    this.step = this.hisProgressOriginalWidth / this.hisData.WordCount;
+}
+BloodSystem.prototype.hisAction = function(e) {
+    if (this.hisIdx < this.hisData.WordCount) {
+        //1:wrong , 0:right
+        var act = this.hisAct[this.hisIdx];
+        console.log("his action: "+ act);
+        if (0 === parseInt(act)) {
+            //right
+            this.Heisright();
+        };
+        this.hisIdx += 1;
+    } else {
+        console.log("clearInterval: "+ this.hisItvHandler);
+        clearInterval(this.hisItvHandler);
+    }
+    
+}
+BloodSystem.prototype.Heisright = function(e) {
+    $('.his_progress').animate({width:'+='+this.step},{duration:800});
+}
+BloodSystem.prototype.Iamright = function(e) {
+    $('.his_progress').animate({width:'-='+this.step},{duration:800});
 }

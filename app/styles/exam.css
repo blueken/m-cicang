@@ -81,13 +81,23 @@
   display: block;
   clear: both;
 }
-.content .booklist_mask .booklist_scroller .books ul li a img {
+.content .booklist_mask .booklist_scroller .books ul li a .icon {
+  position: relative;
   float: left;
   width: 12.828947368421053%;
   margin-top: 2.631578947368421%;
   margin-bottom: 2.631578947368421%;
   margin-right: 10.69078947368421%;
+}
+.content .booklist_mask .booklist_scroller .books ul li a .icon img {
+  width: 100%;
   border-radius: 50%;
+}
+.content .booklist_mask .booklist_scroller .books ul li a .icon .cato {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  width: 100%;
 }
 .content .booklist_mask .booklist_scroller .books ul li a h4 {
   color: #333;
