@@ -114,9 +114,29 @@
     });
 
     function gotoResult() {
+        var url = '';
+        
+
+        //get my total score
+        var o = store.get('hjKxccResult');
+        var correntNum = o.correct * 100;
+        var durationNum = 300 - o.duration;
+        var maxComboNum = o.maxCombo * 10;
+        var totalNum = correntNum + durationNum + maxComboNum;
+
+        //get opp score
+        var data = store.get('hjKxccUserInfo');
+        if (data && (data.Score > 0)) {
+            if (data.Score > totalNum) {
+                url = 'lose1.html';
+            };
+        };
+
+        url = (Math.random() > 0.5) ? 'win2.html' : 'win1.html';
+
         var rand = _.random(1,6);
         setTimeout(function() {
-            document.location = 'win1.html';
+            document.location = url;
         }, rand*1000);
     }
     function getUserData() {
