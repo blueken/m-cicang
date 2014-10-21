@@ -201,6 +201,7 @@
         gScroller.on('scrollEnd', function() {
             var idx = gScroller.currentPage.pageX;
             countUpNum(idx);
+            dealArrows();
         });
         $('.prev').on('click', function() { gScroller.prev(); dealArrows(); });
         $('.next').on('click', function() { gScroller.next(); dealArrows(); });
