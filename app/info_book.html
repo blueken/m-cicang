@@ -2,7 +2,7 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>选择对手</title>
+        <title>词书信息</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -48,7 +48,7 @@
                             <div class="outer">
                                 <div class="swrapper">
                                     <div class="scroller">
-                                        <div class="pic"><img src="images/book_cover1.jpg" alt="" /></div>
+                                        <!--div class="pic"><img src="images/book_cover1.jpg" alt="" /></div-->
                                         
                                     </div>
                                 </div>
@@ -149,7 +149,8 @@
 
     function getBooksData(data) {
         var strScroller = '';
-        var html = _.template('<div class="pic"><img src="images/book_cover1.jpg" title="<%=BookName%>" /></div>', data);
+        var picUrl = (data.PicUrl == null) ? 'images/book_cover.jpg' : data.PicUrl;
+        var html = _.template('<div class="pic"><img src="'+picUrl+'" title="<%=BookName%>" /></div>', data);
         strScroller += html;
         $('.scroller').html(strScroller);
         $('.bookname').html(data.BookName);

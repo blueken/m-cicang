@@ -21,12 +21,14 @@ $(window).on('load', function() {
     // testCountUp();
     var o = store.get('hjKxccResult');
     //o = {correct: this.correct,  duration: this.duration, combo: this.maxCombo};
-    var correntNum = o.correct * 100;
+    var correctNum = o.correct * 100;
     var durationNum = 300 - o.duration;
+    durationNum = (durationNum < 0) ? 0 : durationNum;
+    durationNum = (correctNum == 0) ? 0 : durationNum;
     var maxComboNum = o.maxCombo * 10;
-    var totalNum = correntNum + durationNum + maxComboNum;
+    var totalNum = correctNum + durationNum + maxComboNum;
     showResult();
-    showCorrect(correntNum);
+    showCorrect(correctNum);
     showTime(durationNum);
     showCombo(maxComboNum);
     showTotal(totalNum);
@@ -85,7 +87,6 @@ function initPage() {
         return false;
     });
     $('.overlay').on('click', function() {
-        
         if (isWeiXin()) {
             dummyAnimate('.winxintips', 'animated bounceOut', function() {
                 $('.overlay').addClass('hidden');
@@ -108,6 +109,10 @@ function initPage() {
         e.stopPropagation();
     });
 
+    initJiaThis();
+    
+}
+function initJiaThis() {
     $.getScript('http://v3.jiathis.com/code/jia.js',function(){
         
     }) ;
@@ -115,12 +120,12 @@ function initPage() {
 function weixinLogin() {
     if (isWeiXin()) {
         //weixin hide weixin,show tips
-        $('.winxintips').removeClass('hidden');
         $('.overlay').removeClass('hidden');
+        $('.winxintips').removeClass('hidden');
         dummyAnimate('.winxintips', 'animated bounceIn');
     } else {
         // not weixin show shares
-        $('.shares').find('li').eq(0).addClass('hidden');
+        // $('.shares').find('li').eq(0).addClass('hidden');
         $('.shares').removeClass('hidden');
         $('.overlay').removeClass('hidden');
         dummyAnimate('.shares', 'animated bounceInUp');
@@ -141,20 +146,9 @@ function winxinShareDone() {
     $('.overlay').click();
 }
 // 微信分享到朋友圈的内容和图片的定制
+
+
 (function () {
- 
-    // data for weixin
-    var dataForWeixin = {
-        appId: "",  // 
-        imgUrl: "http://m.hujiang.com/MiniSite/CiKu/images/weixin.png",
-        imgWidth: "200",
-        imgHeight: "200",
-        lineLink: "http://beta.mci.hujiang.com/opponent.html?BookId=1234&UserName=小女&UserId=282929&WrongWords=010100001000010&MatchTime=129890",
-        shareTitle: "我在开心词场”中秒杀对手！不服来战，等你！",
-        descContent: "http://beta.mci.hujiang.com/competition.html?opp=ABC",
-        callback: function () { winxinShareDone(); }
-    };
- 
     var onBridgeReady = function () {
         // 发送给朋友
         WeixinJSBridge.on("menu:share:appmessage", function (argv) {

@@ -105,6 +105,8 @@ function searching() {
         {name: 'NovemberRain', pic: '139.jpg', win: '80%'},
     ];
     var oppsshuffle = _.shuffle(opps);
+    showOpp(oppsshuffle, num);
+    num += 1;
 
     var searchItv = setInterval(function() {
         var w = $('.anonymous').width();

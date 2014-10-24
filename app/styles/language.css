@@ -14,7 +14,7 @@
 }
 .content .nav_mask ul li {
   float: left;
-  width: 10rem;
+  width: 10%;
   height: 100%;
   font-size: 3rem;
   text-align: center;
@@ -45,12 +45,12 @@
   background-color: #fff;
 }
 .content .booklist_mask .booklist_scroller {
-  width: 600%;
-  height: 86%;
+  width: 800%;
+  height: 100%;
 }
 .content .booklist_mask .booklist_scroller .books {
-  width: 15.833333333333334%;
-  padding-left: 0.833333333333333%;
+  width: 11.875%;
+  padding-left: 0.625%;
   height: 100%;
   overflow: hidden;
   float: left;

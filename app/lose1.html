@@ -68,15 +68,18 @@
 
 
                     <div class="overlay hidden">
-                        <div class="shares">
+                        <div class="winxintips hidden">
+                            <img src="images/cccat.png" alt="点击这里分享给好朋友"/>
+                        </div>
+                        <div class="shares hidden">
                             <div class="shares_wrapper">
                                 <ul>
-                                    <li><a class="jiathis_button_weixin" href="#"><span class="sprite s_weixin"></span><p>微信</p></a></li>
+                                    <!--li><a class="jiathis_button_weixin" href="#"><span class="sprite s_weixin"></span><p>微信</p></a></li-->
                                     <li><a class="jiathis_button_qzone" href="#"><span class="sprite s_qq"></span><p>QQ空间</p></a></li>
                                     <li><a class="jiathis_button_tqq" href="#"><span class="sprite s_txwb"></span><p>腾讯微博</p></a></li>
                                     <li><a class="jiathis_button_tsina" href="#"><span class="sprite s_xlwb"></span><p>新浪微博</p></a></li>
                                     <li><a class="jiathis_button_renren" href="#"><span class="sprite s_renren"></span><p>人人网</p></a></li>
-                                    <li><a class="jiathis_button_tieba" href="#"><span class="sprite s_bdtb"></span><p>百度贴吧</p></a></li>
+                                    <!--li><a class="jiathis_button_tieba" href="#"><span class="sprite s_bdtb"></span><p>百度贴吧</p></a></li-->
                                     <li><a class="jiathis_button_douban"href="#"><span class="sprite s_db"></span><p>豆瓣</p></a></li>
                                 </ul>
                             </div>
@@ -117,6 +120,25 @@
 
 
     <script src="scripts/main.js"></script>
+    <script type="text/javascript">
+    jiathis_config = { 
+        url:"http://beta.mci.hujiang.com/index.html",
+        title:"词场多风雨，红颜多薄命！我在开心词场PK中以600分惜败对手，替我报仇！",
+        summary:"待我重整旗鼓，择日再战！#开心词场 背词超爽#开心词场英雄际会，等你挑战！",
+        pic:'http://beta.mci.hujiang.com/images/sharelose.jpg' 
+    }
+    // data for weixin
+    dataForWeixin = {
+        appId: "",  // 
+        imgUrl: "http://beta.mci.hujiang.com/images/sharelose.jpg",
+        imgWidth: "200",
+        imgHeight: "200",
+        lineLink: "http://beta.mci.hujiang.com/",
+        shareTitle: "词场多风雨，红颜多薄命！我在开心词场PK中以600分惜败对手，替我报仇！",
+        descContent: "待我重整旗鼓，择日再战！#开心词场 背词超爽#开心词场英雄际会，等你挑战！",
+        callback: function () { winxinShareDone(); }
+    };
+    </script>
     <!-- build:js scripts/result.js -->
     <script src="scripts/result.js"></script>
     <!-- endbuild -->

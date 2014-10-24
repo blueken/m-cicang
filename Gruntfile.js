@@ -191,16 +191,7 @@ module.exports = function (grunt) {
             },
             html: [
                 '<%= config.app %>/index.html',
-                '<%= config.app %>/language.html',
-                '<%= config.app %>/exam.html',
-                '<%= config.app %>/competition.html',
-                '<%= config.app %>/info_book.html',
-                '<%= config.app %>/info_exam.html',
-                '<%= config.app %>/lose1.html',
-                '<%= config.app %>/opponent.html',
-                '<%= config.app %>/wait_opp_done.html',
-                '<%= config.app %>/win1.html',
-                '<%= config.app %>/win2.html'
+                '<%= config.app %>/*.html'
             ]
         },
 

@@ -2,7 +2,7 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>选择对手</title>
+        <title>选择词书</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,7 +176,8 @@
     function getBooksData(data) {
         var strScroller = '';
         _.each(data.Books, function(v,k) {
-            var html = _.template('<div class="pic"><img src="<%=Icon%>" title="<%=Name%>" /></div>', v);
+            var picUrl = (v.Icon == null) ? 'images/book_cover.jpg' : v.Icon
+            var html = _.template('<div class="pic"><img src="'+picUrl+'" title="<%=Name%>" /></div>', v);
             strScroller += html;
         });
         $('.scroller').html(strScroller);
