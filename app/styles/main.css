@@ -61,14 +61,12 @@ a:hover {
   width: 100%;
   max-width: 768px;
   min-width: 320px;
-  background-color: #ffd700;
   margin: 0 auto;
 }
 .hcontrol .ratioparent {
   position: relative;
   width: 100%;
   padding-bottom: 143.75%;
-  background-color: #f00;
 }
 .hcontrol .ratioparent .ratio {
   position: absolute;
@@ -76,7 +74,6 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #ffd700;
 }
 /* CSS for header.html BEGIN*/
 header {
@@ -519,40 +516,25 @@ header .btn_menu_on {
   html {
     font-size: 53.13%;
   }
-  .sprite {
-    zoom: 0.5;
-  }
 }
 @media screen and (max-width: 550px) {
   html {
     font-size: 48%;
-  }
-  .sprite {
-    zoom: 0.9;
   }
 }
 @media screen and (max-width: 470px) {
   html {
     font-size: 43%;
   }
-  .sprite {
-    zoom: 0.8;
-  }
 }
 @media screen and (max-width: 420px) {
   html {
     font-size: 37%;
   }
-  .sprite {
-    zoom: 0.72;
-  }
 }
 @media screen and (max-width: 360px) {
   html {
     font-size: 32%;
-  }
-  .sprite {
-    zoom: 0.55;
   }
   .rarrow_gray,
   .rarrow_white {

@@ -2,7 +2,7 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>选择对手</title>
+        <title>等待对手完成</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -99,7 +99,7 @@
     $(function() {
         var pageData = {
             'title': '完成中',
-            'back_url': 'http://www.baidu.com',
+            'back_url': '',
         };
 
 
@@ -115,24 +115,26 @@
 
     function gotoResult() {
         var url = '';
-        
+        url = (Math.random() > 0.5) ? 'win2.html' : 'win1.html';
 
         //get my total score
         var o = store.get('hjKxccResult');
-        var correntNum = o.correct * 100;
+        var correctNum = o.correct * 100;
         var durationNum = 300 - o.duration;
+        durationNum = (durationNum < 0) ? 0 : durationNum;
         var maxComboNum = o.maxCombo * 10;
-        var totalNum = correntNum + durationNum + maxComboNum;
+        var totalNum = correctNum + durationNum + maxComboNum;
+        totalNum = (correctNum == 0) ? 0 : totalNum;
 
         //get opp score
-        var data = store.get('hjKxccUserInfo');
+        var data = store.get('hjKxccData');
         if (data && (data.Score > 0)) {
             if (data.Score > totalNum) {
                 url = 'lose1.html';
             };
         };
 
-        url = (Math.random() > 0.5) ? 'win2.html' : 'win1.html';
+        
 
         var rand = _.random(1,6);
         setTimeout(function() {

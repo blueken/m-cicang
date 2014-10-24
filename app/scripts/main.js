@@ -32,7 +32,7 @@ function initHeader(pageData) {
 					top: '9.56%'
 				});
 
-				$('<div class="overlay" id="for_menu" onclick="hideMenu()"></div>').appendTo($('.ratio'));
+				$('<div class="overlay" style="display:block" id="for_menu" onclick="hideMenu()"></div>').appendTo($('.ratio'));
 			}
 		});
 	});
@@ -82,6 +82,7 @@ function initMenu(menuData) {
 
 		judgeLogged();
 		bindDownload();
+		dealSpriteSheet();
 	});
 }
 
@@ -123,9 +124,52 @@ function bindEvents() {
 	$(window).on('resize', function() {
 		initCloud();
 	});
+}
+function dealSpriteSheet() {
+	var winWidth = $(window).width();
+	if (winWidth <= 360) {
+		scaleAllSS('.sprite', 0.55);
+	} else if (winWidth <= 420) {
+		scaleAllSS('.sprite', 0.72);
+	} else if (winWidth <= 470) {
+		scaleAllSS('.sprite', 0.8);
+	} else if (winWidth <= 550) {
+		scaleAllSS('.sprite', 0.9);
+	} else if (winWidth <= 601) {
+		scaleAllSS('.sprite', 0.95);
+	}
 
 }
+function scaleAllSS(sel, ratio) {
+	$(sel).each(function(i,v) {
+	    scaleSS(this, ratio);
+	});
+	setTimeout(function() {$(sel).show();} ,20);
+}
+function scaleSS(domobj, ratio) {
+    //scale sprite sheet element
+    $obj = $(domobj);
 
+    var widthSpriteSheet = parseInt($obj.css('background-size').split(' ')[0]);
+    var heightSpriteSheet = parseInt($obj.css('background-size').split(' ')[1]);
+    var spritePosX = parseInt($obj.css('background-position').split(' ')[0]);
+    var spritePosY = parseInt($obj.css('background-position').split(' ')[1]);
+
+    var widthSprite = parseInt($obj.css('width'));
+    var heightSprite = parseInt($obj.css('height'));
+    console.log(widthSpriteSheet, heightSpriteSheet, spritePosX, spritePosY, widthSprite,heightSprite);
+
+    var backgroundSizeNew = Math.ceil(widthSpriteSheet*ratio) + 'px ' + Math.ceil(heightSpriteSheet*ratio) + 'px';
+    $obj.css('background-size', backgroundSizeNew);
+    var backgroundPosNew = Math.ceil(spritePosX*ratio) + 'px ' + Math.ceil(spritePosY*ratio) + 'px';
+    $obj.css('background-position', backgroundPosNew);
+    var widthSpriteNew = Math.ceil(widthSprite*ratio) + 'px ';
+    $obj.css('width', widthSpriteNew);
+    var heightSpriteNew = Math.ceil(heightSprite*ratio) + 'px ';
+    $obj.css('height', heightSpriteNew);
+
+
+}
 function getParam(name) {
 	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -299,3 +343,22 @@ window.addEventListener("load",function() {
         window.scrollTo(0, 1);
     }, 0);
 });
+
+//for jiathis
+jiathis_config = { 
+    url:"http://beta.mci.hujiang.com/",
+    title:"今天制霸词场，明天征服世界！我在开心词场”中以1920分秒杀对手！不服来战，等你！",
+    summary:"词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
+    pic:'http://beta.mci.hujiang.com/images/sharewin.jpg' 
+} 
+// data for weixin
+dataForWeixin = {
+    appId: "",  // 
+    imgUrl: "http://beta.mci.hujiang.com/images/sharewin.jpg",
+    imgWidth: "200",
+    imgHeight: "200",
+    lineLink: "http://beta.mci.hujiang.com/",
+    shareTitle: "今天制霸词场，明天征服世界！我在开心词场”中以1920分秒杀对手！不服来战，等你！",
+    descContent: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
+    callback: function () { winxinShareDone(); }
+};

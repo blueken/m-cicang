@@ -8,12 +8,12 @@
   background-color: #29b6f6;
 }
 .content .nav_mask ul {
-  width: 200%;
+  width: 100%;
   height: 100%;
 }
 .content .nav_mask ul li {
   float: left;
-  width: 16.666666666666668%;
+  width: 33.333333333333336%;
   height: 100%;
   font-size: 3rem;
   text-align: center;
