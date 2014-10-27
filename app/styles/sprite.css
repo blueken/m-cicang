@@ -1,7 +1,7 @@
 /* ----------------------------------------------------
    created with http://www.codeandweb.com/texturepacker 
    ----------------------------------------------------
-   $TexturePacker:SmartUpdate:26c5197bfee0b29d1a018f14b2563fd4:150559f689603f03d29d9df8e2e19a37:1e9ea531edb030fd06c741d8d5dec72b$
+   $TexturePacker:SmartUpdate:2ac12e4a0eb1939b05307a3564c7f089:0a8c95c5e46f90b5d576a15bc82314b5:1e9ea531edb030fd06c741d8d5dec72b$
    ----------------------------------------------------
 
    usage: <span class="{-spritename-} sprite"></span>
@@ -10,7 +10,7 @@
 
 */
 
-.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sprite.png);}
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sprite.png); background-size: 930px 486px; display: none}
 
 .anonymous {width:82px; height:82px; background-position: -101px -2px}
 .boy {width:174px; height:250px; background-position: -2px -234px}

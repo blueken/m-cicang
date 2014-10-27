@@ -2,7 +2,7 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>选择对手</title>
+        <title>学门语言</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -46,7 +46,7 @@
                             </ul>
                         </div>
                         
-                        <p class="choose">选择语言词书</p>
+                        <p class="choose">选择语言词书:</p>
 
                         <div class="booklist_mask">
                             <div class="booklist_scroller">
@@ -179,11 +179,28 @@
         initHeader(pageData);
         initMenu();
         bindEvents();
-
+        initBooksHeight();
         getData();
         
 
     });
+    function bindScrollBottom() {
+        $(window).scroll(function() {
+           if($(window).scrollTop() + $(window).height() == getDocHeight()) {
+               console.log("bottom!");
+               initBookScroller();
+           }
+       });
+    }
+    function initBooksHeight() {
+        var heightWindow = $(window).innerHeight();
+        var heightHeader = $('header').innerHeight();
+        var heightNav = $('.nav_mask').innerHeight();
+        var heightChoose = $('.choose').innerHeight();
+        var heightBooks = heightWindow - heightHeader - heightNav - heightChoose;
+        heightBooks = heightBooks - 10;
+        $('.booklist_scroller').height(heightBooks);
+    }
     function getData() {
         // var Key = getParameterByName('k');
         // var lang = getParameterByName('l');
@@ -243,7 +260,8 @@
             _.each(v.Books, function(b,i) {
                 // b.BookIntro = b.BookIntro.slice(0,20);
                 b.BookIntro = autoAddEllipsis(b.BookIntro, 22);
-                var tmpl = _.template('<li><a href="info_book.html?bid=<%=BookID%>"><img src="images/book_cover1.jpg" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
+                var picUrl = (b.PicUrl == null) ? 'images/book_cover.jpg' : b.PicUrl;
+                var tmpl = _.template('<li><a href="info_book.html?bid=<%=BookID%>"><img src="'+picUrl+'" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
                 var html = tmpl(b);
                  strList += html;
             });
@@ -253,7 +271,6 @@
 
         $('.nav_mask>ul').html(strNav);
         $('.booklist_scroller').html(strList);
-        highlightTab(0);
     }
 
     function iniTabEvents() {
@@ -267,16 +284,41 @@
         });
 
     }
+    function highlightLastTab() {
+        var oldIdx = store.get('hjKxccLangIdx');
+        oldIdx = oldIdx ? oldIdx : 0;
+        highlightTab(oldIdx);
+        
+        
+        gScrollerList.goToPage(oldIdx,0);
+        
+    }
     function highlightTab(idx) {
         $('.nav_mask>ul>li>a>span').attr('class', 'rvmiddle');
         $('.nav_mask').find('a').eq(idx).find('span').addClass('selected');
+        store.set('hjKxccLangIdx', idx);
+
+        if (idx > 3) {
+            gScrollerNav.scrollTo(-220,0,800);
+        } else {
+            gScrollerNav.scrollTo(0,0,800);
+        }
     }
     function initScroller() {
+        initNavScroller();
+        initBookScroller();
+
+        highlightLastTab();
+    }
+    function initNavScroller() {
         gScrollerNav = new IScroll('.nav_mask', {
             scrollX: true,
             click: true
         });
 
+    }
+
+    function initBookScroller() {
         gScrollerList = new IScroll('.booklist_mask', {
             scrollX: true,
             scrollY: false,
@@ -292,9 +334,22 @@
             };
 
         });
-        $(".books").each(function(idx, val) {
-            new IScroll(this);
-        });
+        setTimeout(function() {
+            $(".books").each(function(idx, val) {
+                new IScroll(this);
+            });
+        }, 1000);
     }
+
+    function getDocHeight() {
+        var D = document;
+        return Math.max(
+            D.body.scrollHeight, D.documentElement.scrollHeight,
+            D.body.offsetHeight, D.documentElement.offsetHeight,
+            D.body.clientHeight, D.documentElement.clientHeight
+        );
+    }
+
+
     </script>
 </html>
