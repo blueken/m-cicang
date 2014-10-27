@@ -137,6 +137,8 @@ function dealSpriteSheet() {
 		scaleAllSS('.sprite', 0.9);
 	} else if (winWidth <= 601) {
 		scaleAllSS('.sprite', 0.95);
+	} else {
+		scaleAllSS('.sprite', 1);
 	}
 
 }
