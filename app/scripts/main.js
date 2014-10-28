@@ -1,7 +1,8 @@
 function initHeader(pageData) {
 	'use strict';
-	var stand_height = 416 * 0.5;
-	var stand_width = 640 * 0.5;
+	var ratio = 0.5
+	var stand_height = 416 * ratio;
+	var stand_width = 640 * ratio;
 
 	pageData = pageData ? pageData : {};
 
@@ -15,30 +16,29 @@ function initHeader(pageData) {
 		var header_html = _.template(tmpl, pageData);
 		$('header').html(header_html);
 
-		$('.btn_menu').click(function() {
-			var menu = $('.btn_menu');
-			var menuContent = $('.menu_content');
-			var bOn = parseInt($('.menu_content').css('top')) > 0;
-			if (bOn) {
-				menu.removeClass('btn_menu_on');
-				menuContent.animate({
-					top: '-50%'
-				});
-
-				$('#for_menu').remove();
-			} else {
-				menu.addClass('btn_menu_on');
-				menuContent.animate({
-					top: '9.56%'
-				});
-
-				$('<div class="overlay" style="display:block" id="for_menu" onclick="hideMenu()"></div>').appendTo($('.ratio'));
-			}
-		});
+		$('.btn_menu').click(toggleMenu);
 	});
 }
-function hideMenu() {
-	$('.btn_menu').click();
+function toggleMenu() {
+	var menu = $('.btn_menu');
+	var menuContent = $('.menu_content');
+	var bOn = parseInt($('.menu_content').css('top')) > 0;
+	if (bOn) {
+		menu.removeClass('btn_menu_on');
+		menuContent.animate({
+			top: '-50%'
+		});
+
+		$('#for_menu').remove();
+	} else {
+		menu.addClass('btn_menu_on');
+		menuContent.animate({
+			top: '9.56%'
+		});
+
+		$('<div class="overlay" style="display:block" id="for_menu" onclick="toggleMenu()"></div>').appendTo($('.ratio'));
+	}
+	console.log('work well!');
 }
 
 function initCloud() {
@@ -127,6 +127,7 @@ function bindEvents() {
 }
 function dealSpriteSheet() {
 	var winWidth = $(window).width();
+	
 	if (winWidth <= 360) {
 		scaleAllSS('.sprite', 0.55);
 	} else if (winWidth <= 420) {

@@ -1,3 +1,5 @@
+(function() {
+
 $(function() {
     var pageData = {
         'title': '第 1 题',
@@ -64,20 +66,8 @@ function getQuestions() {
 
             _.each(v.options, function(o,i) {
                 var alpha = 'A';
-                switch(i) {
-                    case 0 :
-                        alpha = 'A';
-                        break;
-                    case 1 :
-                        alpha = 'B';
-                        break;
-                    case 2 :
-                        alpha = 'C';
-                        break;
-                    case 3 :
-                        alpha = 'D';
-                        break;
-                }
+                var arr = ['A', 'B', 'C', 'D'];
+                alpha = arr[i];
 
                 sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, '+k+','+i+','+v.correctOption+')"><span class="circle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span></a></li>';
             });
@@ -275,3 +265,6 @@ BloodSystem.prototype.Heisright = function(e) {
 BloodSystem.prototype.Iamright = function(e) {
     $('.his_progress').animate({width:'-='+this.step},{duration:800});
 }
+
+
+})();
