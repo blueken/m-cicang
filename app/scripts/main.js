@@ -102,7 +102,7 @@ function judgeLogged() {
         	$('#unlogged').attr('class', 'login hidden');
         }
 
-        if (store) {
+        if (window.store) {
         	store.set('hjKxccUserInfo', data);
         };
     },'JSON');
@@ -171,6 +171,23 @@ function scaleSS(domobj, ratio) {
     $obj.css('height', heightSpriteNew);
 
 
+}
+
+function getUserAvatar(uid) {
+	uid = uid.toString();
+	var uidLen = uid.length;
+	if (uidLen < 4) {
+		var a = 4 - uidLen;
+		for (var i = a - 1; i >= 0; i--) {
+			uid = '0' + uid;
+		};
+	};
+	var p0 = 200; //48, 96 , 200
+	var p1 = uid.substring(uid.length-2,uid.length-4);
+	var p2 = uid.substring(uid.length,uid.length-2);
+	var p3 = uid;
+	var result = 'http://i2.hjfile.cn/f'+p0+'/'+p1+'/'+p2+'/'+p3+'.jpg';
+	return result;
 }
 function getParam(name) {
 	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

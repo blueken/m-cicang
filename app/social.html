@@ -43,9 +43,9 @@
 
                         <div class="result">
                             <img class="bg" src="images/sbgwin.png" alt="" />
-                            <img class="photo" src="images/photo.png" alt="" />
-                            <p class="user_txt user_name">我</p>
-                            <p class="user_txt user_score">4851</p>
+                            <img class="photo hidden" src="images/unknown.png" alt="" />
+                            <p class="user_txt user_name"></p>
+                            <p class="user_txt user_score"></p>
                             <img class="book" src="images/book_cover.jpg" alt="" />
                         </div>
                         <div class="btns">
@@ -97,6 +97,7 @@
     <script src="scripts/main.js"></script>
 
     <script type="text/javascript">
+    //social.html?
     $(function() {
         var pageData = {
             'title': 'PK结果',
@@ -108,6 +109,40 @@
         initMenu();
         //initCloud();
         bindEvents();
+        getData();
+        bindBtnsEvents();
     });
+
+    function getData() {
+        var bookid = getParam('bookid');
+        var uid = getParam('uid');
+        var uname = getParam('uname');
+        var uscore = getParam('uscore');
+        var upic = getUserAvatar(uid);
+
+        $('.photo').attr('src', upic).removeClass('hidden');
+        $('.user_name').html(uname);
+        $('.user_score').html(uscore);
+
+        getBookPic(bookid);
+
+        if (window.store) {
+            store.set('hjKxccBookid', bookid);
+            store.set('hjKxccSocial', {'BookId':bookid, 'UserName':uname, 'UserId':uid});
+        };
+    }
+    function saveSocialData() {
+        
+    }
+    function getBookPic(bookid) {
+        var bid = getParam('bid');
+        $.get('http://beta.mci.hujiang.com/Services/InterestLangBookById.ashx?id='+bid, function(data) {
+            $('.book').attr('src', data.PicUrl);
+        },'JSON');
+    }
+    function bindBtnsEvents() {
+        $('.btn').eq(0).on('click', function() { document.location = 'index.html'; });
+        $('.btn').eq(1).on('click', function() { document.location = 'opponent.html'; });
+    }
     </script>
 </html>
