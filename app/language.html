@@ -193,13 +193,15 @@
        });
     }
     function initBooksHeight() {
-        var heightWindow = $(window).innerHeight();
-        var heightHeader = $('header').innerHeight();
-        var heightNav = $('.nav_mask').innerHeight();
-        var heightChoose = $('.choose').innerHeight();
-        var heightBooks = heightWindow - heightHeader - heightNav - heightChoose;
-        heightBooks = heightBooks - 10;
-        $('.booklist_scroller').height(heightBooks);
+        if (isMobile()) {
+            var heightWindow = $(window).innerHeight();
+            var heightHeader = $('header').innerHeight();
+            var heightNav = $('.nav_mask').innerHeight();
+            var heightChoose = $('.choose').innerHeight();
+            var heightBooks = heightWindow - heightHeader - heightNav - heightChoose;
+            heightBooks = heightBooks - 10;
+            $('.booklist_scroller').height(heightBooks);
+        }
     }
     function getData() {
         // var Key = getParameterByName('k');
@@ -260,7 +262,7 @@
             _.each(v.Books, function(b,i) {
                 // b.BookIntro = b.BookIntro.slice(0,20);
                 b.BookIntro = autoAddEllipsis(b.BookIntro, 22);
-                var picUrl = (b.PicUrl == null) ? 'images/book_cover.jpg' : b.PicUrl;
+                var picUrl = $.trim(b.PicUrl) || 'images/book_cover.jpg';
                 var tmpl = _.template('<li><a href="info_book.html?bid=<%=BookID%>"><img src="'+picUrl+'" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
                 var html = tmpl(b);
                  strList += html;

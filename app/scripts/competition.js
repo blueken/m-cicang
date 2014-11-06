@@ -1,6 +1,4 @@
-(function() {
-
-$(function() {
+$(function () {
     var pageData = {
         'title': '第 1 题',
         'back_url': 'javascript:tryQuit()',
@@ -18,17 +16,18 @@ $(function() {
     getOppInfo();
     getQuestions();
 
-    
+
 });
 
 function bindQuitEvents() {
-    $('.confirm').on('click', function() {
+    $('.confirm').on('click', function () {
         document.location = 'index.html';
     });
-    $('.cancel').on('click', function() {
+    $('.cancel').on('click', function () {
         $('.overlay').hide();
     });
 }
+
 function getUserData() {
     // { "UserId" : 0 , "UserName" : null , "Avatar" : null };
     var data = store.get('hjKxccUserInfo');
@@ -36,7 +35,8 @@ function getUserData() {
         $('.me').attr('src', data.Avatar);
         $('.my_name').html(data.UserName);
     };
- }
+}
+
 function getOppInfo() {
     // hjKxccData = {"UserId":25710160,"UserName":"AirSky_Ten","BookId":10232,"PKUserId":0,"IsWin":false,"MatchTime":135925,"WordCount":15,"RightWordCount":6,"Score":40,"WrongWords":"010100000000000","IsMockup":false};
     var hjKxccData = store.get('hjKxccData');
@@ -49,29 +49,31 @@ function getQuestions() {
     // var bid = getParam('bid');
     var bid = store.get('hjKxccBookid');
     bid = bid ? bid : 10441;
-    $.get('http://beta.mci.hujiang.com/Services/PKQuestion.ashx?bookid='+bid, function(data) {
-        _.extend(gComp, {'data':data});
+    $.get('http://beta.mci.hujiang.com/Services/PKQuestion.ashx?bookid=' + bid, function (data) {
+        _.extend(gComp, {
+            'data': data
+        });
         gComp.total = data.result.length;
         gComp.start();
 
         var quesStr = '';
-        _.each(data.result, function(v,k) {
+        _.each(data.result, function (v, k) {
             var maxBytes = 24;
             var quesBytes = v.question.getBytesLength();
             var fs = maxBytes / quesBytes;
-            fs = (fs >= 1) ? 5 : (5*fs);
-            var fsstr = 'style="font-size:'+ fs +'rem"';
-            var tmp = _.template('<section class="question"><h2 '+ fsstr +'><%=question%></h2><ul>');
+            fs = (fs >= 1) ? 5 : (5 * fs);
+            var fsstr = 'style="font-size:' + fs + 'rem"';
+            var tmp = _.template('<section class="question"><h2 ' + fsstr + '><%=question%></h2><ul>');
             var sectionStr = tmp(v);
 
-            _.each(v.options, function(o,i) {
+            _.each(v.options, function (o, i) {
                 var alpha = 'A';
                 var arr = ['A', 'B', 'C', 'D'];
                 alpha = arr[i];
 
-                sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, '+k+','+i+','+v.correctOption+')"><span class="circle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span></a></li>';
+                sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',' + i + ',' + v.correctOption + ')"><span class="circle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span></a></li>';
             });
-            sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, '+k+',4,'+v.correctOption+')"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>';
+            sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',4,' + v.correctOption + ')"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>';
             sectionStr += '</ul></section>';
             quesStr += sectionStr;
         });
@@ -80,9 +82,9 @@ function getQuestions() {
 
 
 
-    },'JSON');
+    }, 'JSON');
 
-   
+
 }
 
 function answer(o, quesIdx, answerIdx, correntIdx) {
@@ -94,20 +96,23 @@ function answer(o, quesIdx, answerIdx, correntIdx) {
         gComp.combo(1);
         gComp.nextQuestion(1);
         $(o).addClass('right');
-    } else {
+    }
+    else {
         //get wrong
         gComp.combo(0);
         gComp.nextQuestion(0);
         showRight(o, correntIdx);
         if (answerIdx === 4) {
-            $(o).addClass('selected'); 
-        } else {
-            $(o).addClass('wrong'); 
+            $(o).addClass('selected');
+        }
+        else {
+            $(o).addClass('wrong');
         }
     }
-    
+
     answer.done = true;
 }
+
 function showRight(obj, correntIdx) {
     var rightItem = $(obj).parent().parent().children().eq(correntIdx).find('a');
     rightItem.addClass('right');
@@ -117,6 +122,7 @@ function showRight(obj, correntIdx) {
 function tryQuit() {
     $('.overlay').show();
 }
+
 function Competition() {
     this.curr = 1;
     this.total = 1;
@@ -129,26 +135,28 @@ function Competition() {
     this.questionHandler = null; //questionLimit handler
 
 }
-Competition.prototype.combo = function(a) {
+Competition.prototype.combo = function (a) {
     //a = 0, 1, null   0: wrong,  1: right,  null: getCombo
-    if (a===0) {
+    if (a === 0) {
         //wrong
         if (this.numCombo > this.maxCombo) {
             this.maxCombo = this.numCombo;
         };
         this.numCombo = 0;
-    } else if (a===1) {
+    }
+    else if (a === 1) {
         //right
 
-        if (this.numCombo <= 0) { 
+        if (this.numCombo <= 0) {
             this.numCombo = 1;
-        } else {
+        }
+        else {
             //combo
             this.numCombo += 1;
-            $('.combo_txt').html('Combo '+this.numCombo);
+            $('.combo_txt').html('Combo ' + this.numCombo);
             $('.combo').removeClass('hidden')
-            dummyAnimate($('.combo')[0], 'animated fadeInUp', function(){ 
-                setTimeout(function() {
+            dummyAnimate($('.combo')[0], 'animated fadeInUp', function () {
+                setTimeout(function () {
                     $('.combo').addClass('hidden');
                 }, 1000);
             });
@@ -158,70 +166,82 @@ Competition.prototype.combo = function(a) {
             gBlood.Iamright();
         };
     }
-    
+
     return this.numCombo;
 }
-Competition.prototype.start = function() {
+Competition.prototype.start = function () {
     this.duration = _.now();
     this.questionStart();
 }
-Competition.prototype.end = function() {
+Competition.prototype.end = function () {
     this.duration = Math.floor((_.now() - this.duration) / 1000);
 
-    store.set('hjKxccResult', {correct: this.correct,  duration: this.duration, maxCombo: this.maxCombo});
+    store.set('hjKxccResult', {
+        correct: this.correct,
+        duration: this.duration,
+        maxCombo: this.maxCombo
+    });
     document.location = 'wait_opp_done.html';
 }
 
-Competition.prototype.nextQuestion = function(a) {
+Competition.prototype.nextQuestion = function (a) {
     //a = 0, 1, null   0: wrong,  1: right,  null: getCombo
-    if (a===0) {
+    if (a === 0) {
         //wrong
         this.numCombo = 0;
-    } else if (a===1) {
+    }
+    else if (a === 1) {
         //right
         this.correct += 1;
-    } else {
+    }
+    else {
         //timeout
         gComp.combo(0);
-        console.log('this.curr:'+this.curr+','+this.total);
+        console.log('this.curr:' + this.curr + ',' + this.total);
         if (this.curr <= this.total) {
             var o = $('.question').eq(this.curr - 1).find('li>a').eq(4).get(0);
-            var correntIdx = this.data.result[this.curr-1].correctOption;
-            $(o).addClass('selected'); 
+            var correntIdx = this.data.result[this.curr - 1].correctOption;
+            $(o).addClass('selected');
             showRight(o, correntIdx);
         };
-        
+
     }
     this.questionEnd();
     var self = this;
-    setTimeout(function() {
+    setTimeout(function () {
         self.curr += 1;
         if (self.curr <= self.total) {
-            $(".questions").animate({left:"-=100%"},{duration:'250',complete:function() {
-                answer.done = false;
-            }});
+            $(".questions").animate({
+                left: "-=100%"
+            }, {
+                duration: '250',
+                complete: function () {
+                    answer.done = false;
+                }
+            });
 
-            var pageName = '第 '+self.curr+'/'+self.total+' 题';
+            var pageName = '第 ' + self.curr + '/' + self.total + ' 题';
             $('.name_txt').html(pageName);
-        } else {
+        }
+        else {
             self.end();
         }
         self.questionStart();
     }, self.correctShow);
 
 }
-Competition.prototype.questionStart = function() {
+Competition.prototype.questionStart = function () {
     var self = this;
     if (self.curr <= self.total) {
-        self.questionHandler = setTimeout(function() {
+        self.questionHandler = setTimeout(function () {
             self.nextQuestion();
         }, self.questionLimit);
     }
-    
+
 }
-Competition.prototype.questionEnd = function() {
+Competition.prototype.questionEnd = function () {
     var self = this;
-    if ( self.questionHandler ) {
+    if (self.questionHandler) {
         clearTimeout(self.questionHandler);
     };
     answer.done = true;
@@ -237,34 +257,40 @@ function BloodSystem() {
     this.hisIdx = 0;
     this.hisAct = this.hisData.WrongWords.split('');
     this.hisItv = this.hisData.MatchTime / this.hisData.WordCount;
-    this.hisItvHandler = setInterval(function() {
+    this.hisItvHandler = setInterval(function () {
         self.hisAction();
     }, this.hisItv);
 
     this.step = this.hisProgressOriginalWidth / this.hisData.WordCount;
 }
-BloodSystem.prototype.hisAction = function(e) {
+BloodSystem.prototype.hisAction = function (e) {
     if (this.hisIdx < this.hisData.WordCount) {
         //1:wrong , 0:right
         var act = this.hisAct[this.hisIdx];
-        console.log("his action: "+ act);
+        console.log("his action: " + act);
         if (0 === parseInt(act)) {
             //right
             this.Heisright();
         };
         this.hisIdx += 1;
-    } else {
-        console.log("clearInterval: "+ this.hisItvHandler);
+    }
+    else {
+        console.log("clearInterval: " + this.hisItvHandler);
         clearInterval(this.hisItvHandler);
     }
-    
-}
-BloodSystem.prototype.Heisright = function(e) {
-    $('.his_progress').animate({width:'+='+this.step},{duration:800});
-}
-BloodSystem.prototype.Iamright = function(e) {
-    $('.his_progress').animate({width:'-='+this.step},{duration:800});
-}
 
-
-})();
+}
+BloodSystem.prototype.Heisright = function (e) {
+    $('.his_progress').animate({
+        width: '+=' + this.step
+    }, {
+        duration: 800
+    });
+}
+BloodSystem.prototype.Iamright = function (e) {
+    $('.his_progress').animate({
+        width: '-=' + this.step
+    }, {
+        duration: 800
+    });
+}

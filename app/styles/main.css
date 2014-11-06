@@ -367,25 +367,11 @@ header .btn_menu_on {
 }
 .clouds .cloud_parallax .cloud_b {
   display: inline-block;
-  width: 4000px;
-  height: 67px;
-  background: url("../images/cloud_b.png");
-  background-size: contain;
+  width: 2008px;
+  height: 162px;
+  background: url("../images/cloud_b.png") no-repeat;
+  background-size: cover;
   opacity: 0.8;
-  position: absolute;
-  bottom: 0;
-  -webkit-animation: cloud_move 300s linear infinite;
-  -moz-animation: cloud_move 300s linear infinite;
-  -o-animation: cloud_move 300s linear infinite;
-  -ms-animation: cloud_move 300s linear infinite;
-  animation: cloud_move 300s linear infinite;
-}
-.clouds .cloud_parallax .cloud_f {
-  display: inline-block;
-  width: 8000px;
-  height: 67px;
-  background: url("../images/cloud_f.png");
-  background-size: contain;
   position: absolute;
   bottom: 0;
   -webkit-animation: cloud_move 400s linear infinite;
@@ -393,6 +379,20 @@ header .btn_menu_on {
   -o-animation: cloud_move 400s linear infinite;
   -ms-animation: cloud_move 400s linear infinite;
   animation: cloud_move 400s linear infinite;
+}
+.clouds .cloud_parallax .cloud_f {
+  display: inline-block;
+  width: 1680px;
+  height: 135px;
+  background: url("../images/cloud_f.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+  -webkit-animation: cloud_move 150s linear infinite;
+  -moz-animation: cloud_move 150s linear infinite;
+  -o-animation: cloud_move 150s linear infinite;
+  -ms-animation: cloud_move 150s linear infinite;
+  animation: cloud_move 150s linear infinite;
 }
 .ani_cloud_down {
   -webkit-animation: cloud_down 0.2s ease forwards;
