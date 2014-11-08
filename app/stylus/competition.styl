@@ -28,7 +28,7 @@ transform()
 		$questions_h = 572
 		$questions_num = 15
 		position absolute
-		top 14.35% // 88+44 / 920
+		top 9.6% // 88 / 920
 
 		width ($questions_num * 100)%
 		//height 62.18% //572/920
@@ -40,13 +40,17 @@ transform()
 			height 100%
 			float left
 			h2
-				width 100%
-				height  (50*100 / $questions_h)%
+				position relative
+				width 97%
+				// height  (50*100 / $questions_h)%
+				height 26%
 				font-size 5rem
-				padding 3.12% 0//20/640
+				padding 3.12% 1%//20/640
 				text-align	center
 				color white
 				border-bottom white 2px dashed
+				span 
+					width 98%
 			ul
 				$ul_w = 492 + 12 + 12 //516
 				$ul_h = 440
@@ -107,7 +111,7 @@ transform()
 		width ($vs_w * 100 / $content_w)%
 		height ($vs_h * 100 / $content_h)%
 		// background-color gold
-		bottom (32 * 100 / $content_h)%
+		bottom 10%
 		left (32 * 100 / $content_w)%
 		.pho
 			width (82 * 100 / $vs_w)%
@@ -162,7 +166,7 @@ transform()
 					border-bottom-right-radius 0.5rem
 	.combo
 		position absolute
-		top 78%
+		top 72%
 		left 10%
 		z-index 1
 		font-size 2.4rem
@@ -171,8 +175,10 @@ transform()
 			position absolute
 			left 49%
 			top 45%
+			width 90%
 			transform translateY(-50%) translateX(-50%)
-			font-size 3rem
+			font-size 3.1rem
+			text-align center
 
 
 .overlay

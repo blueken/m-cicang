@@ -74,7 +74,7 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    middleware: function(connect) {
+                    middleware: function (connect) {
                         return [
                             connect.static('.tmp'),
                             connect().use('/bower_components', connect.static('./bower_components')),
@@ -87,7 +87,7 @@ module.exports = function (grunt) {
                 options: {
                     open: false,
                     port: 9001,
-                    middleware: function(connect) {
+                    middleware: function (connect) {
                         return [
                             connect.static('.tmp'),
                             connect.static('test'),
@@ -190,7 +190,6 @@ module.exports = function (grunt) {
                 dest: '<%= config.dist %>'
             },
             html: [
-                '<%= config.app %>/index.html',
                 '<%= config.app %>/*.html'
             ]
         },
@@ -383,7 +382,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-stylus');
 
-    grunt.registerTask('bob', function() {
+    grunt.registerTask('bob', function () {
         grunt.log.warn('bob alan green');
     });
 

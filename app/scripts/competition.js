@@ -49,7 +49,8 @@ function getQuestions() {
     // var bid = getParam('bid');
     var bid = store.get('hjKxccBookid');
     bid = bid ? bid : 10441;
-    $.get('http://beta.mci.hujiang.com/Services/PKQuestion.ashx?bookid=' + bid, function (data) {
+    var url = 'http://beta.mci.hujiang.com/Services/PKQuestion.ashx?bookid=' + bid + '&ts=' + Math.random();
+    $.get(url, function (data) {
         _.extend(gComp, {
             'data': data
         });
@@ -58,12 +59,17 @@ function getQuestions() {
 
         var quesStr = '';
         _.each(data.result, function (v, k) {
-            var maxBytes = 24;
+            var maxBytes = 38;
             var quesBytes = v.question.getBytesLength();
             var fs = maxBytes / quesBytes;
-            fs = (fs >= 1) ? 5 : (5 * fs);
+            if (quesBytes < maxBytes) {
+                fs = 5;
+            }
+            else {
+                fs = 4;
+            }
             var fsstr = 'style="font-size:' + fs + 'rem"';
-            var tmp = _.template('<section class="question"><h2 ' + fsstr + '><%=question%></h2><ul>');
+            var tmp = _.template('<section class="question"><h2 ' + fsstr + '><span class="hvmiddle"><%=question%></span></h2><ul>');
             var sectionStr = tmp(v);
 
             _.each(v.options, function (o, i) {
@@ -73,7 +79,7 @@ function getQuestions() {
 
                 sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',' + i + ',' + v.correctOption + ')"><span class="circle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span></a></li>';
             });
-            sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',4,' + v.correctOption + ')"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>';
+            // sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',4,' + v.correctOption + ')"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>'; 
             sectionStr += '</ul></section>';
             quesStr += sectionStr;
         });
@@ -137,16 +143,9 @@ function Competition() {
 }
 Competition.prototype.combo = function (a) {
     //a = 0, 1, null   0: wrong,  1: right,  null: getCombo
-    if (a === 0) {
-        //wrong
-        if (this.numCombo > this.maxCombo) {
-            this.maxCombo = this.numCombo;
-        };
-        this.numCombo = 0;
-    }
-    else if (a === 1) {
-        //right
 
+    if (a === 1) {
+        //right
         if (this.numCombo <= 0) {
             this.numCombo = 1;
         }
@@ -167,6 +166,14 @@ Competition.prototype.combo = function (a) {
         };
     }
 
+    if (this.numCombo > this.maxCombo) {
+        this.maxCombo = this.numCombo;
+    };
+
+    if (a === 0) {
+        //wrong
+        this.numCombo = 0;
+    }
     return this.numCombo;
 }
 Competition.prototype.start = function () {

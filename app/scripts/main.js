@@ -46,7 +46,6 @@ function toggleMenu() {
 
 function initCloud() {
 	'use strict';
-	$('.clouds').hide();
 
 	var cloud_b_stand_h = 135 * 1;
 	var cloud_f_stand_h = 135 * 1;
@@ -93,7 +92,7 @@ function initMenu(menuData) {
 
 function judgeLogged() {
 	//var data = { "UserId" : 0 , "UserName" : null , "Avatar" : null };
-	$.get('http://beta.mci.hujiang.com/Services/UserInfo.ashx', function (data) {
+	$.get('http://beta.mci.hujiang.com/Services/UserInfo.ashx?ts=' + Math.random(), function (data) {
 		if ((typeof (data) === 'undefined') || (data.UserId === 0)) {
 			//unlogin
 			$('#unlogged').attr('class', 'login');
