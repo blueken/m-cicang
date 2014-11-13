@@ -52,10 +52,10 @@
 
                         <div class="booklist_mask">
                             <div class="booklist_scroller">
-                                <!--div class="books">
+                                <!--<div class="books">
                                      <ul>
-                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4><p>简介</p></a></li>
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4><p>简介</p></a></li>
                                         <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
                                         <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
                                         <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
@@ -107,7 +107,7 @@
                                         <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
                                         
                                     </ul>   
-                                </div-->
+                                </div> -->
                             </div>
                         </div>
                         
@@ -201,7 +201,7 @@
                 // var.lang = lang;
 
                 // var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle"><%=Icon%></b></span><h4><%=Name%></h4></a></li>');
-                var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="<%=BG%>" alt="" /></span><h4><%=Name%></h4></a></li>');
+                var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="<%=BG%>" alt="" /></span><h4><%=Name%></h4><p><%=Description%></p></a></li>');
                 var html = tmpl(v);
                 strUlBooks += html;
             });

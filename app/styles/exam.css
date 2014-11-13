@@ -26,6 +26,7 @@
 }
 .content .nav_mask ul li a span {
   color: #a9e2fb;
+  letter-spacing: 0.5rem;
 }
 .content .nav_mask ul li a span.selected {
   color: #fff;
@@ -101,14 +102,18 @@
 }
 .content .booklist_mask .booklist_scroller .books ul li a h4 {
   color: #333;
-  font-size: 3rem;
-  margin-top: 6.578947368421052%;
+  font-size: 3.2rem;
+  margin-top: 2.960526315789474%;
+  font-weight: bold;
 }
 .content .booklist_mask .booklist_scroller .books ul li a p {
-  width: 87.5%;
-  margin-top: 4.111842105263158%;
+  margin-top: 2.631578947368421%;
   color: #999;
   font-size: 2.5rem;
   letter-spacing: 0.2rem;
-  line-height: 3rem;
+  width: 70%;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
