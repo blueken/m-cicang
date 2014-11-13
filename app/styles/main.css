@@ -425,7 +425,7 @@ header .btn_menu_on {
 }
 .content .kinds .icon_left {
   float: left;
-  margin-right: 8%;
+  margin-right: 0%;
 }
 .content .kinds .icon_right {
   float: right;
@@ -447,19 +447,6 @@ header .btn_menu_on {
   color: #fff;
   position: relative;
 }
-.content .kinds .kqbc .kind_title {
-  width: 60%;
-  display: block;
-  margin: 0 auto;
-  font-size: 5.6rem;
-}
-.content .kinds .kqbc .kind_desc {
-  width: 60%;
-  display: block;
-  margin: 0 auto;
-  font-size: 2.4rem;
-  margin-top: 3%;
-}
 .content .kinds .xmyy {
   display: inline-block;
   position: relative;
@@ -470,18 +457,29 @@ header .btn_menu_on {
   text-align: left;
   color: #666;
 }
-.content .kinds .xmyy .kind_title {
+.content .kinds .kind_title {
   width: 60%;
   display: block;
   margin: 0 auto;
   font-size: 5.6rem;
 }
-.content .kinds .xmyy .kind_desc {
-  width: 60%;
+.content .kinds .kind_desc {
+  width: 100%;
   display: block;
   margin: 0 auto;
   font-size: 2.4rem;
-  margin-top: 3%;
+  text-align: left;
+  margin-top: 4%;
+}
+.content .kinds .hmiddle-r {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 .content .kinds .copyright {
   font-size: 2.2rem;
