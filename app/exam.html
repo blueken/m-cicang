@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         
-                        <p class="choose">选择语言词书</p>
+                        <p class="choose">选择语言考试</p>
 
                         <div class="booklist_mask">
                             <div class="booklist_scroller">
@@ -200,8 +200,8 @@
             _.each(v.BookCategorys, function(v,k) {
                 // var.lang = lang;
 
-                // var tmpl = _.template('<li><a href="'+url+'"><img src="images/cet.jpg" alt="<%=Key%>-<%=Icon%>" /><h4><%=Name%></h4></a></li>');
-                var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle"><%=Icon%></b></span><h4><%=Name%></h4></a></li>');
+                // var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle"><%=Icon%></b></span><h4><%=Name%></h4></a></li>');
+                var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="<%=BG%>" alt="" /></span><h4><%=Name%></h4></a></li>');
                 var html = tmpl(v);
                 strUlBooks += html;
             });
