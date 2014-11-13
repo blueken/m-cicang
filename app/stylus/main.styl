@@ -1,7 +1,7 @@
 html 
     font-size 62.5%
 body
-    background #EEF3FA
+    background #FFF
     font-family "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun"
     color #333
 *
@@ -45,7 +45,7 @@ a, a:link, a:visited, a:active, a:hover {
     width 100%
     height 100%
     background rgba(40,40,40,0.3)
-    position absolute
+    position fixed
     top 0
     left 0
     z-index 101
@@ -286,7 +286,7 @@ header
                 height 76.93%  //150/195
                 // background-color gold
                 float left
-                margin 4.22% 3.13% // 26/616 
+                margin 3% 3.13% // 26/616 
                 a 
                     width 100%
                     height 100%
@@ -490,12 +490,12 @@ header
         visibility hidden
 
 .downtips
-    position absolute
+    position fixed
     z-index 100
     width 100%
     height 100%
     background rgba(0,0,0,0.9)
-    animation fadeOut 1s 3s linear forwards
+    animation fadeOut 1s 2s linear forwards
     display none
     // display none
     img 
@@ -531,8 +531,11 @@ header
     // nexus 4 = 384
     html 
         font-size 37%
+    .boy_in_cloud
+        zoom 0.6
+        top 10%
 
-@media screen and (max-width: 360px) 
+@media screen and (max-width: 380px) 
     // nexus 4 = 384
     html 
         font-size 32%

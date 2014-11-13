@@ -11,7 +11,7 @@ function initHeader(pageData) {
 		_.defaults(pageData, {
 			'title': 'Default title',
 			'back_url': '',
-			'down_url': 'http://m.hujiang.com/android/HJWordGames.apk'
+			'down_url': 'http://m.hujiang.com/app/cichang/'
 		});
 		var header_html = _.template(tmpl, pageData);
 		$('header').html(header_html);
@@ -143,7 +143,7 @@ function dealSpriteSheet() {
 
 	var winWidth = $(window).width();
 
-	if (winWidth <= 360) {
+	if (winWidth <= 380) {
 		scaleAllSS('.sprite', 0.6);
 	}
 	else if (winWidth <= 420) {
@@ -358,7 +358,7 @@ function bindDownload() {
 			$(this).attr('href', 'https://itunes.apple.com/cn/app/kai-xin-ci-chang3/id635206028?mt=8');
 		}
 		else {
-			$(this).attr('href', 'http://m.hujiang.com/android/HJWordGames.apk');
+			$(this).attr('href', 'http://m.hujiang.com/app/cichang/');
 		}
 	});
 }
@@ -420,7 +420,7 @@ window.addEventListener("load", function () {
 //for jiathis
 jiathis_config = {
 	url: "http://beta.mci.hujiang.com/",
-	title: "今天制霸词场，明天征服世界！我在开心词场”中以1920分秒杀对手！不服来战，等你！",
+	title: "我在开心词场中以1920分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！",
 	summary: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
 	pic: 'http://beta.mci.hujiang.com/images/sharewin.jpg'
 }
@@ -431,7 +431,7 @@ dataForWeixin = {
 	imgWidth: "200",
 	imgHeight: "200",
 	lineLink: "http://beta.mci.hujiang.com/",
-	shareTitle: "今天制霸词场，明天征服世界！我在开心词场”中以1920分秒杀对手！不服来战，等你！",
+	shareTitle: "我在开心词场”中以1920分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！",
 	descContent: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
 	callback: function () {
 		winxinShareDone();

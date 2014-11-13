@@ -247,7 +247,7 @@ function searching(bRandom) {
                 complete: function () {
                     num += 1;
                     showOpp(oppsshuffle, num);
-                    if (num == 5) {
+                    if (num == 3) {
                         clearInterval(searchItv);
                         showPK();
 

@@ -157,7 +157,7 @@ Competition.prototype.combo = function (a) {
             dummyAnimate($('.combo')[0], 'animated fadeInUp', function () {
                 setTimeout(function () {
                     $('.combo').addClass('hidden');
-                }, 1000);
+                }, 400);
             });
         }
 
@@ -221,7 +221,7 @@ Competition.prototype.nextQuestion = function (a) {
             $(".questions").animate({
                 left: "-=100%"
             }, {
-                duration: '250',
+                duration: '130',
                 complete: function () {
                     answer.done = false;
                 }

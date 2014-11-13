@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     var pageData = {
         'title': 'PK结果',
         'back_url': 'index.html',
@@ -15,9 +15,9 @@ $(function() {
 
     initPage();
 
-    
+
 });
-$(window).on('load', function() {
+$(window).on('load', function () {
     // testCountUp();
     var o = store.get('hjKxccResult');
     //o = {correct: this.correct,  duration: this.duration, combo: this.maxCombo};
@@ -42,88 +42,99 @@ function getUserData() {
         $('.info>img').attr('src', data.Avatar);
         $('.nick').html(data.UserName);
     };
- }
+}
+
 function showResult() {
-    setTimeout(function() {
+    setTimeout(function () {
         $('.winorlose').removeClass('hidden');
         dummyAnimate('.winorlose', 'animated zoomIn');
     }, 100);
 }
+
 function showCorrect(n) {
-    setTimeout(function() {
+    setTimeout(function () {
         $('.correct').html(n).removeClass('hidden');
         dummyAnimate('.correct', 'animated fadeIn');
-    }, 1500);
+    }, 800);
 }
+
 function showTime(n) {
-    setTimeout(function() {
+    setTimeout(function () {
         $('.time').html(n).removeClass('hidden');
         dummyAnimate('.time', 'animated fadeIn');
-    }, 2500);
-    
+    }, 1300);
+
 }
+
 function showCombo(n) {
-    setTimeout(function() {
+    setTimeout(function () {
         $('.combo').html(n).removeClass('hidden');
         dummyAnimate('.combo', 'animated fadeIn');
-    }, 3500);
+    }, 1800);
 }
+
 function showTotal(n) {
-    setTimeout(function() {
+    setTimeout(function () {
         $('.total').removeClass('hidden');
         totalCountUp(n);
-    }, 4500);
+    }, 2300);
 }
+
 function animeSocial(n) {
-    setTimeout(function() {
+    setTimeout(function () {
         dummyAnimate('.btns a:last', 'animated tada');
-        
-    }, 6500);
+
+    }, 3300);
 }
+
 function initPage() {
-    $('.btns a:last').on('click', function() {
+    $('.btns a:last').on('click', function () {
         weixinLogin();
-        
+
         return false;
     });
-    $('.overlay').on('click', function() {
+    $('.overlay').on('click', function () {
         if (isWeiXin()) {
-            dummyAnimate('.winxintips', 'animated bounceOut', function() {
-                $('.overlay').addClass('hidden');
-                $('.winxintips').addClass('hidden');
-                $('.shares').addClass('hidden');
-            });
-        } else {
-            dummyAnimate('.shares', 'animated bounceOutDown', function() {
+            dummyAnimate('.winxintips', 'animated bounceOut', function () {
                 $('.overlay').addClass('hidden');
                 $('.winxintips').addClass('hidden');
                 $('.shares').addClass('hidden');
             });
         }
-        
+        else {
+            dummyAnimate('.shares', 'animated bounceOutDown', function () {
+                $('.overlay').addClass('hidden');
+                $('.winxintips').addClass('hidden');
+                $('.shares').addClass('hidden');
+            });
+        }
+
 
         return false;
     });
 
-    $('.shares_wrapper').on('click', function(e) {
+    $('.shares_wrapper').on('click', function (e) {
         e.stopPropagation();
     });
 
     initJiaThis();
-    
+
 }
+
 function initJiaThis() {
-    $.getScript('http://v3.jiathis.com/code/jia.js',function(){
-        
-    }) ;
+    $.getScript('http://v3.jiathis.com/code/jia.js', function () {
+
+    });
 }
+
 function weixinLogin() {
     if (isWeiXin()) {
         //weixin hide weixin,show tips
         $('.overlay').removeClass('hidden');
         $('.winxintips').removeClass('hidden');
         dummyAnimate('.winxintips', 'animated bounceIn');
-    } else {
+    }
+    else {
         // not weixin show shares
         // $('.shares').find('li').eq(0).addClass('hidden');
         $('.shares').removeClass('hidden');
@@ -131,12 +142,13 @@ function weixinLogin() {
         dummyAnimate('.shares', 'animated bounceInUp');
     }
 }
+
 function totalCountUp(n) {
-    var options = {
-      useEasing : true, 
-      useGrouping : true, 
-      separator : ',', 
-      decimal : '.' 
+    var options = {  
+        useEasing: true,
+          useGrouping: true,
+          separator: ',',
+          decimal: '.'
     }
     var total = new countUp($('.total').get(0), 0, n, 0, 2, options);
     total.start();
@@ -160,9 +172,11 @@ function winxinShareDone() {
                 "link": dataForWeixin.lineLink,
                 "desc": dataForWeixin.descContent,
                 "title": dataForWeixin.shareTitle
-            }, function (res) { dataForWeixin.callback(); });
+            }, function (res) {
+                dataForWeixin.callback();
+            });
         });
- 
+
         // 发送到朋友圈
         WeixinJSBridge.on("menu:share:timeline", function (argv) {
             WeixinJSBridge.invoke("shareTimeline", {
@@ -173,17 +187,21 @@ function winxinShareDone() {
                 "link": dataForWeixin.lineLink,
                 "desc": dataForWeixin.descContent,
                 "title": dataForWeixin.shareTitle
-            }, function (res) { dataForWeixin.callback(); });
+            }, function (res) {
+                dataForWeixin.callback();
+            });
         });
- 
+
         // 分享到微博
         WeixinJSBridge.on("menu:share:weibo", function (argv) {
             WeixinJSBridge.invoke("shareWeibo", {
                 "content": dataForWeixin.shareTitle,
                 "url": dataForWeixin.lineLink
-            }, function (res) { dataForWeixin.callback(); });
+            }, function (res) {
+                dataForWeixin.callback();
+            });
         });
- 
+
         // 分享到facebook
         WeixinJSBridge.on("menu:share:facebook", function (argv) {
             WeixinJSBridge.invoke("shareFB", {
@@ -193,13 +211,16 @@ function winxinShareDone() {
                 "link": dataForWeixin.lineLink,
                 "desc": dataForWeixin.descContent,
                 "title": dataForWeixin.shareTitle
-            }, function (res) { dataForWeixin.callback(); });
+            }, function (res) {
+                dataForWeixin.callback();
+            });
         });
     };
- 
+
     if (document.addEventListener) {
         document.addEventListener("WeixinJSBridgeReady", onBridgeReady, false);
-    } else if (document.attachEvent) {
+    }
+    else if (document.attachEvent) {
         document.attachEvent("onWeixinJSBridgeReady", onBridgeReady);
     }
 })();

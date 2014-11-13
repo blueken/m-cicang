@@ -142,7 +142,7 @@
 
 
     </body>
-
+    <script src="http://172.16.8.16:8204/target/target-script-min.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -298,8 +298,9 @@
     function highlightTab(idx) {
         $('.nav_mask>ul>li>a>span').attr('class', 'rvmiddle');
         $('.nav_mask').find('a').eq(idx).find('span').addClass('selected');
-        store.set('hjKxccLangIdx', idx);
-
+        if(store) {
+            store.set('hjKxccLangIdx',idx);
+        }
         if (idx > 3) {
             gScrollerNav.scrollTo(-220,0,800);
         } else {
