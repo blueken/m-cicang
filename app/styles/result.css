@@ -67,16 +67,20 @@
 }
 .content .result .info .total {
   position: absolute;
+  width: 25%;
   top: 66.40625%;
-  left: 28.596187175043326%;
+  left: 29.462738301559792%;
   font-size: 5.4rem;
+  text-align: center;
   color: #fff;
 }
 .content .result .info .correct {
   position: absolute;
   top: 5.859375%;
-  left: 66.20450606585788%;
+  left: 65.8578856152513%;
+  width: 12%;
   font-size: 3.2rem;
+  text-align: right;
   color: #fff;
   -webkit-animation-duration: 1.2s;
   -moz-animation-duration: 1.2s;
@@ -87,8 +91,10 @@
 .content .result .info .time {
   position: absolute;
   top: 42.96875%;
-  left: 66.20450606585788%;
+  left: 65.8578856152513%;
+  width: 12%;
   font-size: 3.2rem;
+  text-align: right;
   color: #fff;
   -webkit-animation-duration: 1.2s;
   -moz-animation-duration: 1.2s;
@@ -99,8 +105,10 @@
 .content .result .info .combo {
   position: absolute;
   top: 77.34375%;
-  left: 66.20450606585788%;
+  left: 65.8578856152513%;
+  width: 12%;
   font-size: 3.2rem;
+  text-align: right;
   color: #fff;
   -webkit-animation-duration: 1.2s;
   -moz-animation-duration: 1.2s;

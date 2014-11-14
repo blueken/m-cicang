@@ -37,7 +37,7 @@
 
                         <div class="nav_mask">
                             <ul>
-                                <!--li><a href="#"><span class="selected rvmiddle">英语</span></a></li>
+                                <!--li><a class="selected" href="#"><span class="selected rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
@@ -296,7 +296,9 @@
         
     }
     function highlightTab(idx) {
+        $('.nav_mask>ul>li>a').attr('class', '');
         $('.nav_mask>ul>li>a>span').attr('class', 'rvmiddle');
+        $('.nav_mask').find('a').eq(idx).addClass('selected');
         $('.nav_mask').find('a').eq(idx).find('span').addClass('selected');
         if(store) {
             store.set('hjKxccLangIdx',idx);

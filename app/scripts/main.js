@@ -143,7 +143,10 @@ function dealSpriteSheet() {
 
 	var winWidth = $(window).width();
 
-	if (winWidth <= 380) {
+	if (winWidth <= 320) {
+		scaleAllSS('.sprite', 0.45);
+	}
+	else if (winWidth <= 370) {
 		scaleAllSS('.sprite', 0.6);
 	}
 	else if (winWidth <= 420) {
@@ -419,12 +422,12 @@ window.addEventListener("load", function () {
 
 //for jiathis
 jiathis_config = {
-	url: "http://beta.mci.hujiang.com/",
-	title: "我在开心词场中以1920分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！",
-	summary: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
-	pic: 'http://beta.mci.hujiang.com/images/sharewin.jpg'
-}
-// data for weixin
+		url: "http://beta.mci.hujiang.com/",
+		title: "我在开心词场中以1920分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！",
+		summary: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
+		pic: 'http://beta.mci.hujiang.com/images/sharewin.jpg'
+	}
+	// data for weixin
 dataForWeixin = {
 	appId: "", // 
 	imgUrl: "http://beta.mci.hujiang.com/images/sharewin.jpg",

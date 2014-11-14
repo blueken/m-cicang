@@ -27,9 +27,15 @@
 }
 .content .nav_mask ul li a span {
   color: #a9e2fb;
+  letter-spacing: 0.2rem;
+  margin-right: -0.2rem;
 }
 .content .nav_mask ul li a span.selected {
   color: #fff;
+}
+.content .nav_mask ul li a.selected {
+  height: 94%;
+  border-bottom: #ffeb3b 3px solid;
 }
 .content .choose {
   position: relative;

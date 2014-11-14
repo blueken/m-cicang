@@ -403,7 +403,7 @@ header .btn_menu_on {
 }
 .boy_in_cloud {
   position: absolute;
-  top: 8%;
+  top: 18%;
   left: 5%;
   z-index: 0;
 }
@@ -530,8 +530,8 @@ header .btn_menu_on {
     font-size: 37%;
   }
   .boy_in_cloud {
-    zoom: 0.6;
-    top: 10%;
+    zoom: 0.7;
+    top: 22%;
   }
 }
 @media screen and (max-width: 380px) {
@@ -543,8 +543,21 @@ header .btn_menu_on {
     width: 20px;
   }
   .boy_in_cloud {
-    zoom: 0.4;
-    top: 10%;
+    zoom: 0.6;
+    top: 22%;
+  }
+}
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 32%;
+  }
+  .rarrow_gray,
+  .rarrow_white {
+    width: 20px;
+  }
+  .boy_in_cloud {
+    zoom: 0.9;
+    top: 20%;
   }
 }
 /* MEDIA QUERY END */
