@@ -79,7 +79,7 @@ function initMenu(menuData) {
 		_.defaults(menuData, {
 			'title': 'Default title',
 			'back_url': '',
-			'down_url': 'http://www.default.com'
+			'down_url': 'http://m.hujiang.com/app/cichang/'
 		});
 		var header_html = _.template(tmpl, menuData);
 		$('.menu_content').html(header_html);
@@ -120,7 +120,7 @@ function judgeLogged() {
 
 function cloudDown(percent) {
 	'use strict';
-	var p = percent ? percent : '-33%';
+	var p = percent ? percent : '0%';
 	$('.clouds').css('bottom', p);
 	$('.clouds').show();
 }
@@ -182,7 +182,9 @@ function scaleSS(domobj, ratio) {
 	if ($obj.hasClass('boy')) {
 		return;
 	}
-
+	if ($obj.hasClass('anonymous')) {
+		ratio = 0.7;
+	}
 	var widthSpriteSheet = parseInt($obj.css('background-size').split(' ')[0]);
 	var heightSpriteSheet = parseInt($obj.css('background-size').split(' ')[1]);
 	var spritePosX = parseInt($obj.css('background-position').split(' ')[0]);

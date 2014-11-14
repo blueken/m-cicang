@@ -82,7 +82,7 @@ transform()
 							border-radius 50%
 							text-align center
 							margin-right (32 * 100 / $ul_w)% //32/516
-							margin-top  (11 * 100 / $ul_w)%//11/516
+							// margin-top  (11 * 100 / $ul_w)%//11/516
 							margin-left (12 * 100 / $ul_w)% //12/516
 							float left
 							b 
@@ -93,7 +93,11 @@ transform()
 								font-size 2.4rem
 						.answer
 							display inline-block
+							width 68%
+							margin-left 18%
 							font-size 3.0rem
+						.sign
+							right 7%;
 					a.selected
 						background-color #ffffff
 						color #666666
@@ -101,8 +105,12 @@ transform()
 						// 	border-color #666666
 					a.wrong
 						background-color #ed5d62
+						.circle
+							border 0
 					a.right 
 						background-color #08c863
+						.circle
+							border 0
 	.vs
 		$vs_w = 576
 		$vs_h = 82
@@ -111,12 +119,13 @@ transform()
 		width ($vs_w * 100 / $content_w)%
 		height ($vs_h * 100 / $content_h)%
 		// background-color gold
-		bottom 10%
+		bottom 9%
 		left (32 * 100 / $content_w)%
 		.pho
 			width (82 * 100 / $vs_w)%
 			height 100%
 			border-radius 50%
+			border #dcdcdc 2px solid
 		.me 
 			float left
 		.him

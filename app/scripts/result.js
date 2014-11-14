@@ -1,7 +1,7 @@
 $(function () {
     var pageData = {
         'title': 'PK结果',
-        'back_url': 'index.html',
+        'back_url': '/index.html',
     };
 
     initHeader(pageData);
@@ -11,7 +11,7 @@ $(function () {
     bindDownload();
 
     getUserData();
-    cloudDown();
+    cloudDown('-33%');
 
     initPage();
 
@@ -155,9 +155,9 @@ function totalCountUp(n) {
 }
 
 function winxinShareDone() {
-    $('.overlay').click();
-}
-// 微信分享到朋友圈的内容和图片的定制
+        $('.overlay').click();
+    }
+    // 微信分享到朋友圈的内容和图片的定制
 
 
 (function () {

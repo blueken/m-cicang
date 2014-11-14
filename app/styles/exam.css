@@ -92,6 +92,8 @@
 }
 .content .booklist_mask .booklist_scroller .books ul li a .icon img {
   width: 100%;
+  min-width: 4rem;
+  min-height: 4rem;
   border-radius: 50%;
 }
 .content .booklist_mask .booklist_scroller .books ul li a .icon .cato {

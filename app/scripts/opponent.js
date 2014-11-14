@@ -41,7 +41,19 @@ function getOppData() {
         searching(true);
     }
     $.get('http://beta.mci.hujiang.com/Services/PKUserInfo.ashx?bookid=' + bid + '&userid=' + UserId + '&ts=' + Math.random(), function (data) {
-        // data = {"UserId":25710160,"UserName":"AirSky_Ten","BookId":10232,"PKUserId":0,"IsWin":false,"MatchTime":135925,"WordCount":15,"RightWordCount":6,"Score":40,"WrongWords":"010100000000000","IsMockup":false};
+        data = {
+            "UserId": 25710160,
+            "UserName": "AirSky_Ten",
+            "BookId": 10232,
+            "PKUserId": 0,
+            "IsWin": false,
+            "MatchTime": 135925,
+            "WordCount": 15,
+            "RightWordCount": 6,
+            "Score": 40,
+            "WrongWords": "010100000000000",
+            "IsMockup": false
+        };
         saveOppData(data);
     }, 'JSON');
 
@@ -247,7 +259,7 @@ function searching(bRandom) {
                 complete: function () {
                     num += 1;
                     showOpp(oppsshuffle, num);
-                    if (num == 3) {
+                    if (num == 4) {
                         clearInterval(searchItv);
                         showPK();
 
@@ -263,7 +275,7 @@ function searching(bRandom) {
                 }
             });
 
-        }, 1500);
+        }, 1000);
     }
     else {
         // certain opponent from social

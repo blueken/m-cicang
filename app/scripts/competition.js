@@ -10,7 +10,7 @@ $(function () {
     initCloud();
     bindEvents();
     bindQuitEvents();
-    cloudDown();
+    cloudDown('-33%');
 
     getUserData();
     getOppInfo();
@@ -77,7 +77,7 @@ function getQuestions() {
                 var arr = ['A', 'B', 'C', 'D'];
                 alpha = arr[i];
 
-                sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',' + i + ',' + v.correctOption + ')"><span class="circle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span></a></li>';
+                sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',' + i + ',' + v.correctOption + ')"><span class="circle vmiddle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span></a></li>';
             });
             // sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',4,' + v.correctOption + ')"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>'; 
             sectionStr += '</ul></section>';
@@ -293,6 +293,11 @@ BloodSystem.prototype.Heisright = function (e) {
     }, {
         duration: 800
     });
+    // $('.his_progress').animate({
+    //     width: '+=' + this.step
+    // }, 600, 'easeInOutBack', function () {
+    //     console.log('hi is right')
+    // });
 }
 BloodSystem.prototype.Iamright = function (e) {
     $('.his_progress').animate({
@@ -300,4 +305,11 @@ BloodSystem.prototype.Iamright = function (e) {
     }, {
         duration: 800
     });
+    // $('.his_progress').animate({
+    //     width: '-=' + this.step
+    // }, 600, 'easeInOutBack', function () {
+    //     console.log('hi is right')
+    // });
+
+
 }
