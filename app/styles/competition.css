@@ -77,6 +77,7 @@
 }
 .content .questions .question ul li a .sign {
   right: 7%;
+  font-size: 3rem;
 }
 .content .questions .question ul li a.selected {
   background-color: #fff;
@@ -152,7 +153,7 @@
 }
 .content .combo {
   position: absolute;
-  top: 72%;
+  top: 73%;
   left: 10%;
   z-index: 1;
   font-size: 2.4rem;

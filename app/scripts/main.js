@@ -150,7 +150,7 @@ function dealSpriteSheet() {
 		scaleAllSS('.sprite', 0.6);
 	}
 	else if (winWidth <= 420) {
-		scaleAllSS('.sprite', 0.72);
+		scaleAllSS('.sprite', 0.70);
 	}
 	else if (winWidth <= 470) {
 		scaleAllSS('.sprite', 0.8);

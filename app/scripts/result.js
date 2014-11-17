@@ -1,7 +1,7 @@
 $(function () {
     var pageData = {
         'title': 'PK结果',
-        'back_url': '/index.html',
+        'back_url': location.origin + '/index.html',
     };
 
     initHeader(pageData);

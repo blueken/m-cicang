@@ -76,10 +76,10 @@ function getQuestions() {
                 var alpha = 'A';
                 var arr = ['A', 'B', 'C', 'D'];
                 alpha = arr[i];
-
-                sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',' + i + ',' + v.correctOption + ')"><span class="circle vmiddle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span></a></li>';
+                var cstring = '<span class="vmiddle sign hidden">' + (i == v.correctOption ? '√' : '×') + '</span>';
+                sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',' + i + ',' + v.correctOption + ')"><span class="circle vmiddle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span>' + cstring + '</a></li>';
             });
-            // sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',4,' + v.correctOption + ')"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>'; 
+            sectionStr += '<li style="display:none"><a href="javascript:void(0)" onclick="answer(this, ' + k + ',4,' + v.correctOption + ')"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>';
             sectionStr += '</ul></section>';
             quesStr += sectionStr;
         });
@@ -115,7 +115,7 @@ function answer(o, quesIdx, answerIdx, correntIdx) {
             $(o).addClass('wrong');
         }
     }
-
+    $(o).find('.sign').removeClass('hidden');
     answer.done = true;
 }
 
@@ -154,7 +154,7 @@ Competition.prototype.combo = function (a) {
             this.numCombo += 1;
             $('.combo_txt').html('Combo ' + this.numCombo);
             $('.combo').removeClass('hidden')
-            dummyAnimate($('.combo')[0], 'animated fadeInUp', function () {
+            dummyAnimate($('.combo')[0], 'animated fadeIn', function () {
                 setTimeout(function () {
                     $('.combo').addClass('hidden');
                 }, 400);
@@ -288,28 +288,25 @@ BloodSystem.prototype.hisAction = function (e) {
 
 }
 BloodSystem.prototype.Heisright = function (e) {
-    $('.his_progress').animate({
-        width: '+=' + this.step
-    }, {
-        duration: 800
-    });
     // $('.his_progress').animate({
     //     width: '+=' + this.step
-    // }, 600, 'easeInOutBack', function () {
-    //     console.log('hi is right')
-    // });
-}
-BloodSystem.prototype.Iamright = function (e) {
-    $('.his_progress').animate({
-        width: '-=' + this.step
-    }, {
-        duration: 800
-    });
-    // $('.his_progress').animate({
-    //     width: '-=' + this.step
-    // }, 600, 'easeInOutBack', function () {
-    //     console.log('hi is right')
+    // }, {
+    //     duration: 800
     // });
 
+    $('.his_progress').animate({
+        width: '+=' + this.step
+    }, 800, 'easeInOutBack', function () {})
+}
+BloodSystem.prototype.Iamright = function (e) {
+    // $('.his_progress').animate({
+    //     width: '-=' + this.step
+    // }, {
+    //     duration: 800
+    // });
+
+    $('.his_progress').animate({
+        width: '-=' + this.step
+    }, 800, 'easeInOutBack', function () {})
 
 }

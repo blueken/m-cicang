@@ -171,7 +171,7 @@
     $(function() {
         var pageData = {
             'title': '学门语言',
-            'back_url': '/index.html',
+            'back_url': location.origin+'/index.html',
         };
 
 
@@ -198,7 +198,7 @@
             var heightNav = $('.nav_mask').innerHeight();
             var heightChoose = $('.choose').innerHeight();
             var heightBooks = heightWindow - heightHeader - heightNav - heightChoose;
-            heightBooks = heightBooks - 10;
+            heightBooks = heightBooks - 40;
             $('.booklist_scroller').height(heightBooks);
         }
     }
