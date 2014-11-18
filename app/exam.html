@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>考前背词</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
         <link rel="shortcut icon" href="/favicon.ico">
@@ -48,14 +48,14 @@
                             </div>
                         </div>
                         
-                        <p class="choose">选择语言词书</p>
+                        <p class="choose">选择语言考试</p>
 
                         <div class="booklist_mask">
                             <div class="booklist_scroller">
-                                <!--div class="books">
+                                <!--<div class="books">
                                      <ul>
-                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
-                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4><p>简介</p></a></li>
+                                        <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4><p>简介</p></a></li>
                                         <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
                                         <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
                                         <li><a href="info_exam.html"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle">CET</b></span><h4>大学语言四级高频词汇</h4></a></li>
@@ -107,7 +107,7 @@
                                         <li><a href="#"><img src="images/cet.jpg" alt="" /><h4>大学语言四级高频词汇</h4></a></li>
                                         
                                     </ul>   
-                                </div-->
+                                </div> -->
                             </div>
                         </div>
                         
@@ -154,10 +154,9 @@
     gScrollNav = null;
 
     $(function() {
-        var xxx = 'bobalan';
         var pageData = {
             'title': '考前背词',
-            'back_url': 'index.html',
+            'back_url': location.origin+'/index.html',
         };
 
 
@@ -200,8 +199,8 @@
             _.each(v.BookCategorys, function(v,k) {
                 // var.lang = lang;
 
-                // var tmpl = _.template('<li><a href="'+url+'"><img src="images/cet.jpg" alt="<%=Key%>-<%=Icon%>" /><h4><%=Name%></h4></a></li>');
-                var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle"><%=Icon%></b></span><h4><%=Name%></h4></a></li>');
+                // var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="images/cet.jpg" alt="" /><b class="cato hvmiddle"><%=Icon%></b></span><h4><%=Name%></h4></a></li>');
+                var tmpl = _.template('<li><a href="'+url+'"><span class="icon"><img src="<%=BG%>" alt="" /></span><h4><%=Name%></h4><p><%=Description%></p></a></li>');
                 var html = tmpl(v);
                 strUlBooks += html;
             });

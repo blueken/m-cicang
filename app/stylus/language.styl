@@ -31,9 +31,13 @@ $language_num = 8
 					height 100%
 					span 
 						color #a9e2fb
-
+						letter-spacing: 0.2rem;
+						margin-right: -0.2rem;
 					span.selected
 						color white
+				a.selected
+					height 92%
+					border-bottom: #FFEB3B 4px solid;
 	.choose
 		position relative
 		z-index 2
@@ -47,7 +51,7 @@ $language_num = 8
 
 	.booklist_mask
 		width 100%
-		height $mask_height = ((920 - 88 - 88) * 100 / 920)%
+		height $mask_height = ((920 - 88 - 88 - 90) * 100 / 920)%
 
 		background-color white
 		.booklist_scroller

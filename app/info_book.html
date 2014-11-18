@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>词书信息</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
         <link rel="shortcut icon" href="/favicon.ico">
@@ -37,8 +37,8 @@
                             <div class="cloud_parallax">
 
                                 <span class="cloud_b"></span>
-                                <span class="sprite boy boy_in_cloud"></span>
                                 <span class="cloud_f"></span>
+                                <span class="sprite boyc boy_in_cloud"></span>
                             </div>
                         </div>
 
@@ -131,7 +131,7 @@
             $('.bookname').html(data.BookName);
             var pageData = {
                 'title': data.BookName,
-                'back_url': 'language.html',
+                'back_url': location.origin+'/language.html',
             };
 
 

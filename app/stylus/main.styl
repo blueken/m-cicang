@@ -1,7 +1,7 @@
 html 
     font-size 62.5%
 body
-    background #EEF3FA
+    background #FFF
     font-family "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun"
     color #333
 *
@@ -45,7 +45,7 @@ a, a:link, a:visited, a:active, a:hover {
     width 100%
     height 100%
     background rgba(40,40,40,0.3)
-    position absolute
+    position fixed
     top 0
     left 0
     z-index 101
@@ -286,7 +286,7 @@ header
                 height 76.93%  //150/195
                 // background-color gold
                 float left
-                margin 4.22% 3.13% // 26/616 
+                margin 3% 3.13% // 26/616 
                 a 
                     width 100%
                     height 100%
@@ -353,6 +353,7 @@ header
 
 /* CSS for cloud.html BEGIN*/
     .clouds
+        display none
         width 100%
         // padding-bottom 21.1% /*135 / 640*/
         height 74.57% //(416+135+135)/920
@@ -376,38 +377,39 @@ header
 
             .cloud_b
                 display inline-block
-                width 4000px
-                height 67px
-                background url("../images/cloud_b.png")
-                background-size contain
+                width 2008px
+                height 162px
+                background url("../images/cloud_b.png") no-repeat
+                background-size cover
+                
                 opacity 0.8
                 position absolute
                 bottom 0
-                animation cloud_move 300s linear infinite
+                animation cloud_move 400s linear infinite
 
                
             .cloud_f
                 display inline-block
-                width 8000px
-                height 67px
-                background url("../images/cloud_f.png")
+                width 1680px
+                height 135px
+                background url("../images/cloud_f.png") no-repeat
                 background-size contain
                 position absolute
                 bottom 0
-                animation cloud_move 400s linear infinite
+                animation cloud_move 150s linear infinite
                 // -webkit-transform scaleY(0.5);
 
     .ani_cloud_down
         animation cloud_down 0.2s ease forwards
 @keyframes cloud_move
     100%
-        transform translateX(-50%)
+        transform translateX(-40%)
 @keyframes cloud_down
     100%
         transform translateY(200px);
 .boy_in_cloud
     position absolute
-    top 8%
+    top 18%
     left 5%
     z-index 0
 /* CSS for cloud.html END*/
@@ -429,7 +431,7 @@ header
         text-align center
         .icon_left
             float left
-            margin-right 8%
+            margin-right 0%
         .icon_right
             float right
             position: absolute;
@@ -444,17 +446,6 @@ header
             text-align left
             color white
             position relative
-            .kind_title 
-                width 60% //240/444
-                display block
-                margin 0 auto
-                font-size 5.6rem
-            .kind_desc
-                width 60% //240/444
-                display block
-                margin 0 auto
-                font-size 2.4rem
-                margin-top 3% //15/100
         .xmyy
             display inline-block
             position relative
@@ -464,20 +455,29 @@ header
             max-width 450px
             text-align left
             color #666666
-            .kind_title 
-                width 60% //240/444
-                display block
-                margin 0 auto
-                font-size 5.6rem
-            .kind_desc
-                width 60% //240/444
-                display block
-                margin 0 auto
-                font-size 2.4rem
-                margin-top 3% //15/100
+            
+        .kind_title 
+            width 60% //240/444
+            display block
+            margin 0 auto
+            font-size 5.6rem
+            
+            
+        .kind_desc
+            width 100% 
+            display block
+            margin 0 auto
+            font-size 2.4rem
+            text-align left
+            margin-top 7%
+        .hmiddle-r 
+            display inline-block
+            position relative
+            left 50%
+            transform translateX(-50%)
         .copyright
             font-size 2.2rem
-            margin-top 23% //120px/482px
+            margin-top 21% //100px/482px
             
 
 /*Content end*/
@@ -489,12 +489,12 @@ header
         visibility hidden
 
 .downtips
-    position absolute
+    position fixed
     z-index 100
     width 100%
     height 100%
     background rgba(0,0,0,0.9)
-    animation fadeOut 1s 4s linear forwards
+    animation fadeOut 1s 2s linear forwards
     display none
     // display none
     img 
@@ -530,8 +530,11 @@ header
     // nexus 4 = 384
     html 
         font-size 37%
+    .boy_in_cloud
+        zoom 0.7
+        top 22%
 
-@media screen and (max-width: 360px) 
+@media screen and (max-width: 380px) 
     // nexus 4 = 384
     html 
         font-size 32%
@@ -539,9 +542,18 @@ header
     .rarrow_white
         width 20px
     .boy_in_cloud
-        zoom 0.4
-        top 10%
-
+        zoom 0.6
+        top 22%
+@media screen and (max-width: 320px) 
+    // nexus 4 = 384
+    html 
+        font-size 32%
+    .rarrow_gray
+    .rarrow_white
+        width 20px
+    .boy_in_cloud
+        zoom 0.9
+        top 20%
 // @media screen and (max-width: 321px) 
     //iphone 3g 4 5 = 320
 

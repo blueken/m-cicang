@@ -31,17 +31,19 @@ $language_num = 3
 					height 100%
 					span 
 						color #a9e2fb
+						letter-spacing 0.5rem
 
 					span.selected
 						color white
 		.indicator
+			$indicator_num = 3;
 			position absolute
 			bottom 0
 			width 100%
 			height 6%//4/88
 
 			.highlight
-				width 25%
+				width (1/$indicator_num) * 100%
 				height 100%
 				border-radius 2px
 				background-color gold
@@ -100,6 +102,8 @@ $language_num = 3
 								
 								img 
 									width 100%
+									min-width 4.0rem
+									min-height 4.0rem
 									border-radius 50%
 								.cato
 									color white
@@ -107,13 +111,21 @@ $language_num = 3
 									text-align center
 									width 100%
 							h4
-								color #333333
-								font-size 3.0rem
-								margin-top (40*100/ $li_w)%
+								color #585858
+								font-size 3.2rem
+								margin-top (18*100/ $li_w)%
+								font-weight bold
 							p 
-								width (532*100 / $li_w)%
-								margin-top (25*100/ $li_w)%
+								margin-top (16*100/ $li_w)%
 								color #999999
 								font-size 2.5rem
 								letter-spacing 0.2rem
-								line-height 3rem
+								
+								width: 70%;
+								padding-bottom: 3%;
+								border-bottom: #f5f5f5 2px solid;
+								word-wrap: break-word;
+								white-space: nowrap;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								

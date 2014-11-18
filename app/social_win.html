@@ -5,17 +5,17 @@
         <title>开心词场</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
-        <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
-        <meta name="apple-mobile-web-app-title" content="开心词场触屏版">
-
         <link rel="shortcut icon" href="/favicon.ico">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <link rel="stylesheet" href="styles/reset.css">
         <link rel="stylesheet" href="styles/sprite.css">
         <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+        <!-- build:css styles/social.css -->
+        <link rel="stylesheet" href="styles/social.css">
         <!-- endbuild -->
     </head>
     <body>
@@ -32,48 +32,37 @@
                         
                     </div>
                     <article class="content">
-                        <div class="clouds">
+                        <!--div class="clouds">
                             <span class="cloud_bg"></span>
                             <div class="cloud_parallax">
 
                                 <span class="cloud_f"></span>
                                 <span class="cloud_b"></span>
                             </div>
+                        </div-->
+
+                        <div class="result">
+                            <img class="bg" src="images/sbgwin.png" alt="" />
+                            <img class="photo hidden" src="images/unknown.png" alt="" />
+                            <p class="user_txt user_name"></p>
+                            <p class="user_txt user_score"></p>
+                            <img class="book" src="images/book_cover.jpg" alt="" />
                         </div>
-
-                        <div class="kinds">
-                            <ul>
-
-
-                                <li><a class="kqbc" href="exam.html">
-                                    <span class="sprite paper_flight icon_left"></span>
-                                    <span class="kind_title"><span class="hmiddle-r">考前背词<span class="kind_desc">带你高分 带你飞</span></span></span>
-                                    <span class="sprite rarrow_white icon_right"></span>
-                                </a></li>
-
-
-
-                                <li><a class="xmyy" href="language.html">
-                                    <span class="sprite doctor_hat icon_left"></span>
-                                    <span class="kind_title"><span class="hmiddle-r">学门语言<span class="kind_desc">语言达人 就是你</span></span></span>
-                                    <span class="sprite rarrow_gray icon_right"></span>
-                                </a></li>
-                                <li class="copyright">Copyright &copy; 沪江网</li>
-                            </ul>
+                        <div class="btns">
+                            <a class="btn change" href="#" id="download"><span class="rvmiddle">换本词书<span></a>
+                            <a class="btn pk" href="#"><span class="rvmiddle">立即PK<span></a>
                         </div>
+                        
                     </article>
 
 
-                    <div class="downtips">
-                        <img id="img_tips" src="images/down_tips.png" />
-                    </div>
-
-
-                    
 
                 </div>
             </div>
         </div>
+
+       
+
 
 
     </body>
@@ -81,9 +70,6 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
-    <script src="../bower_components/iscroll/build/iscroll.js"></script>
-    <script src="../bower_components/store.js/store.js"></script>
-    <script src="../bower_components/countUp.js/countUp.js"></script>    
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -99,32 +85,64 @@
 
     </script>
 
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/iscroll/build/iscroll.js"></script>
+    <script src="../bower_components/store.js/store.js"></script>
+    <script src="../bower_components/countUp.js/countUp.js"></script>
+    <!-- endbower -->
     <!-- endbuild -->
+    <script src="scripts/main.js"></script>
 
     <script type="text/javascript">
+    //social.html?
     $(function() {
         var pageData = {
-            'title': '开心词场',
+            'title': 'PK结果',
             'back_url': '',
         };
 
+
         initHeader(pageData);
         initMenu();
-        initCloud();
+        //initCloud();
         bindEvents();
-
-        cloudDown('-5%');
-        showDowntips();
+        getData();
+        bindBtnsEvents();
     });
-    function showDowntips() {
-        var t = store.get('hjKxccDownTips');
-        if ( typeof(t) === "undefined" ) {
-            $('.downtips').show()
-            store.set('hjKxccDownTips', new Date().getTime());
+
+    function getData() {
+        var bookid = getParam('bookid');
+        var uid = getParam('uid');
+        var uname = getParam('uname');
+        var uscore = getParam('uscore');
+        var upic = getUserAvatar(uid);
+
+        $('.photo').attr('src', upic).removeClass('hidden');
+        $('.user_name').html(uname);
+        $('.user_score').html(uscore);
+
+        getBookPic(bookid);
+
+        if (window.store) {
+            store.set('hjKxccBookid', bookid);
+            store.set('hjKxccSocial', {'BookId':bookid, 'UserName':uname, 'UserId':uid});
         };
+    }
+    function saveSocialData() {
         
+    }
+    function getBookPic(bookid) {
+        var bid = getParam('bid');
+        $.get('http://beta.mci.hujiang.com/Services/InterestLangBookById.ashx?id='+bid, function(data) {
+            $('.book').attr('src', data.PicUrl);
+        },'JSON');
+    }
+    function bindBtnsEvents() {
+        $('.btn').eq(0).on('click', function() { document.location = 'index.html'; });
+        $('.btn').eq(1).on('click', function() { document.location = 'opponent.html'; });
     }
     </script>
 </html>

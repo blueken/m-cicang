@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>学门语言</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
         <link rel="shortcut icon" href="/favicon.ico">
@@ -37,7 +37,7 @@
 
                         <div class="nav_mask">
                             <ul>
-                                <!--li><a href="#"><span class="selected rvmiddle">英语</span></a></li>
+                                <!--li><a class="selected" href="#"><span class="selected rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
                                 <li><a href="#"><span class="rvmiddle">英语</span></a></li>
@@ -142,7 +142,6 @@
 
 
     </body>
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -172,7 +171,7 @@
     $(function() {
         var pageData = {
             'title': '学门语言',
-            'back_url': 'index.html',
+            'back_url': location.origin+'/index.html',
         };
 
 
@@ -193,13 +192,15 @@
        });
     }
     function initBooksHeight() {
-        var heightWindow = $(window).innerHeight();
-        var heightHeader = $('header').innerHeight();
-        var heightNav = $('.nav_mask').innerHeight();
-        var heightChoose = $('.choose').innerHeight();
-        var heightBooks = heightWindow - heightHeader - heightNav - heightChoose;
-        heightBooks = heightBooks - 10;
-        $('.booklist_scroller').height(heightBooks);
+        if (isMobile()) {
+            var heightWindow = $(window).innerHeight();
+            var heightHeader = $('header').innerHeight();
+            var heightNav = $('.nav_mask').innerHeight();
+            var heightChoose = $('.choose').innerHeight();
+            var heightBooks = heightWindow - heightHeader - heightNav - heightChoose;
+            heightBooks = heightBooks - 40;
+            $('.booklist_scroller').height(heightBooks);
+        }
     }
     function getData() {
         // var Key = getParameterByName('k');
@@ -260,7 +261,7 @@
             _.each(v.Books, function(b,i) {
                 // b.BookIntro = b.BookIntro.slice(0,20);
                 b.BookIntro = autoAddEllipsis(b.BookIntro, 22);
-                var picUrl = (b.PicUrl == null) ? 'images/book_cover.jpg' : b.PicUrl;
+                var picUrl = $.trim(b.PicUrl) || 'images/book_cover.jpg';
                 var tmpl = _.template('<li><a href="info_book.html?bid=<%=BookID%>"><img src="'+picUrl+'" alt="" /><h4><%=BookName%></h4><p><%=BookIntro%></p></a></li>');
                 var html = tmpl(b);
                  strList += html;
@@ -294,15 +295,25 @@
         
     }
     function highlightTab(idx) {
+        $('.nav_mask>ul>li>a').attr('class', '');
         $('.nav_mask>ul>li>a>span').attr('class', 'rvmiddle');
+        $('.nav_mask').find('a').eq(idx).addClass('selected');
         $('.nav_mask').find('a').eq(idx).find('span').addClass('selected');
-        store.set('hjKxccLangIdx', idx);
 
-        if (idx > 3) {
-            gScrollerNav.scrollTo(-220,0,800);
+        if(store) {
+            store.set('hjKxccLangIdx',idx);
+        }
+        if (idx > 2) {
+            var step = -60 * (idx-2);
+            gScrollerNav.scrollTo(step,0,800);
         } else {
             gScrollerNav.scrollTo(0,0,800);
         }
+        //  else  if (idx > 3) {
+        //     gScrollerNav.scrollTo(-220,0,800);
+        // } else {
+        //     gScrollerNav.scrollTo(0,0,800);
+        // }
     }
     function initScroller() {
         initNavScroller();
