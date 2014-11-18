@@ -77,7 +77,7 @@
 }
 .content .questions .question ul li a .sign {
   right: 7%;
-  font-size: 3rem;
+  zoom: 0.8;
 }
 .content .questions .question ul li a.selected {
   background-color: #fff;

@@ -34,8 +34,8 @@
   color: #fff;
 }
 .content .nav_mask ul li a.selected {
-  height: 94%;
-  border-bottom: #ffeb3b 3px solid;
+  height: 92%;
+  border-bottom: #ffeb3b 4px solid;
 }
 .content .choose {
   position: relative;

@@ -61,19 +61,19 @@
   bottom: 0;
   position: absolute;
   z-index: 2;
+  display: none;
 }
 .content .opp_info ul {
   position: relative;
-  left: 50%;
   top: -20%;
   overflow: visible;
-  width: 300%;
+  width: 400%;
   height: 64%;
   padding: 0 0;
 }
 .content .opp_info ul li {
   float: left;
-  margin-right: 2rem;
+  margin-right: 3rem;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -81,13 +81,6 @@
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-.content .opp_info ul li span {
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
 }
 .content .selected {
   position: absolute;

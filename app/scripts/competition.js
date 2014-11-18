@@ -76,7 +76,8 @@ function getQuestions() {
                 var alpha = 'A';
                 var arr = ['A', 'B', 'C', 'D'];
                 alpha = arr[i];
-                var cstring = '<span class="vmiddle sign hidden">' + (i == v.correctOption ? '√' : '×') + '</span>';
+
+                var cstring = '<span class="vmiddle sign hidden"><img src="' + (i == v.correctOption ? 'images/dui.png' : 'images/cuo.png') + '"></span>';
                 sectionStr += '<li><a href="javascript:void(0)" onclick="answer(this, ' + k + ',' + i + ',' + v.correctOption + ')"><span class="circle vmiddle"><b>' + alpha + '</b></span><span class="answer vmiddle">' + o + '</span>' + cstring + '</a></li>';
             });
             sectionStr += '<li style="display:none"><a href="javascript:void(0)" onclick="answer(this, ' + k + ',4,' + v.correctOption + ')"><span class="circle"><b>E</b></span><span class="answer vmiddle">不认识</span></a></li>';
