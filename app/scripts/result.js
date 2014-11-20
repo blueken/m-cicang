@@ -32,7 +32,7 @@ $(window).on('load', function () {
     showTime(durationNum);
     showCombo(maxComboNum);
     showTotal(totalNum);
-    animeSocial();
+    animeSocial(totalNum);
 });
 
 function getUserData() {
@@ -81,10 +81,36 @@ function showTotal(n) {
 }
 
 function animeSocial(n) {
+    setSocialData(n);
     setTimeout(function () {
         dummyAnimate('.btns a:last', 'animated tada');
 
     }, 3300);
+}
+
+function setSocialData(n) {
+    var score = n || 1550;
+
+    var hjKxccData = store.get("hjKxccData");
+    var bookid = hjKxccData.BookId || 10445;
+
+    var hjKxccUserInfo = store.get("hjKxccUserInfo");
+    var uid = hjKxccUserInfo.UserId || 27251398;
+    var uname = hjKxccUserInfo.UserName || 'bob';
+    var uname = 'bob';
+
+
+
+    var hjKxccWin = store.get('hjKxccWin');
+    var url = hjKxccWin ? 'http://beta.mci.hujiang.com/social_win.html' : 'http://beta.mci.hujiang.com/social_lose.html';
+
+
+    var params = '?bookid=' + bookid + '&uid=' + uid + '&uname=' + uname + '&uscore=' + score;
+    jiathis_config.url = url + params;
+    dataForWeixin.lineLink = url + params;
+
+    jiathis_config.title = '我在开心词场中以' + score + '分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！';
+    dataForWeixin.shareTitle = '我在开心词场中以' + score + '分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！';
 }
 
 function initPage() {
