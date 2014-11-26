@@ -129,7 +129,7 @@
         //get opp score
         var data = store.get('hjKxccData');
         if (data && (data.Score > 0)) {
-            if (data.Score > totalNum) {
+            if (data.Score >= totalNum) {
                 url = 'lose1.html';
                 setSocialUrl(false);
             } else {

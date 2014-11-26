@@ -411,7 +411,7 @@ header
     position absolute
     top 18%
     left 5%
-    z-index 0
+    z-index 1
 /* CSS for cloud.html END*/
 
 
@@ -513,6 +513,21 @@ header
 
 
 /* MEDIA QUERY BEGIN */
+@media screen and (min-width: 765px)
+    .content
+        .user_info
+            .pic
+                .photo
+                    width 27%
+    .shares
+        height 57%
+        .shares_wrapper
+            ul
+                li 
+                    margin 5% 3.2%
+                    a
+                        float left
+
 @media screen and (max-width: 601px)
     html
         font-size: 53.13%

@@ -37,8 +37,8 @@
                             <div class="cloud_parallax">
 
                                 <span class="cloud_b"></span>
-                                <span class="cloud_f"></span>
                                 <span class="sprite boyc boy_in_cloud"></span>
+                                <span class="cloud_f"></span>
                             </div>
                         </div>
 
@@ -106,9 +106,17 @@
         
         initCloud();
         cloudDown('-5%');
+        testXiaomi();
         bindEvents();
         getData();
     });
+
+    function testXiaomi() {
+        if ( isXiaomi() ) {
+            $('.cloud_b').get(0).style.webkitAnimationName = 'none';
+            $('.cloud_f').get(0).style.webkitAnimationName = 'none';
+        }
+    }
 
     function initScroller() {
         var scroller = new IScroll('.swrapper', {
@@ -158,4 +166,5 @@
     
 
     </script>
+
 </html>
