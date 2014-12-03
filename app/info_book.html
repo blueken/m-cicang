@@ -157,7 +157,7 @@
 
     function getBooksData(data) {
         var strScroller = '';
-        var picUrl = (data.PicUrl == null) ? 'images/book_cover.jpg' : data.PicUrl;
+        var picUrl = $.trim(data.PicUrl) || 'images/book_cover.jpg';
         var html = _.template('<div class="pic"><img src="'+picUrl+'" title="<%=BookName%>" /></div>', data);
         strScroller += html;
         $('.scroller').html(strScroller);

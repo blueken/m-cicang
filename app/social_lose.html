@@ -110,26 +110,37 @@
         //initCloud();
         bindEvents();
         getData();
-        bindBtnsEvents();
+       
     });
 
     function getData() {
-        var bookid = getParam('bookid');
-        var uid = getParam('uid');
-        var uname = getParam('uname');
-        var uscore = getParam('uscore');
-        var upic = getUserAvatar(uid);
 
-        $('.photo').attr('src', upic).removeClass('hidden');
-        $('.user_name').html(uname);
-        $('.user_score').html(uscore);
+        var tk = getParam('tk');
+        tk = encodeURIComponent(tk);
+        $.get('http://beta.mci.hujiang.com/Services/UserInfoByToken.ashx?token='+tk, function(data){
 
-        getBookPic(bookid);
+            var bookid = getParam('bookid');
+            var uid = data.UserId;
+            var uname = data.UserName;
+            var uscore = getParam('uscore');
+            var upic = getUserAvatar(uid);
 
-        if (window.store) {
-            store.set('hjKxccBookid', bookid);
-            store.set('hjKxccSocial', {'BookId':bookid, 'UserName':uname, 'UserId':uid});
-        };
+            $('.photo').attr('src', upic).removeClass('hidden');
+            $('.user_name').html(uname);
+            $('.user_score').html(uscore);
+
+            getBookPic(bookid);
+
+            if (window.store) {
+                store.set('hjKxccBookid', bookid);
+                store.set('hjKxccSocial', {'BookId':bookid, 'UserName':uname, 'UserId':uid});
+            };
+
+             bindBtnsEvents();
+
+        }, 'JSON');
+
+        
     }
     function saveSocialData() {
         

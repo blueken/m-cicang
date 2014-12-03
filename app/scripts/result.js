@@ -95,8 +95,7 @@ function setSocialData(n) {
     var bookid = hjKxccData.BookId || 10445;
 
     var hjKxccUserInfo = store.get("hjKxccUserInfo");
-    var uid = hjKxccUserInfo.UserId || 27251398;
-    var uname = hjKxccUserInfo.UserName || 'bob';
+    var token = hjKxccUserInfo.ToKen;
 
     var hjKxccWin = store.get('hjKxccWin');
     var url = hjKxccWin ? 'http://beta.mci.hujiang.com/social_win.html' : 'http://beta.mci.hujiang.com/social_lose.html';
@@ -145,7 +144,7 @@ function setSocialData(n) {
     }
 
 
-    var params = '?bookid=' + bookid + '&uid=' + uid + '&uname=' + uname + '&uscore=' + score;
+    var params = '?bookid=' + bookid + '&tk=' + token + '&uscore=' + score;
     jiathis_config.url = url + params;
     dataForWeixin.lineLink = url + params;
 }
