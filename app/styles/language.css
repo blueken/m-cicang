@@ -79,6 +79,7 @@
 .content .booklist_mask .booklist_scroller .books ul li a img {
   float: left;
   width: 23.519736842105264%;
+  min-width: 22%;
   margin-top: 2.138157894736842%;
   margin-bottom: 2.138157894736842%;
   margin-right: 7.894736842105263%;

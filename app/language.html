@@ -199,6 +199,8 @@
             var heightChoose = $('.choose').innerHeight();
             var heightBooks = heightWindow - heightHeader - heightNav - heightChoose;
             heightBooks = heightBooks - 8;
+            var maskH = $('.booklist_mask').height();
+            heightBooks = (heightBooks > maskH) ? maskH : heightBooks;
             $('.booklist_scroller').height(heightBooks);
         }
     }
@@ -274,16 +276,24 @@
         $('.booklist_scroller').html(strList);
     }
 
-    function iniTabEvents() {
+     function iniTabEvents() {
+        if (typeof(window.g_lastClickTime) === 'undefined') {
+            window.g_lastClickTime = 0;
+        }
         $('.nav_mask').on('click', 'li>a', function() {
-            var idx = $(this).parent().index();
-            highlightTab(idx);
+            var now = new Date().getTime();
+            if ( now - window.g_lastClickTime < 500 ) {
+            }else {
+                var idx = $(this).parent().index();
+                window.g_lastClickTime = new Date().getTime();
+                highlightTab(idx);
+                setTimeout(function() {window.g_lastClickTime = 0}, 500);
 
-            if (gScrollerList != null) {
-                gScrollerList.goToPage(idx, 0, 1000);
-            };
+                if (gScrollerList != null) {
+                    gScrollerList.goToPage(idx, 0, 1000);
+                };
+            }
         });
-
     }
     function highlightLastTab() {
         var oldIdx = store.get('hjKxccLangIdx');
@@ -330,6 +340,10 @@
     }
 
     function initBookScroller() {
+        $(".books").each(function(idx, val) {
+            new IScroll(this);
+        });
+
         gScrollerList = new IScroll('.booklist_mask', {
             scrollX: true,
             scrollY: false,
@@ -341,15 +355,11 @@
         gScrollerList.on('scrollEnd', function() {
             var idx = this.currentPage.pageX;
             if (gScrollerNav != null) {
+                console.log('scrollEnd call highlightTab:'+idx);
                 highlightTab(idx);
             };
 
         });
-        setTimeout(function() {
-            $(".books").each(function(idx, val) {
-                new IScroll(this);
-            });
-        }, 1000);
     }
 
     function getDocHeight() {
