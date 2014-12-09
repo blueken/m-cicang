@@ -40,7 +40,8 @@ function getOppData() {
     else {
         searching(true);
     }
-    $.get('http://beta.mci.hujiang.com/Services/PKUserInfo.ashx?bookid=' + bid + '&userid=' + UserId + '&ts=' + Math.random(), function (data) {
+    var url = 'http://beta.mci.hujiang.com/Services/PKUserInfo.ashx?bookid=' + bid + '&userid=' + UserId + '&ts=' + Math.random();
+    $.get(url, function (data) {
         // data = {
         //     "UserId": 25710160,
         //     "UserName": "AirSky_Ten",
@@ -54,6 +55,7 @@ function getOppData() {
         //     "WrongWords": "010100000000000",
         //     "IsMockup": false
         // };
+
         saveOppData(data);
     }, 'JSON');
 
@@ -63,7 +65,7 @@ function getOppData() {
 
 function saveOppData(data) {
     console.log('MatchTime:' + data.MatchTime);
-    console.log('WrongWords:' + data.WrongWords);
+    console.log('RightWordCount:' + data.RightWordCount);
     console.log('Score:' + data.Score);
 
     store.set('hjKxccData', data);

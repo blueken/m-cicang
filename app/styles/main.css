@@ -489,7 +489,7 @@ header .btn_menu_on {
 /*Content end*/
 /*DOwntips begin*/
 .downtips {
-  position: fixed;
+  position: relative;
   z-index: 100;
   width: 100%;
   height: 100%;
@@ -503,7 +503,7 @@ header .btn_menu_on {
 }
 .downtips img {
   position: absolute;
-  right: 2.5%;
+  right: 2.2%;
   top: 1.8%;
   max-width: 100%;
 }

@@ -128,8 +128,13 @@
 
         //get opp score
         var data = store.get('hjKxccData');
+        
         if (data && (data.Score > 0)) {
-            if (data.Score > totalNum) {
+            var oppCorrectNum = data.RightWordCount;
+            var oppTimeBonus = 300 - data.MatchTime;
+            oppTimeBonus = (oppTimeBonus > 0) ? (oppTimeBonus) : 0;
+            var oppScore = 100*oppCorrectNum + oppTimeBonus
+            if (oppScore > totalNum) {
                 url = 'lose1.html';
             };
         };
