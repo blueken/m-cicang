@@ -41,7 +41,6 @@ function toggleMenu() {
 
 		$('<div class="overlay" style="display:block" id="for_menu" onclick="toggleMenu()"></div>').appendTo($('.ratio'));
 	}
-	console.log('work well!');
 }
 
 function initCloud() {
@@ -91,7 +90,7 @@ function initMenu(menuData) {
 }
 
 function judgeLogged() {
-	//var data = { "UserId" : 0 , "UserName" : null , "Avatar" : null };
+	//var data = { "UserId" : 0 , "UserName" : null , "Avatar" : null, "ToKen": "" };
 	$.get('http://beta.mci.hujiang.com/Services/UserInfo.ashx?ts=' + Math.random(), function (data) {
 		if ((typeof (data) === 'undefined') || (data.UserId === 0)) {
 			//unlogin
@@ -150,7 +149,7 @@ function dealSpriteSheet() {
 		scaleAllSS('.sprite', 0.6);
 	}
 	else if (winWidth <= 420) {
-		scaleAllSS('.sprite', 0.70);
+		scaleAllSS('.sprite', 0.62);
 	}
 	else if (winWidth <= 470) {
 		scaleAllSS('.sprite', 0.8);
@@ -224,9 +223,10 @@ function getUserAvatar(uid) {
 }
 
 function getParam(name) {
+	var searchStr = location.search;
 	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-		results = regex.exec(location.search);
+		results = regex.exec(searchStr);
 	return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
@@ -339,6 +339,13 @@ function isIOS() {
 	return re.test(ua);
 }
 
+function isXiaomi() {
+	'use strict';
+	var ua = window.navigator.userAgent.toLowerCase();
+	var re = /xiaomi/gi;
+	return re.test(ua);
+}
+
 function isMobile() {
 	var flag = false;
 	var agent = navigator.userAgent.toLowerCase();
@@ -421,24 +428,3 @@ window.addEventListener("load", function () {
 		window.scrollTo(0, 1);
 	}, 0);
 });
-
-//for jiathis
-jiathis_config = {
-		url: "http://beta.mci.hujiang.com/",
-		title: "我在开心词场中以1920分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！",
-		summary: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
-		pic: 'http://beta.mci.hujiang.com/images/sharewin.jpg'
-	}
-	// data for weixin
-dataForWeixin = {
-	appId: "", // 
-	imgUrl: "http://beta.mci.hujiang.com/images/sharewin.jpg",
-	imgWidth: "200",
-	imgHeight: "200",
-	lineLink: "http://beta.mci.hujiang.com/",
-	shareTitle: "我在开心词场”中以1920分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！",
-	descContent: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
-	callback: function () {
-		winxinShareDone();
-	}
-};

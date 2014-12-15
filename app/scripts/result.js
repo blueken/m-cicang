@@ -32,7 +32,7 @@ $(window).on('load', function () {
     showTime(durationNum);
     showCombo(maxComboNum);
     showTotal(totalNum);
-    animeSocial();
+    animeSocial(totalNum);
 });
 
 function getUserData() {
@@ -81,10 +81,72 @@ function showTotal(n) {
 }
 
 function animeSocial(n) {
+    setSocialData(n);
     setTimeout(function () {
         dummyAnimate('.btns a:last', 'animated tada');
 
     }, 3300);
+}
+
+function setSocialData(n) {
+    var score = (typeof (n) === 'undefined') ? 850 : n;
+
+    var hjKxccData = store.get("hjKxccData");
+    var bookid = hjKxccData.BookId || 10445;
+
+    var hjKxccUserInfo = store.get("hjKxccUserInfo");
+    var token = hjKxccUserInfo.ToKen;
+
+    var hjKxccWin = store.get('hjKxccWin');
+    var url = hjKxccWin ? 'http://beta.mci.hujiang.com/social_win.html' : 'http://beta.mci.hujiang.com/social_lose.html';
+
+    if (hjKxccWin) {
+        jiathis_config = {
+                url: "http://beta.mci.hujiang.com/",
+                title: '我在开心词场中以' + score + '分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！',
+                summary: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
+                pic: 'http://beta.mci.hujiang.com/images/sharewin.jpg'
+            }
+            // data for weixin
+        dataForWeixin = {
+            appId: "", // 
+            imgUrl: "http://beta.mci.hujiang.com/images/sharewin.jpg",
+            imgWidth: "200",
+            imgHeight: "200",
+            lineLink: "http://beta.mci.hujiang.com/",
+            shareTitle: '我在开心词场中以' + score + '分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！',
+            descContent: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
+            callback: function () {
+                winxinShareDone();
+            }
+        };
+    }
+    else {
+        jiathis_config = {
+                url: "http://beta.mci.hujiang.com/index.html",
+                title: '词场多风雨，红颜多薄命！我在开心词场PK中以' + score + '分惜败对手，替我报仇！',
+                summary: "待我重整旗鼓，择日再战！#开心词场 背词超爽#开心词场英雄际会，等你挑战！",
+                pic: 'http://beta.mci.hujiang.com/images/sharelose.jpg'
+            }
+            // data for weixin
+        dataForWeixin = {
+            appId: "", // 
+            imgUrl: "http://beta.mci.hujiang.com/images/sharelose.jpg",
+            imgWidth: "200",
+            imgHeight: "200",
+            lineLink: "http://beta.mci.hujiang.com/",
+            shareTitle: '词场多风雨，红颜多薄命！我在开心词场PK中以' + score + '分惜败对手，替我报仇！',
+            descContent: "待我重整旗鼓，择日再战！#开心词场 背词超爽#开心词场英雄际会，等你挑战！",
+            callback: function () {
+                winxinShareDone();
+            }
+        };
+    }
+
+
+    var params = '?bookid=' + bookid + '&tk=' + token + '&uscore=' + score;
+    jiathis_config.url = url + params;
+    dataForWeixin.lineLink = url + params;
 }
 
 function initPage() {

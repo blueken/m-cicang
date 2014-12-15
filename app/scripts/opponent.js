@@ -28,36 +28,57 @@ function getOppData() {
     //{'BookId':bookid, 'UserName':uname, 'UserId':uid}
     var hjKxccSocial = store.get('hjKxccSocial');
     var bid = store.get('hjKxccBookid');
-    var UserId = '2203265';
+    var UserId = '1000000';
     var UserName = '';
 
     if (hjKxccSocial) {
-        //has hjKxccSocial, from social land page
+        //has hjKxccSocial, from social share page
         UserName = hjKxccSocial.UserName || '我的好友';
-        UserId = hjKxccSocial.UserId || '2203265';
+        UserId = hjKxccSocial.UserId || '1000000';
+        var UserScore = hjKxccSocial.UserScore;
+        var correntNum = Math.floor(UserScore / 100);
+
+
         searching(false);
-    }
-    else {
-        searching(true);
-    }
-    var url = 'http://beta.mci.hujiang.com/Services/PKUserInfo.ashx?bookid=' + bid + '&userid=' + UserId + '&ts=' + Math.random();
-    $.get(url, function (data) {
-        // data = {
-        //     "UserId": 25710160,
-        //     "UserName": "AirSky_Ten",
-        //     "BookId": 10232,
-        //     "PKUserId": 0,
-        //     "IsWin": false,
-        //     "MatchTime": 135925,
-        //     "WordCount": 15,
-        //     "RightWordCount": 6,
-        //     "Score": 40,
-        //     "WrongWords": "010100000000000",
-        //     "IsMockup": false
-        // };
+
+        var data = {
+            "UserId": UserId,
+            "UserName": "我的好友",
+            "BookId": bid,
+            "PKUserId": 0,
+            "IsWin": false,
+            "MatchTime": 150000,
+            "WordCount": 15,
+            "RightWordCount": correntNum,
+            "Score": 50,
+            "WrongWords": "010101010101010",
+            "IsMockup": false
+        };
 
         saveOppData(data);
-    }, 'JSON');
+    }
+    else {
+        //not from social share page
+        searching(true);
+        var url = 'http://beta.mci.hujiang.com/Services/PKUserInfo.ashx?bookid=' + bid + '&userid=' + UserId + '&ts=' + Math.random();
+        $.get(url, function (data) {
+            // data = {
+            //     "UserId": 25710160,
+            //     "UserName": "AirSky_Ten",
+            //     "BookId": 10232,
+            //     "PKUserId": 0,
+            //     "IsWin": false,
+            //     "MatchTime": 135925,
+            //     "WordCount": 15,
+            //     "RightWordCount": 6,
+            //     "Score": 40,
+            //     "WrongWords": "010100000000000",
+            //     "IsMockup": false
+            // };
+
+            saveOppData(data);
+        }, 'JSON');
+    }
 
 
 
@@ -319,7 +340,7 @@ function showOpp(arr, idx) {
 function showOppFromSocial() {
     var data = store.get('hjKxccSocial');
     var name = data.UserName || '我的好友';
-    var uid = data.UserId || '2203265';
+    var uid = data.UserId || '1000000';
     var pic = getUserAvatar(uid);
 
     $('.selected>img').attr('src', pic);
