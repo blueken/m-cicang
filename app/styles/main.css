@@ -395,6 +395,13 @@ header .btn_menu_on {
   -ms-animation: cloud_move 150s linear infinite;
   animation: cloud_move 150s linear infinite;
 }
+.clouds .cloud_parallax .cloud_anim_none {
+  -webkit-animation: none 0 ease 0 1 normal;
+  -moz-animation: none 0 ease 0 1 normal;
+  -o-animation: none 0 ease 0 1 normal;
+  -ms-animation: none 0 ease 0 1 normal;
+  animation: none 0 ease 0 1 normal;
+}
 .ani_cloud_down {
   -webkit-animation: cloud_down 0.2s ease forwards;
   -moz-animation: cloud_down 0.2s ease forwards;

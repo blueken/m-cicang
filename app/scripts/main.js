@@ -346,6 +346,13 @@ function isXiaomi() {
 	return re.test(ua);
 }
 
+function isMeizu() {
+	'use strict';
+	var ua = window.navigator.userAgent.toLowerCase();
+	var re = /m351/gi;
+	return re.test(ua);
+}
+
 function isMobile() {
 	var flag = false;
 	var agent = navigator.userAgent.toLowerCase();

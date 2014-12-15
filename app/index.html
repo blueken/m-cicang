@@ -117,6 +117,7 @@
 
         cloudDown('-5%');
         showDowntips();
+        fixMeizuCloud();
     });
     function showDowntips() {
         var t = store.get('hjKxccDownTips');
@@ -125,6 +126,12 @@
             store.set('hjKxccDownTips', new Date().getTime());
         };
         
+    }
+    function fixMeizuCloud() {
+        if (isMeizu()) {
+            $('.cloud_b').addClass('cloud_anim_none');
+            $('.cloud_f').addClass('cloud_anim_none');
+        }
     }
     </script>
 </html>
