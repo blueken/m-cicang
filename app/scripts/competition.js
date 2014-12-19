@@ -53,7 +53,7 @@ function getQuestions() {
     // var bid = getParam('bid');
     var bid = store.get('hjKxccBookid');
     bid = bid ? bid : 10441;
-    var url = 'http://beta.mci.hujiang.com/Services/PKQuestion.ashx?bookid=' + bid + '&ts=' + Math.random();
+    var url = '/Services/PKQuestion.ashx?bookid=' + bid + '&ts=' + Math.random();
     $.get(url, function (data) {
         _.extend(gComp, {
             'data': data

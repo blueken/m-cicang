@@ -98,22 +98,23 @@ function setSocialData(n) {
     var token = hjKxccUserInfo.ToKen;
 
     var hjKxccWin = store.get('hjKxccWin');
-    var url = hjKxccWin ? 'http://beta.mci.hujiang.com/social_win.html' : 'http://beta.mci.hujiang.com/social_lose.html';
+    var ccDomain = location.origin;
+    var url = hjKxccWin ? ccDomain + '/social_win.html' : ccDomain + '/social_lose.html';
 
     if (hjKxccWin) {
         jiathis_config = {
-                url: "http://beta.mci.hujiang.com/",
+                url: ccDomain,
                 title: '我在开心词场中以' + score + '分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！',
                 summary: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
-                pic: 'http://beta.mci.hujiang.com/images/sharewin.jpg'
+                pic: ccDomain + '/images/sharewin.jpg'
             }
             // data for weixin
         dataForWeixin = {
             appId: "", // 
-            imgUrl: "http://beta.mci.hujiang.com/images/sharewin.jpg",
+            imgUrl: ccDomain + "/images/sharewin.jpg",
             imgWidth: "200",
             imgHeight: "200",
-            lineLink: "http://beta.mci.hujiang.com/",
+            lineLink: ccDomain,
             shareTitle: '我在开心词场中以' + score + '分秒杀对手！今天制霸词场，明天征服世界！不服来战，等你！',
             descContent: "词场英雄，舍我其谁 #开心词场 背词超爽#各路词场英豪够胆你就来！",
             callback: function () {
@@ -123,18 +124,18 @@ function setSocialData(n) {
     }
     else {
         jiathis_config = {
-                url: "http://beta.mci.hujiang.com/index.html",
+                url: ccDomain + "/index.html",
                 title: '词场多风雨，红颜多薄命！我在开心词场PK中以' + score + '分惜败对手，替我报仇！',
                 summary: "待我重整旗鼓，择日再战！#开心词场 背词超爽#开心词场英雄际会，等你挑战！",
-                pic: 'http://beta.mci.hujiang.com/images/sharelose.jpg'
+                pic: ccDomain + '/images/sharelose.jpg'
             }
             // data for weixin
         dataForWeixin = {
             appId: "", // 
-            imgUrl: "http://beta.mci.hujiang.com/images/sharelose.jpg",
+            imgUrl: ccDomain + "/images/sharelose.jpg",
             imgWidth: "200",
             imgHeight: "200",
-            lineLink: "http://beta.mci.hujiang.com/",
+            lineLink: ccDomain,
             shareTitle: '词场多风雨，红颜多薄命！我在开心词场PK中以' + score + '分惜败对手，替我报仇！',
             descContent: "待我重整旗鼓，择日再战！#开心词场 背词超爽#开心词场英雄际会，等你挑战！",
             callback: function () {

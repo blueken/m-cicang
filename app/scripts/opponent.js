@@ -60,7 +60,7 @@ function getOppData() {
     else {
         //not from social share page
         searching(true);
-        var url = 'http://beta.mci.hujiang.com/Services/PKUserInfo.ashx?bookid=' + bid + '&userid=' + UserId + '&ts=' + Math.random();
+        var url = '/Services/PKUserInfo.ashx?bookid=' + bid + '&userid=' + UserId + '&ts=' + Math.random();
         $.get(url, function (data) {
             // data = {
             //     "UserId": 25710160,

@@ -122,7 +122,7 @@
         var Key = getParam('k');
         var lang = getParam('l');
 
-        $.get('http://beta.mci.hujiang.com/Services/BookCategory.ashx?categoryKey='+Key+'&lang='+lang, function(data) {
+        $.get('/Services/BookCategory.ashx?categoryKey='+Key+'&lang='+lang, function(data) {
             gData = data;
 
             var pageData = {

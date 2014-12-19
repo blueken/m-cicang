@@ -135,7 +135,7 @@
     function getData() {
         // var data = { "BookID" : 10625 , "BookName" : "\u5B66\u82F1\u8BED\u7ED5\u4E0D\u8FC7\u76841000\u8BCD" , "BookType" : "Public" , "BookMode" : "Sentence, SentenceDef, Phonetic" , "Langs" : "en" , "BookIntro" : "\u6839\u636E\u767E\u5EA6\u8C37\u6B4C\u6743\u5A01\u6307\u6570\u6392\u884C\uFF0C\u7ED3\u5408\u5C0FD\u8BCD\u5178\u70ED\u8BCD\u6570\u636E\uFF0C\u6536\u5F55\u4E2D\u56FD\u7F51\u6C11\u6700\u5E38\u75281000\u8BCD\uFF0C\u53CD\u6620\u4E86\u6700\u8D34\u8FD1\u751F\u6D3B\u7684\u8BCD\u6C47\u5E94\u7528\u573A\u666F\uFF0C\u9002\u5408\u5404\u5C42\u6B21\u82F1\u8BED\u5B66\u4E60\u8005\u80CC\u8BF5\u3002" , "ItemNum" : 1000 , "UnitNum" : 50 , "DateAdded" : "2012-02-23" , "DateUpdated" : "2013-08-23" , "IsPublic" : false , "IsPublish" : true , "PlanNum" : 60 , "RecommendTID" : "140,37,161" , "Mark" : "" , "RealmID" : 1001 , "PicUrl" : null , "UserCount" : 708290 , "IsBest" : 0 , "BookTypeString" : "\u516C\u5171" , "IsMy" : false , "IsFinished" : false , "MaxUnitIndex" : 0 , "ParentID" : 0 , "IsFav" : false };
         var bid = getParam('bid');
-        $.get('http://beta.mci.hujiang.com/Services/InterestLangBookById.ashx?id='+bid, function(data) {
+        $.get('/Services/InterestLangBookById.ashx?id='+bid, function(data) {
             $('.bookname').html(data.BookName);
             var pageData = {
                 'title': data.BookName,

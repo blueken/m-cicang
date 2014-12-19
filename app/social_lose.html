@@ -137,7 +137,7 @@
         } else {
             //friend login
             tk = encodeURIComponent(tk);
-            $.get('http://beta.mci.hujiang.com/Services/UserInfoByToken.ashx?token='+tk, function(data){
+            $.get('/Services/UserInfoByToken.ashx?token='+tk, function(data){
                 
                 uid = data.UserId;
                 uname = data.UserName;
@@ -168,7 +168,7 @@
     }
     function getBookPic(bookid) {
         var bid = getParam('bookid');
-        $.get('http://beta.mci.hujiang.com/Services/InterestLangBookById.ashx?id='+bid, function(data) {
+        $.get('/Services/InterestLangBookById.ashx?id='+bid, function(data) {
             $('.book').attr('src', data.PicUrl);
         },'JSON');
     }
