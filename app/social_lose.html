@@ -66,12 +66,6 @@
 
 
     </body>
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/underscore/underscore.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -92,6 +86,7 @@
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
     <script src="../bower_components/store.js/store.js"></script>
     <script src="../bower_components/countUp.js/countUp.js"></script>
+    <script src="../bower_components/js-base64/base64.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script src="scripts/main.js"></script>
@@ -128,7 +123,8 @@
         var uid;
         var uname;
 
-        var tk = getParam('tk');
+        var decodeStr = Base64.decode( getParam('q') );
+        var tk = decodeStr.split('_')[0];
         if (tk == 'null') {
             //friend not login
             uid = '1000000';
@@ -146,9 +142,10 @@
         }
     }
     function handleFriendData(uid, uname) {
-        var uscore = getParam('uscore');
+        var decodeStr = Base64.decode( getParam('q') );
+        var uscore = decodeStr.split('_')[2];
         var upic = getUserAvatar(uid);
-        var bookid = getParam('bookid');
+        var bookid = decodeStr.split('_')[1];
 
         $('.photo').attr('src', upic).removeClass('hidden');
         $('.user_name').html(uname);
@@ -167,7 +164,8 @@
         
     }
     function getBookPic(bookid) {
-        var bid = getParam('bookid');
+        var decodeStr = Base64.decode( getParam('q') );
+        var bid = decodeStr.split('_')[1];
         $.get('/Services/InterestLangBookById.ashx?id='+bid, function(data) {
             $('.book').attr('src', data.PicUrl);
         },'JSON');

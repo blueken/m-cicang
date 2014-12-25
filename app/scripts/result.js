@@ -145,7 +145,9 @@ function setSocialData(n) {
     }
 
 
-    var params = '?bookid=' + bookid + '&tk=' + token + '&uscore=' + score;
+    var str = token + '_' + bookid + '_' + score;
+    var encodeStr = Base64.encode(str);
+    var params = '?q=' + encodeStr;
     jiathis_config.url = url + params;
     dataForWeixin.lineLink = url + params;
 }
