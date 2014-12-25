@@ -136,13 +136,8 @@
             var oppScore = 100*oppCorrectNum + oppTimeBonus
             if (oppScore > totalNum) {
                 url = 'lose1.html';
-                setSocialUrl(false);
-            } else {
-                setSocialUrl(true);
             }
         };
-
-        
 
         // var rand = _.random(1,6) * 1000;
         setTimeout(function() {
@@ -150,9 +145,6 @@
         }, 1000);
     }
 
-    function setSocialUrl(bWin) {
-        store.set('hjKxccWin', bWin);
-    }
     function getUserData() {
         // { "UserId" : 0 , "UserName" : null , "Avatar" : null };
         var data = store.get('hjKxccUserInfo');

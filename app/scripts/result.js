@@ -97,7 +97,7 @@ function setSocialData(n) {
     var hjKxccUserInfo = store.get("hjKxccUserInfo");
     var token = hjKxccUserInfo.ToKen;
 
-    var hjKxccWin = store.get('hjKxccWin');
+    var hjKxccWin = (location.href.indexOf('win') > -1) ? true : false;
     var ccDomain = location.origin;
     var url = hjKxccWin ? ccDomain + '/social_win.html' : ccDomain + '/social_lose.html';
 
