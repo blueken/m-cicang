@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>开心词场</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
@@ -43,8 +43,21 @@
 
                         <div class="kinds">
                             <ul>
-                                <li><a class="kqbc" href="exam.html"><span class="sprite paper_flight icon_left"></span><span class="kind_title">考前背词</span><span class="kind_desc">带你高分 带你飞</span><span class="sprite rarrow_white icon_right"></span></a></li>
-                                <li><a class="xmyy" href="language.html"><span class="sprite doctor_hat icon_left"></span><span class="kind_title">学门语言</span><span class="kind_desc">语言达人 就是你</span><span class="sprite rarrow_gray icon_right"></span></a></li>
+
+
+                                <li><a class="kqbc" href="exam.html">
+                                    <span class="sprite paper_flight icon_left"></span>
+                                    <span class="kind_title"><span class="hmiddle-r">考前背词<span class="kind_desc">带你高分 带你飞</span></span></span>
+                                    <span class="sprite rarrow_white icon_right"></span>
+                                </a></li>
+
+
+
+                                <li><a class="xmyy" href="language.html">
+                                    <span class="sprite doctor_hat icon_left"></span>
+                                    <span class="kind_title"><span class="hmiddle-r">学门语言<span class="kind_desc">语言达人 就是你</span></span></span>
+                                    <span class="sprite rarrow_gray icon_right"></span>
+                                </a></li>
                                 <li class="copyright">Copyright &copy; 沪江网</li>
                             </ul>
                         </div>
@@ -70,7 +83,8 @@
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
     <script src="../bower_components/store.js/store.js"></script>
-    <script src="../bower_components/countUp.js/countUp.js"></script>    
+    <script src="../bower_components/countUp.js/countUp.js"></script>
+    <script src="../bower_components/js-base64/base64.js"></script>    
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -104,6 +118,7 @@
 
         cloudDown('-5%');
         showDowntips();
+        fixMeizuCloud();
     });
     function showDowntips() {
         var t = store.get('hjKxccDownTips');
@@ -112,6 +127,12 @@
             store.set('hjKxccDownTips', new Date().getTime());
         };
         
+    }
+    function fixMeizuCloud() {
+        if (isMeizu()) {
+            $('.cloud_b').addClass('cloud_anim_none');
+            $('.cloud_f').addClass('cloud_anim_none');
+        }
     }
     </script>
 </html>

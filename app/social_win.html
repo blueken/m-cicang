@@ -1,0 +1,178 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>开心词场</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- build:css styles/vendor.css -->
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/sprite.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+        <!-- build:css styles/social.css -->
+        <link rel="stylesheet" href="styles/social.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="hcontrol">
+            <div class="ratioparent">
+                <div class="ratio">
+                    <header>
+
+                    </header>
+                    <div class="menu_content">
+                        
+                    </div>
+                    <article class="content">
+                        <!--div class="clouds">
+                            <span class="cloud_bg"></span>
+                            <div class="cloud_parallax">
+
+                                <span class="cloud_f"></span>
+                                <span class="cloud_b"></span>
+                            </div>
+                        </div-->
+
+                        <div class="result">
+                            <img class="bg" src="images/sbgwin.png" alt="" />
+                            <img class="photo hidden" src="images/unknown.png" alt="" />
+                            <p class="user_txt user_name"></p>
+                            <p class="user_txt user_score"></p>
+                            <img class="book" src="images/book_cover.jpg" alt="" />
+                        </div>
+                        <div class="btns">
+                            <a class="btn change" href="#" id="download"><span class="rvmiddle">换本词书<span></a>
+                            <a class="btn pk" href="#"><span class="rvmiddle">立即PK<span></a>
+                        </div>
+                        
+                    </article>
+
+
+
+                </div>
+            </div>
+        </div>
+
+       
+
+
+
+    </body>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-34211645-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/iscroll/build/iscroll.js"></script>
+    <script src="../bower_components/store.js/store.js"></script>
+    <script src="../bower_components/countUp.js/countUp.js"></script>
+    <script src="../bower_components/js-base64/base64.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script src="scripts/main.js"></script>
+
+     <script type="text/javascript">
+    //social.html?
+    $(function() {
+        var pageData = {
+            'title': 'PK结果',
+            'back_url': '',
+        };
+
+
+        initHeader(pageData);
+        initMenu();
+        //initCloud();
+        bindEvents();
+        getData();
+       
+    });
+   
+    function getParam(name) {
+        var searchStr = location.href.split("?")[1];
+        searchStr = searchStr.replace(/&amp;/g, '&');
+        searchStr = searchStr.replace(/&#38;/g, '&');
+        searchStr = searchStr.replace(/;uscore/g, '&uscore');
+        searchStr = '&' + searchStr;
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(searchStr);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    function getData() {
+        var uid;
+        var uname;
+
+        var decodeStr = Base64.decode( getParam('q') );
+        var tk = decodeStr.split('_')[0];
+        if (tk == 'null') {
+            //friend not login
+            uid = '1000000';
+            uname = '我的好友';
+            handleFriendData(uid, uname);
+        } else {
+            //friend login
+            tk = encodeURIComponent(tk);
+            $.get('/Services/UserInfoByToken.ashx?token='+tk, function(data){
+                
+                uid = data.UserId;
+                uname = data.UserName;
+                handleFriendData(uid, uname);
+            }, 'JSON');
+        }
+    }
+    function handleFriendData(uid, uname) {
+        var decodeStr = Base64.decode( getParam('q') );
+        var uscore = decodeStr.split('_')[2];
+        var upic = getUserAvatar(uid);
+        var bookid = decodeStr.split('_')[1];
+
+        $('.photo').attr('src', upic).removeClass('hidden');
+        $('.user_name').html(uname);
+        $('.user_score').html(uscore);
+
+        getBookPic(bookid);
+
+        if (window.store) {
+            store.set('hjKxccBookid', bookid);
+            store.set('hjKxccSocial', {'BookId':bookid, 'UserName':uname, 'UserId':uid, 'UserScore':uscore});
+        };
+
+        bindBtnsEvents();
+    }
+    function saveSocialData() {
+        
+    }
+    function getBookPic(bookid) {
+        var decodeStr = Base64.decode( getParam('q') );
+        var bid = decodeStr.split('_')[1];
+        $.get('/Services/InterestLangBookById.ashx?id='+bid, function(data) {
+            $('.book').attr('src', data.PicUrl);
+        },'JSON');
+    }
+    function bindBtnsEvents() {
+        $('.btn').eq(0).on('click', function() { document.location = 'index.html'; });
+        $('.btn').eq(1).on('click', function() { document.location = 'opponent.html'; });
+    }
+    </script>
+</html>

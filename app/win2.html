@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>开心词场-我赢啦！</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
         <link rel="shortcut icon" href="/favicon.ico">
@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="styles/result.css">
         <!-- endbuild -->
     </head>
-    <body>
+    <body style="background-color:#009A3C">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -67,15 +67,18 @@
 
 
                     <div class="overlay hidden">
-                        <div class="shares">
+                        <div class="winxintips hidden">
+                            <img src="images/cccat.png" alt="点击这里分享给好朋友"/>
+                        </div>
+                        <div class="shares hidden">
                             <div class="shares_wrapper">
                                 <ul>
-                                    <li><a class="jiathis_button_weixin" href="#"><span class="sprite s_weixin"></span><p>微信</p></a></li>
+                                    <!--li><a class="jiathis_button_weixin" href="#"><span class="sprite s_weixin"></span><p>微信</p></a></li-->
                                     <li><a class="jiathis_button_qzone" href="#"><span class="sprite s_qq"></span><p>QQ空间</p></a></li>
                                     <li><a class="jiathis_button_tqq" href="#"><span class="sprite s_txwb"></span><p>腾讯微博</p></a></li>
                                     <li><a class="jiathis_button_tsina" href="#"><span class="sprite s_xlwb"></span><p>新浪微博</p></a></li>
                                     <li><a class="jiathis_button_renren" href="#"><span class="sprite s_renren"></span><p>人人网</p></a></li>
-                                    <li><a class="jiathis_button_tieba" href="#"><span class="sprite s_bdtb"></span><p>百度贴吧</p></a></li>
+                                    <!--li><a class="jiathis_button_tieba" href="#"><span class="sprite s_bdtb"></span><p>百度贴吧</p></a></li-->
                                     <li><a class="jiathis_button_douban"href="#"><span class="sprite s_db"></span><p>豆瓣</p></a></li>
                                 </ul>
                             </div>
@@ -111,6 +114,7 @@
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
     <script src="../bower_components/store.js/store.js"></script>
     <script src="../bower_components/countUp.js/countUp.js"></script>
+    <script src="../bower_components/js-base64/base64.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -1,7 +1,7 @@
 /* ----------------------------------------------------
    created with http://www.codeandweb.com/texturepacker 
    ----------------------------------------------------
-   $TexturePacker:SmartUpdate:26c5197bfee0b29d1a018f14b2563fd4:150559f689603f03d29d9df8e2e19a37:1e9ea531edb030fd06c741d8d5dec72b$
+   $TexturePacker:SmartUpdate:2ac12e4a0eb1939b05307a3564c7f089:0a8c95c5e46f90b5d576a15bc82314b5:1e9ea531edb030fd06c741d8d5dec72b$
    ----------------------------------------------------
 
    usage: <span class="{-spritename-} sprite"></span>
@@ -10,29 +10,30 @@
 
 */
 
-.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../images/sprite.png);}
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat; background-size:cover; display: none}
 
-.anonymous {width:82px; height:82px; background-position: -101px -2px}
-.boy {width:174px; height:250px; background-position: -2px -234px}
-.bubble {width:213px; height:85px; background-position: -376px -234px}
-.doctor_hat {width:85px; height:85px; background-position: -272px -2px}
-.download {width:28px; height:34px; background-position: -71px -2px}
-.icon_cctalk {width:114px; height:114px; background-position: -814px -118px}
-.icon_hjtk {width:114px; height:114px; background-position: -466px -118px}
-.icon_hjxd {width:114px; height:114px; background-position: -582px -118px}
-.icon_tlk {width:114px; height:114px; background-position: -698px -118px}
-.menu {width:8px; height:32px; background-position: -2px -2px}
-.menu_back {width:15px; height:24px; background-position: -12px -2px}
-.paper_flight {width:85px; height:85px; background-position: -185px -2px}
-.rarrow_gray {width:19px; height:60px; background-position: -29px -2px}
-.rarrow_white {width:19px; height:60px; background-position: -50px -2px}
-.right_tick {width:196px; height:196px; background-position: -178px -234px}
-.s_bdtb {width:114px; height:114px; background-position: -350px -118px}
-.s_db {width:114px; height:114px; background-position: -707px -2px}
-.s_pyq {width:114px; height:114px; background-position: -359px -2px}
-.s_qq {width:114px; height:114px; background-position: -475px -2px}
-.s_renren {width:114px; height:114px; background-position: -591px -2px}
-.s_txwb {width:114px; height:114px; background-position: -118px -118px}
-.s_weixin {width:114px; height:114px; background-position: -234px -118px}
-.s_xlwb {width:114px; height:114px; background-position: -2px -118px}
-.wave {width:324px; height:150px; background-position: -591px -234px}
+.anonymous {width:82px; height:82px; background-image: url(../images/sprites/anonymous.png)}
+.boy {width:174px; height:250px; background-image: url(../images/sprites/boy.png)}
+.boyc {width:174px; height:291px; background-image: url(../images/sprites/boyc.png)}
+.bubble {width:213px; height:85px; background-image: url(../images/sprites/bubble.png)}
+.doctor_hat {width:85px; height:85px; background-image: url(../images/sprites/doctor_hat.png)}
+.download {width:28px; height:34px; background-image: url(../images/sprites/download.png)}
+.icon_cctalk {width:114px; height:114px; background-image: url(../images/sprites/icon_cctalk.png)}
+.icon_hjtk {width:114px; height:114px; background-image: url(../images/sprites/icon_hjtk.png)}
+.icon_hjxd {width:114px; height:114px; background-image: url(../images/sprites/icon_hjxd.png)}
+.icon_tlk {width:114px; height:114px; background-image: url(../images/sprites/icon_tlk.png)}
+.menu {width:8px; height:32px; background-image: url(../images/sprites/menu.png)}
+.menu_back {width:15px; height:24px; background-image: url(../images/sprites/menu_back.png)}
+.paper_flight {width:85px; height:85px; background-image: url(../images/sprites/paper_flight.png)}
+.rarrow_gray {width:19px; height:60px; background-image: url(../images/sprites/rarrow_gray.png)}
+.rarrow_white {width:19px; height:60px; background-image: url(../images/sprites/rarrow_white.png)}
+.right_tick {width:196px; height:196px; background-image: url(../images/sprites/right_tick.png)}
+.s_bdtb {width:114px; height:114px; background-image: url(../images/sprites/s_bdtb.jpg)}
+.s_db {width:114px; height:114px; background-image: url(../images/sprites/s_db.jpg)}
+.s_pyq {width:114px; height:114px; background-image: url(../images/sprites/s_pyq.jpg)}
+.s_qq {width:114px; height:114px; background-image: url(../images/sprites/s_qq.jpg)}
+.s_renren {width:114px; height:114px; background-image: url(../images/sprites/s_renren.jpg)}
+.s_txwb {width:114px; height:114px; background-image: url(../images/sprites/s_txwb.jpg)}
+.s_weixin {width:114px; height:114px; background-image: url(../images/sprites/s_weixin.jpg)}
+.s_xlwb {width:114px; height:114px; background-image: url(../images/sprites/s_xlwb.jpg)}
+.wave {width:324px; height:150px; background-image: url(../images/sprites/wave.png)}

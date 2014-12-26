@@ -2,7 +2,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  background: #eef3fa;
+  background: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "SimSun";
   color: #333;
 }
@@ -47,7 +47,7 @@ a:hover {
   width: 100%;
   height: 100%;
   background: rgba(40,40,40,0.3);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 101;
@@ -61,14 +61,12 @@ a:hover {
   width: 100%;
   max-width: 768px;
   min-width: 320px;
-  background-color: #ffd700;
   margin: 0 auto;
 }
 .hcontrol .ratioparent {
   position: relative;
   width: 100%;
   padding-bottom: 143.75%;
-  background-color: #f00;
 }
 .hcontrol .ratioparent .ratio {
   position: absolute;
@@ -76,7 +74,6 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #ffd700;
 }
 /* CSS for header.html BEGIN*/
 header {
@@ -275,7 +272,7 @@ header .btn_menu_on {
   width: 18.67%;
   height: 76.93%;
   float: left;
-  margin: 4.22% 3.13%;
+  margin: 3% 3.13%;
 }
 .menu_content .icon_links ul li a {
   width: 100%;
@@ -347,6 +344,7 @@ header .btn_menu_on {
 /* CSS for .menu_content END*/
 /* CSS for cloud.html BEGIN*/
 .clouds {
+  display: none;
   width: 100%;
   height: 74.57%;
   overflow: hidden;
@@ -370,25 +368,11 @@ header .btn_menu_on {
 }
 .clouds .cloud_parallax .cloud_b {
   display: inline-block;
-  width: 4000px;
-  height: 67px;
-  background: url("../images/cloud_b.png");
-  background-size: contain;
+  width: 2008px;
+  height: 162px;
+  background: url("../images/cloud_b.png") no-repeat;
+  background-size: cover;
   opacity: 0.8;
-  position: absolute;
-  bottom: 0;
-  -webkit-animation: cloud_move 300s linear infinite;
-  -moz-animation: cloud_move 300s linear infinite;
-  -o-animation: cloud_move 300s linear infinite;
-  -ms-animation: cloud_move 300s linear infinite;
-  animation: cloud_move 300s linear infinite;
-}
-.clouds .cloud_parallax .cloud_f {
-  display: inline-block;
-  width: 8000px;
-  height: 67px;
-  background: url("../images/cloud_f.png");
-  background-size: contain;
   position: absolute;
   bottom: 0;
   -webkit-animation: cloud_move 400s linear infinite;
@@ -396,6 +380,27 @@ header .btn_menu_on {
   -o-animation: cloud_move 400s linear infinite;
   -ms-animation: cloud_move 400s linear infinite;
   animation: cloud_move 400s linear infinite;
+}
+.clouds .cloud_parallax .cloud_f {
+  display: inline-block;
+  width: 1680px;
+  height: 135px;
+  background: url("../images/cloud_f.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+  -webkit-animation: cloud_move 150s linear infinite;
+  -moz-animation: cloud_move 150s linear infinite;
+  -o-animation: cloud_move 150s linear infinite;
+  -ms-animation: cloud_move 150s linear infinite;
+  animation: cloud_move 150s linear infinite;
+}
+.clouds .cloud_parallax .cloud_anim_none {
+  -webkit-animation: none 0 ease 0 1 normal;
+  -moz-animation: none 0 ease 0 1 normal;
+  -o-animation: none 0 ease 0 1 normal;
+  -ms-animation: none 0 ease 0 1 normal;
+  animation: none 0 ease 0 1 normal;
 }
 .ani_cloud_down {
   -webkit-animation: cloud_down 0.2s ease forwards;
@@ -406,9 +411,9 @@ header .btn_menu_on {
 }
 .boy_in_cloud {
   position: absolute;
-  top: 8%;
+  top: 18%;
   left: 5%;
-  z-index: 0;
+  z-index: 1;
 }
 /* CSS for cloud.html END*/
 /*Content begin*/
@@ -428,7 +433,7 @@ header .btn_menu_on {
 }
 .content .kinds .icon_left {
   float: left;
-  margin-right: 8%;
+  margin-right: 0%;
 }
 .content .kinds .icon_right {
   float: right;
@@ -450,19 +455,6 @@ header .btn_menu_on {
   color: #fff;
   position: relative;
 }
-.content .kinds .kqbc .kind_title {
-  width: 60%;
-  display: block;
-  margin: 0 auto;
-  font-size: 5.6rem;
-}
-.content .kinds .kqbc .kind_desc {
-  width: 60%;
-  display: block;
-  margin: 0 auto;
-  font-size: 2.4rem;
-  margin-top: 3%;
-}
 .content .kinds .xmyy {
   display: inline-block;
   position: relative;
@@ -473,41 +465,52 @@ header .btn_menu_on {
   text-align: left;
   color: #666;
 }
-.content .kinds .xmyy .kind_title {
+.content .kinds .kind_title {
   width: 60%;
   display: block;
   margin: 0 auto;
   font-size: 5.6rem;
 }
-.content .kinds .xmyy .kind_desc {
-  width: 60%;
+.content .kinds .kind_desc {
+  width: 100%;
   display: block;
   margin: 0 auto;
   font-size: 2.4rem;
-  margin-top: 3%;
+  text-align: left;
+  margin-top: 7%;
+}
+.content .kinds .hmiddle-r {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 .content .kinds .copyright {
   font-size: 2.2rem;
-  margin-top: 23%;
+  margin-top: 21%;
 }
 /*Content end*/
 /*DOwntips begin*/
 .downtips {
-  position: absolute;
+  position: relative;
   z-index: 100;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.9);
-  -webkit-animation: fadeOut 1s 4s linear forwards;
-  -moz-animation: fadeOut 1s 4s linear forwards;
-  -o-animation: fadeOut 1s 4s linear forwards;
-  -ms-animation: fadeOut 1s 4s linear forwards;
-  animation: fadeOut 1s 4s linear forwards;
+  -webkit-animation: fadeOut 1s 2s linear forwards;
+  -moz-animation: fadeOut 1s 2s linear forwards;
+  -o-animation: fadeOut 1s 2s linear forwards;
+  -ms-animation: fadeOut 1s 2s linear forwards;
+  animation: fadeOut 1s 2s linear forwards;
   display: none;
 }
 .downtips img {
   position: absolute;
-  right: 2.5%;
+  right: 2.2%;
   top: 1.8%;
   max-width: 100%;
 }
@@ -515,52 +518,68 @@ header .btn_menu_on {
 /*hjm_share begin*/
 /*hm-share end*/
 /* MEDIA QUERY BEGIN */
+@media screen and (min-width: 765px) {
+  .content .user_info .pic .photo {
+    width: 27%;
+  }
+  .shares {
+    height: 57%;
+  }
+  .shares .shares_wrapper ul li {
+    margin: 5% 3.2%;
+  }
+  .shares .shares_wrapper ul li a {
+    float: left;
+  }
+}
 @media screen and (max-width: 601px) {
   html {
     font-size: 53.13%;
-  }
-  .sprite {
-    zoom: 0.5;
   }
 }
 @media screen and (max-width: 550px) {
   html {
     font-size: 48%;
   }
-  .sprite {
-    zoom: 0.9;
-  }
 }
 @media screen and (max-width: 470px) {
   html {
     font-size: 43%;
-  }
-  .sprite {
-    zoom: 0.8;
   }
 }
 @media screen and (max-width: 420px) {
   html {
     font-size: 37%;
   }
-  .sprite {
-    zoom: 0.72;
+  .boy_in_cloud {
+    zoom: 0.7;
+    top: 22%;
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 380px) {
   html {
     font-size: 32%;
-  }
-  .sprite {
-    zoom: 0.55;
   }
   .rarrow_gray,
   .rarrow_white {
     width: 20px;
   }
   .boy_in_cloud {
-    zoom: 0.4;
-    top: 10%;
+    zoom: 0.6;
+    top: 22%;
+  }
+}
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 32%;
+  }
+  .rarrow_gray,
+  .rarrow_white {
+    width: 20px;
+  }
+  .boy_in_cloud {
+    zoom: 0.9;
+    top: 20%;
   }
 }
 /* MEDIA QUERY END */
@@ -774,38 +793,38 @@ header .btn_menu_on {
 }
 @-moz-keyframes cloud_move {
   100% {
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-40%);
+    -moz-transform: translateX(-40%);
+    -o-transform: translateX(-40%);
+    -ms-transform: translateX(-40%);
+    transform: translateX(-40%);
   }
 }
 @-webkit-keyframes cloud_move {
   100% {
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-40%);
+    -moz-transform: translateX(-40%);
+    -o-transform: translateX(-40%);
+    -ms-transform: translateX(-40%);
+    transform: translateX(-40%);
   }
 }
 @-o-keyframes cloud_move {
   100% {
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-40%);
+    -moz-transform: translateX(-40%);
+    -o-transform: translateX(-40%);
+    -ms-transform: translateX(-40%);
+    transform: translateX(-40%);
   }
 }
 @keyframes cloud_move {
   100% {
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-40%);
+    -moz-transform: translateX(-40%);
+    -o-transform: translateX(-40%);
+    -ms-transform: translateX(-40%);
+    transform: translateX(-40%);
   }
 }
 @-moz-keyframes cloud_down {

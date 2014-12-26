@@ -1,0 +1,97 @@
+animation-duration()
+    -webkit-animation-duration arguments
+    -moz-animation-duration arguments
+    -o-animation-duration arguments
+    -ms-animation-duration arguments
+    animation-duration arguments
+
+
+.content
+	.result
+		$result_w = 640
+		$result_h = 920
+
+		width ($result_w * 100 / 640)%
+		height ($result_h * 100 / 920)%
+		// background-color gold
+
+		position absolute
+		z-index 2
+
+		margin-top (0 * 100 / 640)%
+		margin-left (0 * 100 / 640)%
+		
+		.bg 
+			width 100%
+			max-height 100%
+		.photo
+			$photo_w = 130
+			$photo_h = 130
+			width ($photo_w * 100 / 640)%
+			height ($photo_h * 100 / 920)%
+			// width ($photo_w * 100 /result_w)%
+			// height ($photo_h * 100 /result_h)%
+			position absolute
+			top (120 *100/ 920)%
+			left (16 * 100/ 640)%
+			
+			border-radius 50%
+			border 2px #dcdcdc solid
+		.user_txt
+			position absolute
+			color #FFF
+			text-align center
+		.user_name
+			width (110 / $result_w) *100%
+			height (30 / $result_w) * 100%
+			top (265 / $result_h) * 100%
+			left (30 / $result_w) * 100%
+			font-size 1.8rem
+		.user_score
+			width (162 / $result_w) *100%
+			height (54 / $result_w) * 100%
+			top (228 / $result_h) * 100%
+			left (155 / $result_w) * 100%
+			font-size 5.2rem
+		.book
+			position absolute
+			top (444 / $result_h) * 100%
+			left (52 / $result_w) * 100%
+			width (173 / $result_w) * 100%
+			height (237 / $result_h) * 100%
+			
+	.btns
+		//640*72
+		width 100%
+		height (72*100/920)%
+		// background-color gold
+
+		position absolute
+		z-index 3
+		bottom (32*100/920)%
+		.btn 
+			width (272*100/640)%
+			height 100%
+			// background-color gold
+
+			display inline-block
+			border-radius 0.6rem
+
+			font-size 3.0rem
+			text-align center
+			margin-left (32*100/640)%
+		.change 
+			background-color #29b6f6
+
+		.pk
+			background-color #fd585c
+		.pk2
+			background-color #fdcc41	
+	
+.content_bg2
+	background silver url("../images/bg2.jpg") center center no-repeat
+	background-size cover
+.content_bg3
+	background silver url("../images/bg3.jpg") center center no-repeat
+	background-size cover
+

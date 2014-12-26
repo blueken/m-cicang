@@ -27,7 +27,7 @@
   margin-left: 7.972270363951473%;
 }
 .content .result .winorlose p.you2 {
-  color: #fdcc41;
+  color: #f8b921;
   font-size: 3.2rem;
   margin-left: 7.972270363951473%;
 }
@@ -59,24 +59,28 @@
 .content .result .info .nick {
   position: absolute;
   width: 17.96875%;
-  top: 79.6875%;
-  left: 4.15944540727903%;
+  bottom: 12.109375%;
+  left: 3.466204506065858%;
   font-size: 2rem;
   text-align: center;
   color: #fff;
 }
 .content .result .info .total {
   position: absolute;
+  width: 25%;
   top: 66.40625%;
-  left: 28.596187175043326%;
+  left: 29.462738301559792%;
   font-size: 5.4rem;
+  text-align: center;
   color: #fff;
 }
 .content .result .info .correct {
   position: absolute;
   top: 5.859375%;
-  left: 68.63084922010398%;
+  left: 65.8578856152513%;
+  width: 12%;
   font-size: 3.2rem;
+  text-align: right;
   color: #fff;
   -webkit-animation-duration: 1.2s;
   -moz-animation-duration: 1.2s;
@@ -87,8 +91,10 @@
 .content .result .info .time {
   position: absolute;
   top: 42.96875%;
-  left: 68.63084922010398%;
+  left: 65.8578856152513%;
+  width: 12%;
   font-size: 3.2rem;
+  text-align: right;
   color: #fff;
   -webkit-animation-duration: 1.2s;
   -moz-animation-duration: 1.2s;
@@ -99,8 +105,10 @@
 .content .result .info .combo {
   position: absolute;
   top: 77.34375%;
-  left: 68.63084922010398%;
+  left: 65.8578856152513%;
+  width: 12%;
   font-size: 3.2rem;
+  text-align: right;
   color: #fff;
   -webkit-animation-duration: 1.2s;
   -moz-animation-duration: 1.2s;
@@ -132,7 +140,7 @@
   background-color: #fd585c;
 }
 .content .btns .show2 {
-  background-color: #fdcc41;
+  background-color: #f8b921;
 }
 .content .btns .show3 {
   background-color: #5b53a9;

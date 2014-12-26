@@ -2,7 +2,7 @@
 /*muti-browser capability end*/
 .content .questions {
   position: absolute;
-  top: 14.35%;
+  top: 9.6%;
   width: 1500%;
   height: 62.17391304347826%;
 }
@@ -12,13 +12,17 @@
   float: left;
 }
 .content .questions .question h2 {
-  width: 100%;
-  height: 8.741258741258742%;
+  position: relative;
+  width: 97%;
+  height: 26%;
   font-size: 5rem;
-  padding: 3.12% 0;
+  padding: 3.12% 1%;
   text-align: center;
   color: #fff;
   border-bottom: #fff 2px dashed;
+}
+.content .questions .question h2 span {
+  width: 98%;
 }
 .content .questions .question ul {
   width: 80.625%;
@@ -51,7 +55,6 @@
   border-radius: 50%;
   text-align: center;
   margin-right: 6.2015503875969%;
-  margin-top: 2.131782945736434%;
   margin-left: 2.325581395348837%;
   float: left;
 }
@@ -68,7 +71,13 @@
 }
 .content .questions .question ul li a .answer {
   display: inline-block;
+  width: 68%;
+  margin-left: 18%;
   font-size: 3rem;
+}
+.content .questions .question ul li a .sign {
+  right: 7%;
+  zoom: 0.8;
 }
 .content .questions .question ul li a.selected {
   background-color: #fff;
@@ -77,21 +86,28 @@
 .content .questions .question ul li a.wrong {
   background-color: #ed5d62;
 }
+.content .questions .question ul li a.wrong .circle {
+  border: 0;
+}
 .content .questions .question ul li a.right {
   background-color: #08c863;
+}
+.content .questions .question ul li a.right .circle {
+  border: 0;
 }
 .content .vs {
   position: absolute;
   z-index: 1;
   width: 90%;
   height: 8.91304347826087%;
-  bottom: 3.478260869565217%;
+  bottom: 9%;
   left: 5%;
 }
 .content .vs .pho {
   width: 14.23611111111111%;
   height: 100%;
   border-radius: 50%;
+  border: #dcdcdc 2px solid;
 }
 .content .vs .me {
   float: left;
@@ -137,7 +153,7 @@
 }
 .content .combo {
   position: absolute;
-  top: 78%;
+  top: 73%;
   left: 10%;
   z-index: 1;
   font-size: 2.4rem;
@@ -147,12 +163,14 @@
   position: absolute;
   left: 49%;
   top: 45%;
+  width: 90%;
   -webkit-transform: translateY(-50%) translateX(-50%);
   -moz-transform: translateY(-50%) translateX(-50%);
   -o-transform: translateY(-50%) translateX(-50%);
   -ms-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
-  font-size: 3.4rem;
+  font-size: 3.1rem;
+  text-align: center;
 }
 .overlay {
   display: none;

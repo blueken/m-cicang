@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>选择对手</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
         <link rel="shortcut icon" href="/favicon.ico">
@@ -65,14 +65,13 @@
                                 <li><span class="sprite anonymous"></span></li>
                                 <li><span class="sprite anonymous"></span></li>
                                 <li><span class="sprite anonymous"></span></li>
-                                <li><span class="sprite anonymous"></span></li>
                             </ul>
 
                         </div>
                         <div class="selected">
-                            <img src="images/photo.png" alt="对手头像"/>
-                            <p class="opp_txt opp_name">路人小词霸</p>
-                            <p class="opp_txt opp_status">胜率 75%</p>
+                            <img src="images/unknown.png" alt="对手头像"/>
+                            <p class="opp_txt opp_name"></p>
+                            <p class="opp_txt opp_status"></p>
                         </div>
                         
                         <div class="pk hvmiddle hidden">
@@ -111,9 +110,10 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
-    <script src="../bower_components/countUp.js/countUp.js"></script>
+    <script src="../bower_components/iscroll/build/iscroll.js"></script>
     <script src="../bower_components/store.js/store.js"></script>
     <script src="../bower_components/countUp.js/countUp.js"></script>
+    <script src="../bower_components/js-base64/base64.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -122,4 +122,5 @@
     <!-- build:js scripts/opponent.js -->
     <script src="scripts/opponent.js" ></script>
     <!-- endbuild -->
+    
 </html>

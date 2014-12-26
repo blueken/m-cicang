@@ -1,4 +1,4 @@
-$language_num = 6
+$language_num = 8
 .content
 	$content_w = 640
 	$content_h = 920
@@ -19,7 +19,7 @@ $language_num = 6
 			padding-left (30*100 / 640)%
 			li
 				float left
-				width 10rem
+				width 10%
 				height 100%
 
 				font-size 3rem	
@@ -31,9 +31,13 @@ $language_num = 6
 					height 100%
 					span 
 						color #a9e2fb
-
+						letter-spacing: 0.2rem;
+						margin-right: -0.2rem;
 					span.selected
 						color white
+				a.selected
+					height 92%
+					border-bottom: #FFEB3B 4px solid;
 	.choose
 		position relative
 		z-index 2
@@ -47,12 +51,12 @@ $language_num = 6
 
 	.booklist_mask
 		width 100%
-		height $mask_height = ((920 - 88 - 88) * 100 / 920)%
+		height $mask_height = ((920 - 88 - 88 - 90) * 100 / 920)%
 
 		background-color white
 		.booklist_scroller
 			width ($language_num * 100)%
-			height 86%
+			height 100%
 
 			.books
 				width (100/$language_num *0.95)%
@@ -81,6 +85,7 @@ $language_num = 6
 							img 
 								float left
 								width (143*100/ $li_w)%
+								min-width 22%
 
 								margin-top (13*100/ $li_w)%
 								margin-bottom (13*100/ $li_w)%

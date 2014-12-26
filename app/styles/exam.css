@@ -8,12 +8,12 @@
   background-color: #29b6f6;
 }
 .content .nav_mask ul {
-  width: 200%;
+  width: 100%;
   height: 100%;
 }
 .content .nav_mask ul li {
   float: left;
-  width: 16.666666666666668%;
+  width: 33.333333333333336%;
   height: 100%;
   font-size: 3rem;
   text-align: center;
@@ -26,6 +26,7 @@
 }
 .content .nav_mask ul li a span {
   color: #a9e2fb;
+  letter-spacing: 0.5rem;
 }
 .content .nav_mask ul li a span.selected {
   color: #fff;
@@ -37,7 +38,7 @@
   height: 6%;
 }
 .content .nav_mask .indicator .highlight {
-  width: 25%;
+  width: 33.3333333333333%;
   height: 100%;
   border-radius: 2px;
   background-color: #ffd700;
@@ -91,6 +92,8 @@
 }
 .content .booklist_mask .booklist_scroller .books ul li a .icon img {
   width: 100%;
+  min-width: 4rem;
+  min-height: 4rem;
   border-radius: 50%;
 }
 .content .booklist_mask .booklist_scroller .books ul li a .icon .cato {
@@ -100,15 +103,21 @@
   width: 100%;
 }
 .content .booklist_mask .booklist_scroller .books ul li a h4 {
-  color: #333;
-  font-size: 3rem;
-  margin-top: 6.578947368421052%;
+  color: #585858;
+  font-size: 3.2rem;
+  margin-top: 2.960526315789474%;
+  font-weight: bold;
 }
 .content .booklist_mask .booklist_scroller .books ul li a p {
-  width: 87.5%;
-  margin-top: 4.111842105263158%;
+  margin-top: 2.631578947368421%;
   color: #999;
   font-size: 2.5rem;
   letter-spacing: 0.2rem;
-  line-height: 3rem;
+  width: 70%;
+  padding-bottom: 3%;
+  border-bottom: #f5f5f5 2px solid;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

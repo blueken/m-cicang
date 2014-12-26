@@ -2,9 +2,9 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>选择对手</title>
+        <title>选择词书</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white" />
         <link rel="shortcut icon" href="/favicon.ico">
@@ -100,6 +100,7 @@
     <script src="../bower_components/iscroll/build/iscroll.js"></script>
         <script src="../bower_components/store.js/store.js"></script>
     <script src="../bower_components/countUp.js/countUp.js"></script>
+    <script src="../bower_components/js-base64/base64.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -122,12 +123,12 @@
         var Key = getParam('k');
         var lang = getParam('l');
 
-        $.get('http://beta.mci.hujiang.com/Services/BookCategory.ashx?categoryKey='+Key+'&lang='+lang, function(data) {
+        $.get('/Services/BookCategory.ashx?categoryKey='+Key+'&lang='+lang, function(data) {
             gData = data;
 
             var pageData = {
                 'title': gData.Name,
-                'back_url': 'exam.html',
+                'back_url': location.origin+'/exam.html',
             };
 
             initHeader(pageData);
@@ -176,7 +177,8 @@
     function getBooksData(data) {
         var strScroller = '';
         _.each(data.Books, function(v,k) {
-            var html = _.template('<div class="pic"><img src="<%=Icon%>" title="<%=Name%>" /></div>', v);
+            var picUrl = (v.Icon == null) ? 'images/book_cover.jpg' : v.Icon
+            var html = _.template('<div class="pic"><img src="'+picUrl+'" title="<%=Name%>" /></div>', v);
             strScroller += html;
         });
         $('.scroller').html(strScroller);
@@ -201,6 +203,7 @@
         gScroller.on('scrollEnd', function() {
             var idx = gScroller.currentPage.pageX;
             countUpNum(idx);
+            dealArrows();
         });
         $('.prev').on('click', function() { gScroller.prev(); dealArrows(); });
         $('.next').on('click', function() { gScroller.next(); dealArrows(); });
