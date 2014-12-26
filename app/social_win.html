@@ -167,7 +167,9 @@
         var decodeStr = Base64.decode( getParam('q') );
         var bid = decodeStr.split('_')[1];
         $.get('/Services/InterestLangBookById.ashx?id='+bid, function(data) {
-            $('.book').attr('src', data.PicUrl);
+            if(data.PicUrl){
+                $('.book').attr('src', data.PicUrl);    
+            }
         },'JSON');
     }
     function bindBtnsEvents() {
