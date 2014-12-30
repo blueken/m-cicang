@@ -132,7 +132,6 @@
             handleFriendData(uid, uname);
         } else {
             //friend login
-            tk = encodeURIComponent(tk);
             $.get('/Services/UserInfoByToken.ashx?token='+tk, function(data){
                 
                 uid = data.UserId;
